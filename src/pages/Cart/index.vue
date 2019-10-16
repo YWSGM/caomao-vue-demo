@@ -131,7 +131,7 @@ export default {};
         .circle
           position absolute
           left -10px
-          top 2px
+          top 4px
   .discounts
     width 100%
     height 40px
