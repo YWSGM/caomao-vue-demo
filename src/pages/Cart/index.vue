@@ -30,6 +30,7 @@
         </li>
       </ul>
     </div>
+    <Footer/>
   </div>
 </template>
 
