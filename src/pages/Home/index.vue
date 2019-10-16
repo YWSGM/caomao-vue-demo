@@ -2,7 +2,7 @@
 <section class="home">
   <!--首页头部-->
 <Header/>
-
+<Footer/>
 </section>
 </template>
 <script>
