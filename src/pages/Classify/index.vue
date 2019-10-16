@@ -1,10 +1,11 @@
 <template>
   <div>
-    <header class="header">
+    <!-- <header class="header">
       <div class="search">
         <input type="text" placeholder="请输入搜索商品" />
       </div>
-    </header>
+    </header> -->
+    <Header/>
     <div class="List">
       <div class="listLeft">
         <ul>
@@ -77,6 +78,7 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 <script>
@@ -98,6 +100,7 @@ export default {};
     text-align center
     background-color #ccc
 .List
+  margin-top 40px
   display flex
   .listLeft
     top-border-1px(#ccc)
