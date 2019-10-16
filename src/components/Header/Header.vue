@@ -4,7 +4,7 @@
         <img src="./images/logo.png"/>
     </div>
     <div class="header-content" >
-      <span class="iconfont">&#xe601;</span>
+      <span class="iconfont font">&#xe601;</span>
        
        <p>搜索商品, 共23255款好物</p>
     </div>
@@ -38,15 +38,16 @@ export default {
   position absolute
   left 17px
   top 2px
-  font-weight 600 
+  // font-weight 600 
 }
 .header
   width 350px
   height 38px
-  border-bottom  1px solid #666
+  // border-bottom  1px solid #666
   margin auto
   display flex
   position relative
+  top 5px
   .header-log
     width 70px
     height 30px
@@ -70,6 +71,8 @@ export default {
      left 40px
      top 5px
      color #666666
+    .font
+      font-weight 700 
   .header-btn
     width 40px
     height 18px
