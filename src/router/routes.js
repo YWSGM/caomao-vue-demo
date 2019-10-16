@@ -4,10 +4,16 @@ import ShopCar from '../pages/ShopCar'
 import Classify from '../pages/Classify'
 import Personal from '../pages/Personal'
 import Cart from '../pages/Cart'
+import Login from '../pages/Login/index.vue'
+
 export default [
 	{
 		path:'/home',
 		component: Home
+	},
+	{
+		path:'/login',
+		component: Login
 	},
 	{
 		path:'/search',
