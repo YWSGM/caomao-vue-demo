@@ -17,7 +17,7 @@
       <span class="item">购物车</span>
      <span class="iconfont font">&#xe657;</span>
     </li>
-    <li class="guide_item" @click="goPersonal('/personal')">
+    <li class="guide_item" @click="goPersonal('/login')">
       <span class="iconfont font">&#xe615;</span>
       <span class="item">个人</span>
     </li>
