@@ -46,8 +46,9 @@ export default {
   // border-bottom  1px solid #666
   margin auto
   display flex
-  position relative
+  position fixed
   top 5px
+  left 12px
   .header-log
     width 70px
     height 30px
