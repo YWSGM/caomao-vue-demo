@@ -5,26 +5,35 @@ let KoaRouter = require('koa-router')
 //实例化koa
 let koa = new Koa()
 //实例化koa-router
-let KoaRouter = new KoaRouter()
+let koaRouter = new KoaRouter()
 //引入datas数据
 let datas= require('./datas/data.json')
-var Fly=require("flyio/src/node")
-var fly=new Fly;
 // 定义接口返回数据
-KoaRouter.get('/home', () => {
-
+koaRouter.get('/home', (ctx, next) => {
+  //获取调用接口传入的参数
+  let req = ctx.query.req
+  console.log(req)
+  ctx.body = datas
 })
-KoaRouter.get('/classify', () => {
-  
+koaRouter.get('/personal', (ctx, next) => {
+  let req = ctx.query.req
+  console.log(req)
+  ctx.body = datas.classify
 })
-KoaRouter.get('/personal', () => {
-  
+koaRouter.get('/classify', (ctx, next) => {
+  let req = ctx.query.req
+  console.log(req)
+  ctx.body = datas
 })
-KoaRouter.get('/search', () => {
-  
+koaRouter.get('/search', (ctx, next) => {
+  let req = ctx.query.req
+  console.log(req)
+  ctx.body = datas.search
 })
-KoaRouter.get('/shopcar', () => {
-  
+koaRouter.get('/shopcar', (ctx, next) => {
+  let req = ctx.query.req
+  console.log(req)
+  ctx.body = datas
 })
 
 //声明使用所有的路由及路由的相关的所有的方法
