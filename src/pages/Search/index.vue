@@ -66,6 +66,7 @@
         </li>
       </ul>
     </div>
+    <Footer/>
   </div>
 </template>
 <script>
@@ -73,10 +74,15 @@ export default {};
 </script>
 <style lang="stylus">
 @import '../../common/stylus/mixins.styl'
-@font-face
-  font-family 'iconfont' /* project id 1461446 */
-  src url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot')
-  src url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff2') format('woff2'), url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff') format('woff'), url('//at.alicdn.com/t/font_1461446_uge1knhxboh.ttf') format('truetype'), url('//at.alicdn.com/t/font_1461446_uge1knhxboh.svg#iconfont') format('svg')
+@font-face {
+  font-family: 'iconfont';  /* project id 1461446 */
+  src: url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot');
+  src: url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.svg#iconfont') format('svg');
+}
 .iconfont
   font-family 'iconfont' !important
   font-size 22px
@@ -98,6 +104,7 @@ export default {};
     display flex
     justify-content space-evenly
 		position relative
+    border-bottom 1px solid #ccc
   .header-mid
     margin 10px auto
     .font
@@ -105,10 +112,11 @@ export default {};
       font-weight 700
       color #b4282d
     .select-home
-      padding 0 0 0 10px
+      // padding 0 0 0 10px
       font-size 16px
   .topList
     // bottom-border-1px(#ccc)
+    padding-top 40px
     border-bottom 1px solid #666
     .topList-ul
       display flex

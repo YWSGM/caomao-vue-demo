@@ -1,33 +1,49 @@
 <template>
 <footer class="footer_guide">
   <ul>
-    <li class="guide_item">
+    <li class="guide_item" @click="goHome('/home')">
       <span class="item">首页</span>
      <span class="iconfont font">&#xe615;</span>
     </li>
-    <li class="guide_item">
+    <li class="guide_item" @click="goClassify('/classify')">
       <span class="item">分类</span>
      <span class="iconfont font">&#xe624;</span>
     </li>
-    <li class="guide_item">
+    <li class="guide_item" @click="goSearch('/search')">
       <span class="item">识物</span>
      <span class="iconfont font">&#xe7fd;</span>
     </li>
-    <li class="guide_item">
+    <li class="guide_item" @click="goShopCar('/shopcar')">
       <span class="item">购物车</span>
      <span class="iconfont font">&#xe657;</span>
     </li>
-    <li class="guide_item">
+    <li class="guide_item" @click="goPersonal('/personal')">
       <span class="iconfont font">&#xe615;</span>
       <span class="item">个人</span>
-     
     </li>
   </ul>
   </footer>
 </template>
 <script>
 export default {
-  name:'Footer'
+  name:'Footer',
+  methods: {
+    goHome(path){
+      this.$router.replace(path)
+    },
+    goClassify(path){
+      this.$router.replace(path)
+    },
+    goSearch(path){
+      this.$router.replace(path)
+    },
+    goShopCar(path){
+      this.$router.replace(path)
+    },
+    goPersonal(path){
+      this.$router.replace(path)
+    },
+  }
 }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -54,6 +70,7 @@ export default {
   
 }
 .footer_guide
+  background-color #fff
   width 100%
   height 50px
   position fixed
