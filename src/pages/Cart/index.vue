@@ -3,6 +3,7 @@
     <div class="shopCar-header">
       <span class="car">购物车</span>
       <span class="posh">领券</span>
+      <span class="edit">编辑</span>
     </div>
     <div class="shopCar-safe">
       <ul>
@@ -21,18 +22,22 @@
       </ul>
     </div>
     <div class="shopCar-content">
-      <div class="emptyShop">
-        <img src="./img/shopCar.png" alt="">
-        <span class="font">去添点什么吧</span>
-        <div class="btn">登录</div>
-      </div>
+      <ul>
+        <li>
+          <img src="" alt="">
+          <span>白胖子 温润净颜卸妆水</span>
+          <span>400ml</span>
+        </li>
+      </ul>
     </div>
-    <Footer />
+    <Footer/>
   </div>
 </template>
+
 <script>
 export default {};
 </script>
+
 <style lang="stylus" scoped>
 @font-face
   font-family 'iconfont' /* project id 1461072 */
@@ -58,12 +63,17 @@ export default {};
     box-sizing border-box
     .posh
       position absolute
+      right 65px
+      color #BA393D
+      font-size 16px
+    .edit
+      position absolute
       right 15px
-      color red
+      font-size 14px
   .shopCar-safe
     width 100%
     height 35px
-    background-color #EEEEEE 
+    background-color #EEEEEE
     ul
       width 100%
       height 100%
@@ -73,44 +83,12 @@ export default {};
         height 35px
         flex 1
         line-height 35px
-        margin-left 15px 
+        margin-left 15px
         position relative
-        span 
+        span
           color #666
           font-size 12px
         .circle
           position absolute
           left -10px
-          top 2px
-  .shopCar-content
-    width 100%
-    height 100%
-    background-color #EEEEEE
-    position relative
-    .emptyShop
-      // position absolute
-      // left 0
-      // top 0
-      // right 0
-      // bottom 0
-      // margin auto 
-      display flex
-      flex-direction column
-      align-items center
-      text-align center
-      img 
-        display block
-        width 210px
-        height 210px
-        margin-top 110px
-      .font
-        color #666666
-      .btn
-        width 210px
-        height 40px
-        line-height 40px
-        text-align center
-        background-color #B4282D
-        color white
-        margin-top 10px
-</style>
+          top 2px</style>
