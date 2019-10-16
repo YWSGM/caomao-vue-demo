@@ -1,10 +1,14 @@
 <template>
   <div class="big">
-    <header class="header">
-      <span class="iconfont font-home">&#xe642;</span>
+    <header class="search-header">
+      <span class="iconfont font-home" @click="goto('/home')">&#xe642;</span>
       <div class="header-mid">
         <a class="font" href="javascript:;">发现</a>
         <a class="select-home" href="javascript:;">甄选家</a>
+      </div>
+      <div class="font-box">
+        <span class="iconfont search-font">&#xe658;</span>
+        <span class="iconfont car-font" @click="goto('/shopcar')">&#xe602;</span>
       </div>
     </header>
     <div class="topList">
@@ -64,18 +68,54 @@
             <img src="./img/ringt1.jpg" alt />
           </div>
         </li>
+        <li class="content-item">
+          <div class="left">
+            <div class="top">
+              <img src="./img/touxiang1.jpg" alt />
+              <span>网易游戏：波涛</span>
+            </div>
+            <p>两种意见|终于找到了一款颜值在线的保温杯</p>
+          </div>
+          <div class="right">
+            <img src="./img/ringt1.jpg" alt />
+          </div>
+        </li>
       </ul>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 <script>
-export default {};
+import BScroll from "better-scroll";
+export default {
+  methods: {
+    _initBscroll() {
+      
+      let scroll = new BScroll('.content-list')
+      /* this.rightScroll = new BScroll(".foods-wrapper", {
+        click: true,
+        // 计算滚动的位置
+        probeType: 2
+      });
+      // 右侧列表的滑动事件
+      this.rightScroll.on("scroll", ({ x, y }) => {
+        // console.log(y);
+        this.scrollY = Math.abs(y);
+      }); */
+    },
+    goto(path){
+      this.$router.replace(path)
+    }
+  },
+  mounted () {
+    this._initBscroll();
+  }
+};
 </script>
 <style lang="stylus">
 @import '../../common/stylus/mixins.styl'
 @font-face {
-  font-family: 'iconfont';  /* project id 1461446 */
+  font-family: 'iconfont';
   src: url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot');
   src: url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot?#iefix') format('embedded-opentype'),
   url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff2') format('woff2'),
@@ -97,31 +137,57 @@ export default {};
 .big
   width 100%
   height 100%
+  position relative
   background-color #eee
-  .header
+  .search-header
+    bottom-border-1px(black)
+    position absolute
+    left 0
+    top 0
+    z-index 99
+    background-color #d9d9d9
     width 100%
     height 44px
     display flex
     justify-content space-evenly
-		position relative
-    border-bottom 1px solid #ccc
-  .header-mid
-    margin 10px auto
-    .font
-      font-size 20px
-      font-weight 700
-      color #b4282d
-    .select-home
-      // padding 0 0 0 10px
-      font-size 16px
+    .font-home
+      margin-top 10px
+    .header-mid
+      margin 10px auto
+      .font
+        font-size 20px
+        font-weight 700
+        color #b4282d
+      .select-home
+        padding-left 5px
+    .font-box
+      position relative
+      .search-font
+        position absolute
+        left 0
+        top 10px
+      .car-font
+        position absolute
+        right 15px
+        top 10px
+    
+  .font-box
+    width 44px
+    height 22px
+    display flex
   .topList
-    // bottom-border-1px(#ccc)
+    position relative
     padding-top 40px
     border-bottom 1px solid #666
     .topList-ul
+      padding-right 5px
+      position absolute
+      left 0
+      top 40px
+      z-index 99
+      background-color #d9d9d9
       display flex
       white-space nowrap
-      // background-color #cccccc
       height 40px
       line-height 40px
       li
@@ -135,12 +201,13 @@ export default {};
             border-bottom 2px solid #b4282d
             color #b4282d
   .content-list
+    padding-top 100px
     margin-top 10px
     width 100%
-    height 100%
+    height 500px
     .content-ul
+      padding-top 40px
       width 100%
-      height 100%
       .content-item
         margin-top 10px
         width 100%
