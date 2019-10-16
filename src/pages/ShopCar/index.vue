@@ -27,6 +27,7 @@
         <div class="btn">登录</div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 <script>
