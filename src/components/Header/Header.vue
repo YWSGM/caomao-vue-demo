@@ -18,7 +18,7 @@ export default {
   name:'Header'
 }
 </script>
-<style lang="stylus" rel="stylesheet/stylus" >
+<style lang="stylus" rel="stylesheet/stylus">
 @font-face {
   font-family: 'iconfont';  /* project id 1461237 */
   src: url('//at.alicdn.com/t/font_1461237_w731nh5w5d.eot');
@@ -43,7 +43,7 @@ export default {
 .header
   width 350px
   height 38px
-  // border-bottom  1px solid #666
+  border-bottom  1px solid #666
   margin auto
   display flex
   position fixed
