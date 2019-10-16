@@ -28,17 +28,38 @@
     <div class="logoWrap s">
       <i class="icon icon-logo-wrap"></i>
     </div>
-    <div>
-      <Button type="danger" size="large">手机号快捷登录</Button>
-      <Button type="danger" size="large" plain>邮箱账号登录</Button>
+    <div class="btnWrap">
+      <Button type="danger" size="large" class="mt-16">
+        <div class="s">
+          <i class="icon icon-phone mr-8"></i>
+          <p>手机号快捷登录</p>
+        </div>
+      </Button>
+      <Button type="danger" size="large" plain>
+        <div class="s">
+          <i class="icon icon-email mr-8"></i>
+          <p>邮箱账号登录</p>
+        </div>
+      </Button>
+    </div>
+    <div class="thirdWrap s">
+      <div class="itemWrap s">
+        <i class="icon icon-weixin"></i> 微信
+      </div>
+      <div class="itemWrap s">
+        <i class="icon icon-qq"></i> QQ
+      </div>
+      <div class="itemWrap s">
+        <i class="icon icon-weibo"></i> 微博
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Button } from 'mint-ui';
+import { Button } from "mint-ui";
 export default {
-  components: {Button},
+  components: { Button },
   data() {
     return {
       defaultBannerSeen: true
@@ -100,6 +121,50 @@ export default {
   width: 86px;
   height: 27px;
   background-position-y: -64px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.icon-phone {
+  background-image: url('./login-btn-icons.png');
+  background-size: 20px 145px;
+  background-position-y: -25px;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-email {
+  background-image: url('./login-btn-icons.png');
+  background-size: 20px 145px;
+  background-position-y: 0px;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-weixin {
+  background-image: url('./weixin.png');
+  background-size: 98%;
+  background-position-y: 0px;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-qq {
+  background-image: url('./qq.png');
+  background-size: 98%;
+  background-position-y: 0px;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-weibo {
+  background-image: url('./weibo.png');
+  background-size: 98%;
+  background-position-y: 0px;
+  height: 20px;
+  width: 20px;
 }
 
 .container {
@@ -195,14 +260,50 @@ export default {
   }
 
   .logoWrap {
-    padding 80px 0 116px 0;
+    padding: 80px 0 116px 0;
     width: 100%;
+
     .icon-logo-wrap {
       width: 134px;
       height: 45px;
       background-size: 100% 100%;
       background-image: url('./logo-wrap.png');
       background-position-y: 0px;
+    }
+  }
+
+  .btnWrap {
+    width: 335px;
+    margin: 0 auto;
+
+    .mt-16 {
+      margin-bottom: 16px;
+    }
+
+    .mint-button {
+      height: 47px;
+      font-size: 14px;
+    }
+  }
+
+  .thirdWrap {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    color: #8c8c8c;
+
+    .itemWrap {
+      height: 20px;
+      padding: 0 20px;
+      border-right: 1px solid #8c8c8c;
+
+      .icon {
+        margin-right: 2.5px;
+      }
+
+      &:last-child {
+        border: none;
+      }
     }
   }
 }
