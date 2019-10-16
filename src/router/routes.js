@@ -3,11 +3,16 @@ import Search from '../pages/Search'
 import ShopCar from '../pages/ShopCar'
 import Classify from '../pages/Classify'
 import Personal from '../pages/Personal'
+import Login from '../pages/Login/index.vue'
 
 export default [
 	{
 		path:'/home',
 		component: Home
+	},
+	{
+		path:'/login',
+		component: Login
 	},
 	{
 		path:'/search',
