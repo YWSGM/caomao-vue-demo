@@ -1,23 +1,23 @@
 <template>
 <footer class="footer_guide">
   <ul>
-    <li class="guide_item" @click="goHome('/home')">
+    <li class="guide_item" @click="goto('/home')" :class="{active:$route.path==='/home'}">
       <span class="item">首页</span>
      <span class="iconfont font">&#xe615;</span>
     </li>
-    <li class="guide_item" @click="goClassify('/classify')">
+    <li class="guide_item" @click="goto('/classify')" :class="{active:$route.path==='/classify'}">
       <span class="item">分类</span>
      <span class="iconfont font">&#xe624;</span>
     </li>
-    <li class="guide_item" @click="goSearch('/search')">
+    <li class="guide_item" @click="goto('/search')" :class="{active:$route.path==='/search'}">
       <span class="item">识物</span>
      <span class="iconfont font">&#xe7fd;</span>
     </li>
-    <li class="guide_item" @click="goShopCar('/shopcar')">
+    <li class="guide_item" @click="goto('/shopcar')" :class="{active:$route.path==='/shopcar'}">
       <span class="item">购物车</span>
      <span class="iconfont font">&#xe657;</span>
     </li>
-    <li class="guide_item" @click="goPersonal('/login')">
+    <li class="guide_item" @click="goto('/login')" :class="{active:$route.path==='/login'}">
       <span class="iconfont font">&#xe615;</span>
       <span class="item">个人</span>
     </li>
@@ -27,22 +27,13 @@
 <script>
 export default {
   name:'Footer',
+  mounted(){
+    window.console.log('ssss', this.$route.path , this.$route.path==='/home')
+  },
   methods: {
-    goHome(path){
+    goto(path){
       this.$router.replace(path)
-    },
-    goClassify(path){
-      this.$router.replace(path)
-    },
-    goSearch(path){
-      this.$router.replace(path)
-    },
-    goShopCar(path){
-      this.$router.replace(path)
-    },
-    goPersonal(path){
-      this.$router.replace(path)
-    },
+    }
   }
 }
 </script>
@@ -63,11 +54,11 @@ export default {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:#999999;
+  // color:#999999;
   position absolute
   left 18px
   top 2px
-  
+
 }
 .footer_guide
   background-color #fff
@@ -84,12 +75,17 @@ export default {
     display flex
     .guide_item
       flex 1
+      color #999999
       position relative
+      &.active
+        color #b4282d
+        .iconfont
+          color #b4282d 
       .item
         position absolute
         top 30px
         left 20px
-        color #999999
+        
         font-size 14px
       span 
         display block
