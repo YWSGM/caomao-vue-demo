@@ -44,14 +44,10 @@
             </li>
           </ul>
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide1">
           <ul class="slide-top">
             <li class="top-item">
               <img src="./images/item-1.png" alt />
-              <span>新品首发</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-2.png" alt />
               <span>新品首发</span>
             </li>
             <li class="top-item">
@@ -72,10 +68,7 @@
             </li>
           </ul>
            <ul class="slide-top">
-            <li class="top-item">
-              <img src="./images/item-3.png" alt />
-              <span>新品首发</span>
-            </li>
+        
             <li class="top-item">
               <img src="./images/item-4.png" alt />
               <span>新品首发</span>
@@ -174,7 +167,7 @@ export default {
         top 15px
         font-size 12px
         color #333
-  .swiper-slide
+  .swiper-slide1
     width 100%
     height 170px
     // background-color red
