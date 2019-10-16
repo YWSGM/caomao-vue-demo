@@ -17,7 +17,6 @@
       <div class="text-logo-holder">
         <i class="icon icon-text-logo"></i>
       </div>
-
       <div class="left">
         <i class="icon icon-home" @click="$router.push('/home')"></i>
       </div>
@@ -25,6 +24,9 @@
         <i class="icon icon-search right-10" @click="$router.push('/search')"></i>
         <i class="icon icon-cart" @click="$router.push('/cart')"></i>
       </div>
+    </div>
+    <div class="logoWrap s">
+      <i class="icon icon-logo-wrap"></i>
     </div>
   </div>
 </template>
@@ -38,8 +40,7 @@ export default {
     };
   },
   computed: {},
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
@@ -59,6 +60,12 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
+}
+
+.s {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
@@ -179,6 +186,18 @@ export default {
 
     .right {
       z-index: 1;
+    }
+  }
+
+  .logoWrap {
+    padding 80px 0 116px 0;
+    width: 100%;
+    .icon-logo-wrap {
+      width: 134px;
+      height: 45px;
+      background-size: 100% 100%;
+      background-image: url('./logo-wrap.png');
+      background-position-y: 0px;
     }
   }
 }
