@@ -21,6 +21,15 @@
         </li>
       </ul>
     </div>
+    <div class="shopCar-content">
+      <ul>
+        <li>
+          <img src="" alt="">
+          <span>白胖子 温润净颜卸妆水</span>
+          <span>400ml</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
