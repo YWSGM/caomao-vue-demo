@@ -28,12 +28,17 @@
     <div class="logoWrap s">
       <i class="icon icon-logo-wrap"></i>
     </div>
+    <div>
+      <Button type="danger" size="large">手机号快捷登录</Button>
+      <Button type="danger" size="large" plain>邮箱账号登录</Button>
+    </div>
   </div>
 </template>
 
 <script>
+import { Button } from 'mint-ui';
 export default {
-  components: {},
+  components: {Button},
   data() {
     return {
       defaultBannerSeen: true
@@ -100,7 +105,7 @@ export default {
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: #eee;
+  background-color: #f2f5f4;
 
   .defaultBanner {
     background-color: #333;
