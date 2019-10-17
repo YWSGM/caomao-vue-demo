@@ -2,6 +2,26 @@
   <section class="home">
     <!--首页头部-->
     <Header />
+    <div class="header-list" >
+      <div class="content-wrap">
+        <div class="list-content">
+          <div class="content1">
+            <span class="active">推荐使用</span>
+            <span>居家生活</span>
+            <span>服饰鞋包</span>
+            <span>美食酒水</span>
+            <span>个护清洁</span>
+            <span>母婴亲子</span>
+            <span>运行旅游</span>
+            <span>数码家电</span>
+            <span>全球特色</span>
+          </div>
+        </div>
+      </div>
+
+     
+    </div>
+
     <div class="firstView">
       <div class="content">
         <div class="swiper-container">
@@ -107,24 +127,24 @@
               <p class="font-top">9.9超值专区</p>
               <p class="font-bottom">190款商品定价直降</p>
               <div class="content-img">
-                <img src="./images/item-6.png" alt />
-                <img src="./images/item-7.png" alt />
+                <img src="./images/item-22.png" alt />
+                <img src="./images/item-23.png" alt />
               </div>
             </div>
             <div class="content-bottom1">
               <p class="font-top">9.9超值专区</p>
               <p class="font-bottom">190款商品定价直降</p>
               <div class="content-img">
-                <img src="./images/item-6.png" alt />
-                <img src="./images/item-7.png" alt />
+                <img src="./images/item-24.png" alt />
+                <img src="./images/item-25.png" alt />
               </div>
             </div>
             <div class="content-bottom2">
               <p class="font-top">9.9超值专区</p>
               <p class="font-bottom">190款商品定价直降</p>
               <div class="content-img">
-                <img src="./images/item-6.png" alt />
-                <img src="./images/item-7.png" alt />
+                <img src="./images/item-26.png" alt />
+                <img src="./images/item-27.png" alt />
               </div>
             </div>
           </div>
@@ -138,98 +158,134 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="slide-list">
-                 <ul>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-9.png" alt="">
-                     </div>
-                     <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-10.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-11.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                 </ul>
-              </div>
-            </div>
-            <div class="swiper-slide">
-             <div class="slide-list">
-                 <ul>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-9.png" alt="">
-                     </div>
-                     <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-10.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-11.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                 </ul>
+                <ul>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-9.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-10.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-11.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="slide-list">
-                 <ul>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-9.png" alt="">
-                     </div>
-                     <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-10.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-11.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                 </ul>
+                <ul>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-9.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-10.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-11.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="swiper-slide">
-               <div class="slide-list">
-                 <ul>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-12.png" alt="">
-                     </div>
-                     <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-13.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-14.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                 </ul>
+              <div class="slide-list">
+                <ul>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-9.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-10.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-11.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide-list">
+                <ul>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-12.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-13.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <div class="list-books">
+                      <img src="./images/item-14.png" alt />
+                    </div>
+                    <p>
+                      严选礼品卡 500元面值
+                      <span>￥50</span>
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -242,48 +298,64 @@
           </div>
         </div>
         <div class="ctn">
-                  <div class="slide-list">
-                 <ul>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-15.png" alt="">
-                     </div>
-                     <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-16.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-17.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                    <li>
-                     <div class="list-books">
-                      <img src="./images/item-18.png" alt="">
-                     </div>
-                     <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-19.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                   <li>
-                     <div class="list-books">
-                      <img src="./images/item-21.png" alt="">
-                     </div>
-                      <p>严选礼品卡 500元面值 <span>￥50</span></p>
-                   </li>
-                 </ul>
-               
-              </div>
-                
+          <div class="slide-list">
+            <ul>
+              <li>
+                <div class="list-books">
+                  <img src="./images/item-15.png" alt />
+                </div>
+                <p>
+                  严选礼品卡 500元面值
+                  <span>￥50</span>
+                </p>
+              </li>
+              <li>
+                <div class="list-books">
+                  <img src="./images/item-16.png" alt />
+                </div>
+                <p>
+                  严选礼品卡 500元面值
+                  <span>￥50</span>
+                </p>
+              </li>
+              <li>
+                <div class="list-books">
+                  <img src="./images/item-17.png" alt />
+                </div>
+                <p>
+                  严选礼品卡 500元面值
+                  <span>￥50</span>
+                </p>
+              </li>
+              <li>
+                <div class="list-books">
+                  <img src="./images/item-18.png" alt />
+                </div>
+                <p>
+                  严选礼品卡 500元面值
+                  <span>￥50</span>
+                </p>
+              </li>
+              <li>
+                <div class="list-books">
+                  <img src="./images/item-19.png" alt />
+                </div>
+                <p>
+                  严选礼品卡 500元面值
+                  <span>￥50</span>
+                </p>
+              </li>
+              <li>
+                <div class="list-books">
+                  <img src="./images/item-21.png" alt />
+                </div>
+                <p>
+                  严选礼品卡 500元面值
+                  <span>￥50</span>
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -297,10 +369,19 @@ import 'swiper/css/swiper.css'
 // 引入 better-scroll
 import BScroll from 'better-scroll'
 export default {
+  methods: {
+    scroll() {}
+  },
   mounted() {
     // 开始滑动
     /* eslint-disable */
     let scroll = new BScroll('.firstView')
+    let scroll1 = new BScroll('.list-content', {
+      scrollX:true,
+      scrollY:false,
+    })
+    
+    console.log(scroll1)
     // 创建Swiper对象，实现轮播
     /* eslint-disable */
     var mySwiper = new Swiper('.swiper-container', {
@@ -325,13 +406,18 @@ export default {
 <style lang="stylus" scoped>
 .firstView
   height 600px
+ 
 .home
   width 100%
   height 100%
+  position fixed
+  top 80px
+  
   .swiper-container
-    padding-top 75px
+    // padding-top 1px
     width 100%
     height 200px
+    
     img
       width 100%
       height 100%
@@ -521,7 +607,6 @@ export default {
     width 100%
     height 180px
     border-bottom 10px solid #ededed
-    
     .slide-list
       width 100%
       height 100%
@@ -534,19 +619,19 @@ export default {
           .list-books
             width 100px
             height 100px
-            background-color #f5f5f5 
-            img 
+            background-color #f5f5f5
+            img
               width 100px
               height 100px
-          p 
+          p
             padding-top 5px
-            font-size  12px
+            font-size 12px
             width 100px
             height 30px
             display block
             line-height 20px
             // background-color green
-            span 
+            span
               color red
   .moduleTitle
     width 100%
@@ -560,40 +645,57 @@ export default {
       p
         line-height 50px
 .ctn
-    width 380px
-    height 360px
-    border-bottom 10px solid #ededed
-    // background-color green
-    .slide-list
-      width 100%
-      height 100%
-      // background-color red
-      ul
-        width 380px
-        height 360px
-        display flex
-        flex-wrap wrap 
-        li
-          flex 1
-          padding-left 12px
-          
-          .list-books
+  width 380px
+  height 360px
+  border-bottom 10px solid #ededed
+  // background-color green
+  .slide-list
+    width 100%
+    height 100%
+    // background-color red
+    ul
+      width 380px
+      height 360px
+      display flex
+      flex-wrap wrap
+      li
+        flex 1
+        padding-left 12px
+        .list-books
+          width 100px
+          height 100px
+          background-color #f5f5f5
+          img
             width 100px
             height 100px
-            background-color #f5f5f5 
-            img 
-              width 100px
-              height 100px
-          p 
-            padding-top 5px
-            font-size  12px
-            width 100px
-            height 30px
-            display block
-            line-height 20px
-            // background-color green
-            span 
-              color red
-            
-
+        p
+          padding-top 5px
+          font-size 12px
+          width 100px
+          height 30px
+          display block
+          line-height 20px
+          // background-color green
+          span
+            color red
+.header-list
+  position fixed
+  top 38px
+  width 100%
+  // height 100px
+  background-color #fff
+  z-index 999
+  .list-content
+    width 300px
+    height 50px
+    .content1
+      width 800px
+      height 100px
+      display flex
+      span
+        flex 1
+        padding-left 20px
+        line-height 50px
+        &.active
+          color #b4282d
 </style>
