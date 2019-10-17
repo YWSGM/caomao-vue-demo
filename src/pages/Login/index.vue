@@ -13,18 +13,7 @@
         <button class="w-button">打开APP</button>
       </div>
     </div>
-    <div class="header ad bottom-border-1px">
-      <div class="text-logo-holder">
-        <i class="icon icon-text-logo"></i>
-      </div>
-      <div class="left">
-        <i class="icon icon-home" @click="$router.push('/home')"></i>
-      </div>
-      <div class="ad right">
-        <i class="icon icon-search right-10" @click="$router.push('/search')"></i>
-        <i class="icon icon-cart" @click="$router.push('/cart')"></i>
-      </div>
-    </div>
+    <Header />
     <div class="logoWrap s">
       <i class="icon icon-logo-wrap"></i>
     </div>
@@ -58,8 +47,9 @@
 
 <script>
 import { Button } from "mint-ui";
+import Header from './header'
 export default {
-  components: { Button },
+  components: { Button , Header},
   data() {
     return {
       defaultBannerSeen: true
@@ -98,23 +88,6 @@ export default {
   display: block;
   background-image: url('./login-icons.png');
   background-size: 86px 210px;
-}
-
-.icon-home {
-  width: 24px;
-  height: 22px;
-  background-position-y: -37px;
-}
-
-.icon-search {
-  width: 32px;
-  height: 32px;
-  background-position-y: 32px;
-}
-
-.icon-cart {
-  width: 32px;
-  height: 32px;
 }
 
 .icon-text-logo {
@@ -223,41 +196,7 @@ export default {
     }
   }
 
-  .header {
-    height: 44px;
-    padding: 0px 8px 0px 12px;
-    background-color: #fafafa;
-    position: relative;
-    top: 0;
-    left: 0;
-    border-color: #eee;
-    width: 100vw;
-    box-sizing: border-box;
 
-    .right-10 {
-      margin-right: 10px;
-    }
-
-    .text-logo-holder {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 0;
-    }
-
-    .left {
-      z-index: 1;
-    }
-
-    .right {
-      z-index: 1;
-    }
-  }
 
   .logoWrap {
     padding: 80px 0 116px 0;
