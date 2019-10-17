@@ -9,7 +9,7 @@ import Right from '../pages/Classify/Right'
 import Season from '../pages/Classify/Season'
 import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
-import Purchase from '../pages/Purchase'
+import Purchase from '../pages/Purchase/Purchase.vue'
 
 export default [
 	{
