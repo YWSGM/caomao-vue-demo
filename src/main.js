@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import router from './router'
+// 引入store
+import store from './store'
 import 'mint-ui/lib/style.css'
 import { Swipe, SwipeItem } from 'mint-ui';
 
@@ -26,5 +28,6 @@ new Vue({
 		App
 	},
 	template: '<App/>',
-	router
+	router,
+	store
 })
