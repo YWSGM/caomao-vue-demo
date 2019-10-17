@@ -55,18 +55,6 @@ export default {
   justify-content: space-between;
 }
 
-.icon {
-  display: block;
-}
-
-.icon-arrow-right {
-  background-image: url('./right-arrow.png');
-  background-size: 100%;
-  width: 14px;
-  height: 14px;
-}
-
-
 .container {
   width: 100vw;
   height: 100vh;
