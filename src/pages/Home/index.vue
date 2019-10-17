@@ -21,7 +21,6 @@
 
      
     </div>
-
     <div class="firstView">
       <div class="content">
         <div class="swiper-container">
@@ -368,6 +367,7 @@ import Swiper from 'swiper'
 import 'swiper/css/swiper.css'
 // 引入 better-scroll
 import BScroll from 'better-scroll'
+import { mapState } from "vuex";
 export default {
   methods: {
     scroll() {}
@@ -380,7 +380,6 @@ export default {
       scrollX:true,
       scrollY:false,
     })
-    
     console.log(scroll1)
     // 创建Swiper对象，实现轮播
     /* eslint-disable */
@@ -399,6 +398,12 @@ export default {
       pagination: {
         // el: '.swiper-pagination'
       }
+    })
+    this.$store,dispatch('getHomelist')
+  },
+  computed: {
+    ...mapState({
+      homelist:state=>state.home.homelist
     })
   }
 }
