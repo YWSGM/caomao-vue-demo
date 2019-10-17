@@ -1,16 +1,11 @@
 <template>
   <div class="form">
     <label class="input-item ad">
-      <input
-        type="text"
-        placeholder="请输入手机号"
-        v-model="phone"
-        @focus="hideError = true"
-      />
+      <input type="text" placeholder="请输入手机号" v-model="phone" @focus="hideError = true" />
       <i class="icon icon-cancal" v-show="phone && phone.length>0" @click="phone = ''"></i>
     </label>
     <label class="input-item ad">
-      <input type="password" placeholder="请输入密码" v-model="password" @focus="hideError = true"/>
+      <input type="password" placeholder="请输入密码" v-model="password" @focus="hideError = true" />
       <i class="icon icon-cancal" v-show="password && password.length>0" @click="password = ''"></i>
     </label>
     <p class="error-msg" v-show="!hideError">{{error}}</p>
@@ -20,12 +15,7 @@
         <span :style="{color: '#333'}" @click="onSwitchForm('code')">短信快捷登录</span>
       </div>
       <div>
-        <Button
-          :style="{ fontSize: `15px`}"
-          @click="submit"
-          type="danger"
-          size="large"
-        >
+        <Button :style="{ fontSize: `15px`}" @click="submit" type="danger" size="large">
           <div class="s">
             <p>登录</p>
           </div>
@@ -37,6 +27,7 @@
 
 <script>
 import { Button } from "mint-ui";
+import axios from "axios";
 export default {
   components: {
     Button
@@ -48,13 +39,18 @@ export default {
     }
   },
   data() {
-    return { phone: "", password: "", hideError: true };
+    return { phone: "18842606347", password: "qwer1234", hideError: true };
   },
   methods: {
     submit() {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
+        axios.get("http://localhost:4000/homelist").then(response => {
+          window.console.log(response);
+        }).catch((err)=>{
+          window.console.error(err)
+        });
       } else {
         window.console.error("you cant submit");
       }

@@ -10,3 +10,4 @@ export const reqSearchlist = (id)=>ajax.get(BAES+`/search?id=${id}`)
 export const reqClassfiy = (id)=>ajax.get(BAES + `/classify?id=${id}`)
 //获取商品
 export const reqGoods = (id)=>ajax.get(BAES+`/goods?id=${id}`)
+export const loginWithPassword = (id)=>ajax.get(BAES+`/goods?id=${id}`)

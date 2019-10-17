@@ -40,6 +40,11 @@ koaRouter.get('/goods', (ctx, next) => {
   }
 })
 
+koaRouter.post('/loginWithEmail', (ctx, next)=>{
+  console.log(ctx)
+
+})
+
 
 //声明使用所有的路由及路由的相关的所有的方法
 koa
