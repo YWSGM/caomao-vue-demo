@@ -32,7 +32,19 @@
     </div>
     <div class="content-list">
       <ul class="content-ul">
-        <li class="content-item">
+        <li class="content-item" v-for="(list,index) in lists" :key="index">
+          <div class="left">
+            <div class="top">
+              <img :src="list.photo" alt />
+              <span>{{list.name}}</span>
+            </div>
+            <p>{{list.text}}</p>
+          </div>
+          <div class="right">
+            <img :src="list.url" alt />
+          </div>
+        </li>
+        <!-- <li class="content-item">
           <div class="left">
             <div class="top">
               <img src="./img/touxiang1.jpg" alt />
@@ -67,28 +79,18 @@
           <div class="right">
             <img src="./img/ringt1.jpg" alt />
           </div>
-        </li>
-        <li class="content-item">
-          <div class="left">
-            <div class="top">
-              <img src="./img/touxiang1.jpg" alt />
-              <span>网易游戏：波涛</span>
-            </div>
-            <p>两种意见|终于找到了一款颜值在线的保温杯</p>
-          </div>
-          <div class="right">
-            <img src="./img/ringt1.jpg" alt />
-          </div>
-        </li>
+        </li> -->
       </ul>
     </div>
     <Footer />
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 import BScroll from "better-scroll";
 // import {reqClassfiy,reqHomelist,reqSearchlist,reqGoods} from '../../api'
 export default {
+
   methods: {
     _initBscroll() {
       let scroll = new BScroll('.content-list')
@@ -97,12 +99,17 @@ export default {
       this.$router.replace(path)
     }
   },
-  async  mounted () {
+  mounted () {
     this._initBscroll();
     this.$store.dispatch('getSearchList')
     // console.log(this);
     // let result = await reqSearchlist('search')
     // console.log(result);
+  },
+  computed: {
+    ...mapState({
+      lists:state => state.Search.list
+    })
   }
 };
 </script>
