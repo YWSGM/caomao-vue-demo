@@ -25,7 +25,7 @@
       <div class="content">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" >
               <img src="./images/e.jpg" alt />
             </div>
             <div class="swiper-slide">
@@ -299,16 +299,16 @@
         <div class="ctn">
           <div class="slide-list">
             <ul>
-              <li>
+              <li v-for="(homegood,index) in homegoods" :key="index">
                 <div class="list-books">
-                  <img src="./images/item-15.png" alt />
+                  <img :src="homegood.url" alt />
                 </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
+                <p >
+                  {{homegood.text}}
+                  <span>￥{{homegood.price}}</span>
                 </p>
               </li>
-              <li>
+              <!-- <li>
                 <div class="list-books">
                   <img src="./images/item-16.png" alt />
                 </div>
@@ -352,7 +352,7 @@
                   严选礼品卡 500元面值
                   <span>￥50</span>
                 </p>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -401,11 +401,13 @@ export default {
     })
     this.$store.dispatch('getHomelist')
     this.$store.dispatch('getHomelisttwo')
+    this.$store.dispatch('getHomegood')
   },
   computed: {
     ...mapState({
       homelists:state=>state.Home.homelist,
       homelisttwos:state=>state.Home.homelisttwo,
+      homegoods:state=>state.Home.homegood
     })
   }
 }
