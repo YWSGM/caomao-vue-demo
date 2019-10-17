@@ -40,8 +40,9 @@ koaRouter.get('/goods', (ctx, next) => {
   }
 })
 
-koaRouter.post('/loginWithEmail', (ctx, next)=>{
-  console.log(ctx)
+koaRouter.post('/loginWithPassword', (ctx, next)=>{
+  console.log('sss', ctx.request)
+  ctx.body = 'fuck you'
 
 })
 
