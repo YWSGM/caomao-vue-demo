@@ -87,11 +87,11 @@
             </li> -->
           </ul>
           <ul class="slide-top">
-            <li class="top-item">
-              <img src="./images/item-4.png" alt />
-              <span>新品首发</span>
+            <li class="top-item"  v-for="(homelisttwo,index) in homelisttwos" :key="index">
+              <img :src="homelisttwo.url" alt />
+              <span>{{homelisttwo.name}}</span>
             </li>
-            <li class="top-item">
+            <!-- <li class="top-item">
               <img src="./images/item-5.png" alt />
               <span>居家生活</span>
             </li>
@@ -106,7 +106,7 @@
             <li class="top-item">
               <img src="./images/item-6.gif" alt />
               <span>个人清洁</span>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="bgImage">
@@ -400,10 +400,12 @@ export default {
       }
     })
     this.$store.dispatch('getHomelist')
+    this.$store.dispatch('getHomelisttwo')
   },
   computed: {
     ...mapState({
-      homelists:state=>state.home.homelist
+      homelists:state=>state.Home.homelist,
+      homelisttwos:state=>state.Home.homelisttwo,
     })
   }
 }
