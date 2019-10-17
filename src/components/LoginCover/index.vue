@@ -2,13 +2,13 @@
   <div class="cover">
     <LogoWrap :size="{width:134,height:45}" />
     <div class="btnWrap">
-      <Button @click="onSwitch('phoneCodeForm')" type="danger" size="large" class="mt-16">
+      <Button @click="onSwitch('code')" type="danger" size="large" class="mt-16">
         <div class="s">
           <i class="icon icon-phone mr-8"></i>
           <p>手机号快捷登录</p>
         </div>
       </Button>
-      <Button @click="onSwitch('emailForm')" type="danger" size="large" plain>
+      <Button @click="onSwitch('email')" type="danger" size="large" plain>
         <div class="s">
           <i class="icon icon-email mr-8"></i>
           <p>邮箱账号登录</p>
@@ -31,7 +31,7 @@
 
 <script>
 import { Button } from "mint-ui";
-import LogoWrap from "../../pages/Login/logoWrap";
+import LogoWrap from "../LogoWrap/index";
 export default {
   components: {
     LogoWrap,

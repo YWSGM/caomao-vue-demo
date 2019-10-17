@@ -3,17 +3,20 @@
     <Advertisement />
     <Header />
     <div class="yield">
-      <keep-alive>
-        <Login v-if="yieldOut === 'emailForm'" :onSwitch="switchLoginComponent" formMode="emailForm" />
-        <LoginCover v-else :onSwitch="switchLoginComponent"/>
-      </keep-alive>
+      <Login v-if="yieldOut === 'email'" :onSwitch="switchLoginComponent" formMode="email" />
+      <Login
+        v-else-if="yieldOut === 'password'"
+        :onSwitch="switchLoginComponent"
+        formMode="password"
+      />
+      <Login v-else-if="yieldOut === 'code'" :onSwitch="switchLoginComponent" formMode="code" />
+      <LoginCover v-else :onSwitch="switchLoginComponent" />
     </div>
   </div>
 </template>
 
 <script>
 import Header from "./header";
-
 import Advertisement from "../../components/Advertisement/index";
 import LoginCover from "../../components/LoginCover/index";
 import Login from "../../components/Login/index";
@@ -22,26 +25,13 @@ export default {
   components: { Advertisement, LoginCover, Header, Login },
   data() {
     return {
-      yieldOut: "login"
+      yieldOut: "password"
     };
   },
   methods: {
     switchLoginComponent(name) {
-      switch (name) {
-        case "login":
-          this.yieldOut = "login";
-          break;
-        case "emailForm":
-          this.yieldOut = "emailForm";
-          break;
-        case "phoneCodeForm":
-          this.yieldOut = "phoneCodeForm";
-          break;
-        case "cover":
-          this.yieldOut = "cover";
-          break;
-        default:
-          break;
+      if (["email", "password", "code", "cover"].includes(name)) {
+        this.yieldOut = name;
       }
     }
   }
