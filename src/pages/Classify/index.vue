@@ -1,95 +1,77 @@
 <template>
-  <div>
+  <div class="conatiner">
     <!-- <header class="header">
       <div class="search">
         <input type="text" placeholder="请输入搜索商品" />
       </div>
-    </header> -->
-    <Header/>
+    </header>-->
+    <Header />
     <div class="List">
       <div class="listLeft">
         <ul>
-          <li class="active">
-            <a class="active" href="#javascript:;">推荐专区</a>
+          <li :class="{active:$route.path==='/classify/recommend'}" @click="goto('/classify/recommend')">
+            <span :class="{active:$route.path==='/classify/recommend'}">推荐专区</span>
+          </li>
+          <li @click="goto('/classify/season')" :class="{active:$route.path==='/classify/season'}">
+            <span :class="{active:$route.path==='/classify/season'}">秋冬好物</span>
+          </li>
+          <li @click="goto('/classify/faddish')" :class="{active:$route.path==='/classify/faddish'}">
+            <span :class="{active:$route.path==='/classify/faddish'}">爆款专区</span>
+          </li>
+          <li @click="goto('/classify/new')" :class="{active:$route.path==='/classify/new'}">
+            <span :class="{active:$route.path==='/classify/new'}">新品专区</span>
           </li>
           <li>
-            <a href="#javascript:;">推荐专区</a>
+            <span>居家生活</span>
           </li>
           <li>
-            <a href="#javascript:;">秋冬好物</a>
+            <span>服饰鞋包</span>
           </li>
           <li>
-            <a href="#javascript:;">爆款专区</a>
+            <span>美食酒水</span>
           </li>
           <li>
-            <a href="#javascript:;">新品专区</a>
+            <span>个人清护</span>
           </li>
           <li>
-            <a href="#javascript:;">居家生活</a>
+            <span>母婴亲子</span>
           </li>
           <li>
-            <a href="#javascript:;">服饰鞋包</a>
+            <span>运动旅行</span>
           </li>
-					<li>
-            <a href="#javascript:;">美食酒水</a>
+          <li>
+            <span>数码家电</span>
           </li>
-					<li>
-            <a href="#javascript:;">个人清护</a>
-          </li>
-					<li>
-            <a href="#javascript:;">母婴亲子</a>
-          </li>
-					<li>
-            <a href="#javascript:;">运动旅行</a>
-          </li>
-					<li>
-            <a href="#javascript:;">数码家电</a>
+          <li>
+            <span>数码家电</span>
           </li>
         </ul>
       </div>
-      <div class="listRight">
-        <mt-swipe :auto="4000" class="swiper-item">
-          <mt-swipe-item >
-						<img src="./img/lunbotu1.jpg" alt="	">
-					</mt-swipe-item>
-					<mt-swipe-item>
-						<img src="./img/lunbotu2.png" alt="	">
-					</mt-swipe-item>
-        </mt-swipe>
-        <div>
-          <ul class="shopList">
-            <li>
-              <img src="./img/boutique/01.png" alt />
-              <p>明星商品地质69元</p>
-            </li>
-            <li>
-              <img src="./img/boutique/02.png" alt />
-              <p>999+好评</p>
-            </li>
-            <li>
-              <img src="./img/boutique/03.png" alt />
-              <p>员工精选好货低至15元</p>
-            </li>
-            <li>
-              <img src="./img/boutique/04.png" alt />
-              <p>秋冬服配特惠低至5折</p>
-            </li>
-          </ul>
-        </div>
+
+      <div>
+        <router-view></router-view>
       </div>
+      <!-- <Right /> -->
     </div>
     <Footer />
   </div>
 </template>
 <script>
 import BScroll from "better-scroll";
+import Right from "./Right";
 export default {
-   methods: {
+  components: {
+    Right
+  },
+  methods: {
     _initBscroll() {
-      let scroll = new BScroll('.listLeft')
+      let scroll = new BScroll(".listLeft");
+    },
+    goto(path) {
+      this.$router.push(path);
     }
   },
-  mounted () {
+  mounted() {
     this._initBscroll();
   }
 };
@@ -110,10 +92,12 @@ export default {
     text-align center
     background-color #ccc
 .List
-  margin-top 40px
+  margin-top 38px
+  height calc(100vh - 38px - 51px)
   display flex
+  flex-direction row
   .listLeft
-    width 550px
+    width 80px
     top-border-1px(#ccc)
     ul
       li
@@ -125,32 +109,9 @@ export default {
         border-right 0.5px solid #ccc
         &.active
           background-color #ccc
-        a
+        span
           width 100%
           padding 2px
           &.active
             border-left red solid 4px
-  .listRight
-    // border-top 1px solid #ccc
-    top-border-1px(#ccc)
-    box-sizing border-box
-    .shopList
-      display flex
-      flex-wrap wrap
-      margin-left 20px
-      padding-left 10px
-      li
-        width 80px
-        height 80px
-        img
-          width 60px
-          height 60px
-        p
-          font-size 14px
-		.swiper-item
-			width 300px
-			height 100px
-			img 
-				width 100%
-				height 100%
 </style>
