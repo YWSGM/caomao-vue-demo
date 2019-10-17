@@ -59,6 +59,7 @@
 <script>
 import BScroll from "better-scroll";
 import Right from "./Right";
+//import {reqClassfiy,reqHomelist,reqSearchlist,reqGoods} from '../../api'
 export default {
   components: {
     Right
@@ -73,6 +74,7 @@ export default {
   },
   mounted() {
     this._initBscroll();
+  
   }
 };
 </script>

@@ -9,32 +9,32 @@ let koaRouter = new KoaRouter()
 //引入datas数据
 let datas= require('./datas/data.json')
 // 定义接口返回数据
-koaRouter.get('/home', (ctx, next) => {
-  //获取调用接口传入的参数
-  let req = ctx.query.req
-  console.log(req)
-  ctx.body = datas
+//首页分类的接口
+koaRouter.get('/homelist', (ctx, next) => {
+  if(ctx.query.id === 'homelist'){
+    ctx.body = datas.homelist
+  }
+  
 })
-koaRouter.get('/personal', (ctx, next) => {
-  let req = ctx.query.req
-  console.log(req)
-  ctx.body = datas.classify
-})
+//分类组件列表
 koaRouter.get('/classify', (ctx, next) => {
-  let req = ctx.query.req
-  console.log(req)
-  ctx.body = datas
+  if(ctx.query.id === 'classify'){
+    ctx.body = datas.classify
+  }
 })
+//识物组件列表
 koaRouter.get('/search', (ctx, next) => {
-  let req = ctx.query.req
-  console.log(req)
-  ctx.body = datas.search
+  if(ctx.query.id === 'search'){
+    ctx.body = datas.search
+  }
 })
-koaRouter.get('/shopcar', (ctx, next) => {
-  let req = ctx.query.req
-  console.log(req)
-  ctx.body = datas
+//商品详情信息接口
+koaRouter.get('/goods', (ctx, next) => {
+  if(ctx.query.id === 'goods'){
+    ctx.body = datas.goods
+  }
 })
+
 
 //声明使用所有的路由及路由的相关的所有的方法
 koa
