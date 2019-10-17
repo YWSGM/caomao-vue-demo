@@ -6,6 +6,8 @@ import Cart from '../pages/Cart'
 import Login from '../pages/Login/index.vue'
 import emailLogin from '../pages/Login/emailLogin.vue'
 import phoneLogin from '../pages/Login/phoneLogin.vue'
+import Right from '../pages/Classify/Right'
+import Season from '../pages/Classify/Season'
 
 export default [
 	{
@@ -30,7 +32,29 @@ export default [
 	},
 	{
 		path:'/classify',
-		component: Classify
+		component: Classify,
+		children:[
+			{
+				path:'/classify/recommend',
+				component:Right
+			},
+			{
+				path:'/classify/season',
+				component:Season
+			},
+			{
+				path:'/classify/faddish',
+				component:Season
+			},
+			{
+				path:'/classify/new',
+				component:Season
+			},
+			{
+				path:'/classify',
+				redirect: '/classify/recommend'
+			}
+		]
 	},
 	{
 		path:'/personal',
