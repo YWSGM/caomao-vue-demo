@@ -9,6 +9,7 @@ import Right from '../pages/Classify/Right'
 import Season from '../pages/Classify/Season'
 import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
+import Purchase from '../pages/Purchase'
 
 export default [
 	{
@@ -56,6 +57,10 @@ export default [
 	{
 		path:'/detail',
 		component: Detail
+	},
+	{
+		path:'/purchase',
+		component:Purchase
 	},
 	{
 		path:'/cart',

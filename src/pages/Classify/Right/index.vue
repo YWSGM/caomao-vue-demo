@@ -53,9 +53,11 @@ export default {
 			li
 				width 80px
 				height 80px
+        
 				img
 					width 60px
 					height 60px
+          border-radius 50%
 				p
 					font-size 14px
 </style>

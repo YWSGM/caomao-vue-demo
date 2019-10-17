@@ -11,3 +11,6 @@ export const reqClassfiy = (id)=>ajax.get(BAES + `/classify?id=${id}`)
 //获取商品
 export const reqGoods = (id)=>ajax.get(BAES+`/goods?id=${id}`)
 export const loginWithPassword = (id)=>ajax.get(BAES+`/goods?id=${id}`)
+
+// 获取搜索默认列表
+export const reqHomeSearchList = ()=> ajax.get('http://m.you.163.com/xhr/search/init.json')
