@@ -13,7 +13,7 @@
       <span class="item">识物</span>
      <span class="iconfont font">&#xe7fd;</span>
     </li>
-    <li class="guide_item" @click="goto('/shopcar')" :class="{active:$route.path==='/shopcar'}">
+    <li class="guide_item" @click="goto('/cart')" :class="{active:$route.path==='/cart'}">
       <span class="item">购物车</span>
      <span class="iconfont font">&#xe657;</span>
     </li>
