@@ -143,6 +143,7 @@
         <div class="btn" @click="goLogin">登录</div>
       </div>
     </div>
+    
     <!-- 底部导航 -->
     <Footer />
   </div>
