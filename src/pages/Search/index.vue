@@ -87,6 +87,7 @@
 </template>
 <script>
 import BScroll from "better-scroll";
+import {reqClassfiy,reqHomelist,reqSearchlist,reqGoods} from '../../api'
 export default {
   methods: {
     _initBscroll() {
@@ -96,8 +97,10 @@ export default {
       this.$router.replace(path)
     }
   },
-  mounted () {
+  async  mounted () {
     this._initBscroll();
+    let result = await reqSearchlist('search')
+    console.log(result);
   }
 };
 </script>
