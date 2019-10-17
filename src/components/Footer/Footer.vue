@@ -68,6 +68,7 @@ export default {
   bottom  0px
   border-top 1px solid #999999
   background-color #fff
+  box-sizing border-box
   ul
     width 100%
     height 100%
