@@ -686,16 +686,19 @@ export default {
   background-color #fff
   z-index 999
   .list-content
-    width 300px
+    width 380px
     height 50px
+    // background-color green
     .content1
       width 800px
-      height 100px
+      height 50px
       display flex
+      // background-color red
       span
         flex 1
         padding-left 20px
         line-height 50px
+        color #666
         &.active
           color #b4282d
 </style>
