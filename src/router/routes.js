@@ -4,6 +4,7 @@ import ShopCar from '../pages/ShopCar'
 import Classify from '../pages/Classify'
 import Personal from '../pages/Personal'
 import Login from '../pages/Login/index.vue'
+// import Detail from '../pages/Detail'
 
 export default [
 	{
@@ -30,6 +31,10 @@ export default [
 		path:'/personal',
 		component: Personal
 	},
+	// {
+	// 	path:'/detail',
+	// 	component: Detail
+	// },
 	{
 		path:'/',
 		redirect: '/home'
