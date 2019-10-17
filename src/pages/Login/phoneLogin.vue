@@ -33,9 +33,9 @@
             </div>
           </Button>
         </div>
-        <div class="row infos">
-          <Checkbox />
-          <p>
+        <div class="row agreements">
+          <Checkbox :value="isAllowAgreements" :onChange="changeAllowAgreements" />
+          <p :style="{marginLeft:`5px`}">
             我同意
             <span class="info-link">《服务条款》</span>
             和
@@ -68,8 +68,18 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      isAllowAgreements: true
     };
+  },
+  updated() {
+    window.console.log("isAllowAgreements", this.isAllowAgreements);
+  },
+  methods: {
+    changeAllowAgreements() {
+      const nextValue = !this.isAllowAgreements;
+      this.isAllowAgreements = nextValue;
+    }
   }
 };
 </script>
@@ -152,9 +162,10 @@ export default {
     font-size: 14px;
   }
 
-  .infos {
+  .agreements {
     font-size: 14px;
     margin-top: 16px;
+
     .info-link {
       color: #007aff;
     }

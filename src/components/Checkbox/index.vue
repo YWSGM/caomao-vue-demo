@@ -1,24 +1,25 @@
 <template>
-  <div class="holder">
-    <input class="checkbox" type="checkbox" />
-    &nbsp;
-    <input class="checkbox" type="checkbox" checked />
-    &nbsp;
-  </div>
+  <input class="checkbox" type="checkbox" :checked="value" @change="onChange" />
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    value: {
+      required: true,
+      type: Boolean
+    },
+    onChange: {
+      required: true,
+      type: Function
+    }
+  }
+};
 </script>
 <style lang="stylus" scoped>
-.holder {
-  display: flex;
-  align-items: center;
-}
-
 .checkbox {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   display: inline-flex;
   position: relative;
   display: inline-flex;
@@ -27,18 +28,17 @@ export default {};
 
   &:after, &:checked:after {
     content: '';
+    background-color: #fff;
+    background-image: url('./uncheck.png');
+    background-size: 100%;
+    flex-grow: 1;
     height: 100%;
     width: 100%;
-    background-color: #fff;
-    border: 1px solid #bdbdbd;
     z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
 
   &:checked:after {
-    content: '√';
+    background-image: url('./checked.png');
   }
 }
 </style>

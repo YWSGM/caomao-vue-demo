@@ -39,6 +39,10 @@ export default {};
   width: 24px;
   height: 22px;
   background-position-y: -37px;
+
+  &:before {
+    content: '';
+  }
 }
 
 .icon-search {
