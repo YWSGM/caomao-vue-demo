@@ -1,9 +1,10 @@
-import{RECEIVE_HOMELIST,RECEIVE_HOMELIST_TWO}from '../mutation-type'
-import {reqHomelist,reqHomelisttwo} from '../../api'
+import{RECEIVE_HOMELIST,RECEIVE_HOMELIST_TWO,RECEIVE_HOMEGOODS}from '../mutation-type'
+import {reqHomelist,reqHomelisttwo,reqGoods} from '../../api'
 
 const state = {
   homelist:[],
-  homelisttwo:[]
+  homelisttwo:[],
+  homegood:[]
 }
 const mutations = {
   [RECEIVE_HOMELIST](state,homelist){
@@ -11,6 +12,9 @@ const mutations = {
   },
   [RECEIVE_HOMELIST_TWO](state,homelisttwo){
     state.homelisttwo =homelisttwo
+  },
+  [RECEIVE_HOMEGOODS](state,homegood){
+    state.homegood =homegood
   }
 }
 const actions = {
@@ -21,6 +25,10 @@ const actions = {
   async getHomelisttwo({commit}){
     const result = await reqHomelisttwo('homelisttwo')
     commit(RECEIVE_HOMELIST_TWO,result)
+  },
+  async getHomegood({commit}){
+    const result = await reqGoods('goods')
+    commit(RECEIVE_HOMEGOODS,result)
   }
 }
 const getters = {}

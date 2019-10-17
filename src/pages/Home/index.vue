@@ -25,7 +25,7 @@
       <div class="content">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" >
               <img src="./images/e.jpg" alt />
             </div>
             <div class="swiper-slide">
@@ -401,11 +401,13 @@ export default {
     })
     this.$store.dispatch('getHomelist')
     this.$store.dispatch('getHomelisttwo')
+    this.$store.dispatch('getHomegood')
   },
   computed: {
     ...mapState({
       homelists:state=>state.Home.homelist,
       homelisttwos:state=>state.Home.homelisttwo,
+      homegoods:state=>state.Home.homegood
     })
   }
 }
