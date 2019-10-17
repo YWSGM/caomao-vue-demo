@@ -1,10 +1,5 @@
 import{RECEIVE_HOMELIST}from '../mutation-type'
-import {
-  // reqClassfiy,
-  // reqGoods,
-  reqHomelist,
-  //reqSearchlist
-} from '../../api'
+import {reqHomelist} from '../../api'
 
 const state = {
   homelist:[]
@@ -16,7 +11,9 @@ const mutations = {
 }
 const actions = {
   async getHomelist({commit}){
-    const result = await reqHomelist('home')
+    const result = await reqHomelist('homelist')
+    console.log(result)
+    
     commit(RECEIVE_HOMELIST,result)
   }
 }
