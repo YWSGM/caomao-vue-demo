@@ -43,7 +43,9 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  name: 'Purchase'
+};
 </script>
 <style  lang="stylus" rel="stylesheet/stylus">
 .box
