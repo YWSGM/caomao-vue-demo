@@ -3,8 +3,11 @@ import Search from '../pages/Search'
 import ShopCar from '../pages/ShopCar'
 import Classify from '../pages/Classify'
 import Personal from '../pages/Personal'
+import Cart from '../pages/Cart'
 import Login from '../pages/Login/index.vue'
-// import Detail from '../pages/Detail'
+import Detail from '../pages/Detail'
+import emailLogin from '../pages/Login/emailLogin.vue'
+import phoneLogin from '../pages/Login/phoneLogin.vue'
 
 export default [
 	{
@@ -14,6 +17,14 @@ export default [
 	{
 		path:'/login',
 		component: Login
+	},
+	{
+		path:'/phoneLogin',
+		component: phoneLogin
+	},
+	{
+		path:'/emailLogin',
+		component: emailLogin
 	},
 	{
 		path:'/search',
@@ -31,10 +42,14 @@ export default [
 		path:'/personal',
 		component: Personal
 	},
-	// {
-	// 	path:'/detail',
-	// 	component: Detail
-	// },
+	{
+		path:'/detail',
+		component: Detail
+	},
+	{
+		path:'/cart',
+		component: Cart
+	},
 	{
 		path:'/',
 		redirect: '/home'

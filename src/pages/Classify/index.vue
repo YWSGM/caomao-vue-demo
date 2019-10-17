@@ -82,7 +82,17 @@
   </div>
 </template>
 <script>
-export default {};
+import BScroll from "better-scroll";
+export default {
+   methods: {
+    _initBscroll() {
+      let scroll = new BScroll('.listLeft')
+    }
+  },
+  mounted () {
+    this._initBscroll();
+  }
+};
 </script>
 <style lang="stylus">
 @import '../../common/stylus/mixins.styl'
@@ -103,6 +113,7 @@ export default {};
   margin-top 40px
   display flex
   .listLeft
+    width 550px
     top-border-1px(#ccc)
     ul
       li

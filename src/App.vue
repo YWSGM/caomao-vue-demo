@@ -8,6 +8,18 @@
 export default {};
 </script>
 <style lang="stylus">
-body,html
-	overflow hidden
+dangerColor = #dd1a21;
+
+body, html {
+  overflow: hidden;
+}
+
+.mint-button--danger {
+  background-color: dangerColor;
+
+  &.is-plain {
+    color: dangerColor;
+    border-color: dangerColor;
+  }
+}
 </style>
