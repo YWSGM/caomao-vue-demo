@@ -10,7 +10,7 @@
       <i class="icon icon-cancal" v-show="phone && phone.length>0" @click="phone = ''"></i>
     </label>
     <label class="input-item ad">
-      <input type="password" placeholder="请输入密码" v-model="password" />
+      <input type="password" placeholder="请输入密码" v-model="password" @focus="hideError = true"/>
       <i class="icon icon-cancal" v-show="password && password.length>0" @click="password = ''"></i>
     </label>
     <p class="error-msg" v-show="!hideError">{{error}}</p>

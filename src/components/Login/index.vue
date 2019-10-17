@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <logoWrap :size="{width:96,height:32}" :style="{padding: '28px 0 64px 0'}" />
+    <LogoWrap :size="{width:96,height:32}" :style="{padding: '28px 0 64px 0'}" />
     <!-- 动态组件位置 -->
     <div class="yield">
   
@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import logoWrap from "../../pages/Login/logoWrap";
+import LogoWrap from "../LogoWrap/index";
 import EmailForm from "../EmailForm/index";
 import PhoneCodeForm from "../PhoneCodeForm/index";
 import PhonePasswordForm from "../PhonePasswordForm/index";
 export default {
-  components: { logoWrap, EmailForm, PhoneCodeForm, PhonePasswordForm },
+  components: { LogoWrap, EmailForm, PhoneCodeForm, PhonePasswordForm },
   props: {
     onSwitch: {
       required: true,
