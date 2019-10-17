@@ -7,7 +7,7 @@
       <span class="iconfont font">&#xe601;</span>
       <p>搜索商品, 共23255款好物</p>
     </div>
-    <div class="header-btn">
+    <div class="header-btn" @click="goto('/login')">
       <p>登录</p>
     </div>
   </header>
