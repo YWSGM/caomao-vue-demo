@@ -37,7 +37,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" scoped>
 @import '../../common/stylus/mixins.styl'
 @font-face {
   font-family: 'iconfont';  /* project id 1461237 */
@@ -50,14 +50,12 @@ export default {
 }
 .iconfont{
   font-family: "iconfont" !important;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // color:#999999;
-  position absolute
-  left 18px
-  top 2px
+ 
 
 }
 .footer_guide
@@ -68,6 +66,7 @@ export default {
   bottom  0px
   border-top 1px solid #999999
   background-color #fff
+  z-index 10
   ul
     width 100%
     height 100%
