@@ -3,10 +3,11 @@
     <logoWrap :size="{width:96,height:32}" :style="{padding: '28px 0 64px 0'}" />
     <!-- 动态组件位置 -->
     <div class="yield">
-      <keep-alive>
-        <EmailForm v-if=" formMode=== 'EmailForm'" />
-        <PhoneCodeForm v-else />
-      </keep-alive>
+  
+        <EmailForm v-if="mode==='email'" />
+        <PhonePasswordForm v-else-if="mode==='password'" :onSwitchForm="switchForm" />
+        <PhoneCodeForm v-else :onSwitchForm="switchForm" />
+    
     </div>
     <div class="s foot">
       <span class="s" @click="onSwitch('cover')">
@@ -21,24 +22,35 @@
 import logoWrap from "../../pages/Login/logoWrap";
 import EmailForm from "../EmailForm/index";
 import PhoneCodeForm from "../PhoneCodeForm/index";
+import PhonePasswordForm from "../PhonePasswordForm/index";
 export default {
-  components: { logoWrap, EmailForm, PhoneCodeForm },
+  components: { logoWrap, EmailForm, PhoneCodeForm, PhonePasswordForm },
   props: {
     onSwitch: {
       required: true,
       type: Function
     },
-    formMode: {
-      required: true,
-      type: String
-    }
+    formMode:{
+      required: false,
+      type: String,
+    },
+  },
+  mounted(){
+    // if(this.formMode){
+    //   this.switchForm(this.formMode)
+    // }
+    window.console.log('formprop', this.formMode)
   },
   data() {
-    return {};
+    return {
+      mode: "password"
+    };
   },
-  computed: {
-    currentTabComponent() {
-      return EmailForm;
+  methods: {
+    switchForm(mode) {
+      if (["email", "password", "code"].includes(mode)) {
+        this.mode = mode;
+      }
     }
   }
 };

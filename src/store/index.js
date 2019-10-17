@@ -14,6 +14,7 @@ import actions from './actions'
 
 // 引入模块文件
 import Search from './modules/Search'
+import Home from './modules/home'
 
 export default new Vuex.Store( {
 	state,
@@ -21,6 +22,7 @@ export default new Vuex.Store( {
 	mutations,
 	actions,
 	modules:{
-    Search
+		Search,
+		Home
   }
 })
