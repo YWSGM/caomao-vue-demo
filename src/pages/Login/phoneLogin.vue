@@ -34,7 +34,7 @@
           </Button>
         </div>
         <div class="row infos">
-          <input type="checkbox" checked>
+          <input class="checkbox" type="checkbox" checked />
           <p>
             我同意
             <span class="info-link">《服务条款》</span>
@@ -86,6 +86,7 @@ export default {
   color: #bdbdbd;
   font-size: 16px;
 }
+
 
 .row {
   display: flex;
@@ -151,7 +152,8 @@ export default {
   }
 
   .infos {
-    font-size 14px;
+    font-size: 14px;
+
     .info-link {
       color: #007aff;
     }
