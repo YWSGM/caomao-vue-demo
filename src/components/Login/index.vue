@@ -36,9 +36,9 @@ export default {
     },
   },
   mounted(){
-    // if(this.formMode){
-    //   this.switchForm(this.formMode)
-    // }
+    if(this.formMode){
+      this.switchForm(this.formMode)
+    }
     window.console.log('formprop', this.formMode)
   },
   data() {
