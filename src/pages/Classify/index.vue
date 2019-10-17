@@ -74,7 +74,7 @@ export default {
   },
   mounted() {
     this._initBscroll();
-  
+    this.$store.dispatch('getClassify')
   }
 };
 </script>
