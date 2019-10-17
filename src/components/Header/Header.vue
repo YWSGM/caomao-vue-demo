@@ -3,9 +3,8 @@
     <div class="header-log">
       <img src="./images/logo.png" />
     </div>
-    <div class="header-content">
+    <div class="header-content" @click="goto('/homesearch')">
       <span class="iconfont font">&#xe601;</span>
-
       <p>搜索商品, 共23255款好物</p>
     </div>
     <div class="header-btn">
@@ -15,7 +14,12 @@
 </template>
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    goto(path){
+      this.$router.replace(path)
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>

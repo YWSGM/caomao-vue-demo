@@ -8,6 +8,8 @@ import emailLogin from '../pages/Login/emailLogin.vue'
 import phoneLogin from '../pages/Login/phoneLogin.vue'
 import Right from '../pages/Classify/Right'
 import Season from '../pages/Classify/Season'
+import Faddish from '../pages/Classify/Faddish'
+import HeaderSearch from '../pages/HeardSearch'
 
 export default [
 	{
@@ -44,7 +46,7 @@ export default [
 			},
 			{
 				path:'/classify/faddish',
-				component:Season
+				component:Faddish
 			},
 			{
 				path:'/classify/new',
@@ -63,6 +65,10 @@ export default [
 	{
 		path:'/cart',
 		component: Cart
+	},
+	{
+		path:'/homesearch',
+		component: HeaderSearch
 	},
 	{
 		path:'/',
