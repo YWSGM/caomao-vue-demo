@@ -3,10 +3,12 @@
     <Advertisement />
     <Header />
     <div class="yield">
-      <keep-alive>
-        <Login v-if="yieldOut === 'emailForm'" :onSwitch="switchLoginComponent" formMode="emailForm" />
+    
+        <Login v-if="yieldOut === 'email'" :onSwitch="switchLoginComponent" formMode="email" />
+        <Login v-else-if="yieldOut === 'password'" :onSwitch="switchLoginComponent" formMode="password" />
+        <Login v-else-if="yieldOut === 'code'" :onSwitch="switchLoginComponent" formMode="code" />
         <LoginCover v-else :onSwitch="switchLoginComponent"/>
-      </keep-alive>
+      
     </div>
   </div>
 </template>
@@ -27,21 +29,8 @@ export default {
   },
   methods: {
     switchLoginComponent(name) {
-      switch (name) {
-        case "login":
-          this.yieldOut = "login";
-          break;
-        case "emailForm":
-          this.yieldOut = "emailForm";
-          break;
-        case "phoneCodeForm":
-          this.yieldOut = "phoneCodeForm";
-          break;
-        case "cover":
-          this.yieldOut = "cover";
-          break;
-        default:
-          break;
+      if(['email', 'password','code','cover'].includes(name)){
+        this.yieldOut = name;
       }
     }
   }

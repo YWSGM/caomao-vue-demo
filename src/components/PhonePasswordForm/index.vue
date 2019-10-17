@@ -1,5 +1,6 @@
 <template>
     <div class="form">
+      电话密码
       <div class="input-item bottom-border-1px">
         <input type="text" placeholder="请输入手机号" v-model="phone" />
       </div>
@@ -18,7 +19,7 @@
       <div>
         <div class="ad links">
           <span>遇到问题?</span>
-          <span :style="{color: '#333'}">使用密码验证登录</span>
+          <span :style="{color: '#333'}" @click="onSwitchForm('code')">使用密码验证登录</span>
         </div>
         <div>
           <Button :style="{ fontSize: `15px`}" @click="submit" type="danger" size="large">
@@ -42,7 +43,12 @@
 
 <script>
 export default {
-
+  props:{
+    onSwitchForm:{
+      required: true,
+      type: Function
+    }
+  },
 }
 </script>
 
