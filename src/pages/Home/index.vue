@@ -399,7 +399,7 @@ export default {
         // el: '.swiper-pagination'
       }
     })
-    this.$store,dispatch('getHomelist')
+    this.$store.dispatch('getHomelist')
   },
   computed: {
     ...mapState({
