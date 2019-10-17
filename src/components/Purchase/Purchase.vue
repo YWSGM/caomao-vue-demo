@@ -1,6 +1,5 @@
 <template>
   <div class="box">
-    <Header />
     <div class="head1">
       <div class="imgs">
         <img src="./6.png" alt="">
