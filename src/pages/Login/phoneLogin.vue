@@ -34,7 +34,7 @@
           </Button>
         </div>
         <div class="row infos">
-          <input class="checkbox" type="checkbox" checked />
+          <Checkbox />
           <p>
             我同意
             <span class="info-link">《服务条款》</span>
@@ -56,12 +56,14 @@
 <script>
 import Header from "./header";
 import logoWrap from "./logoWrap";
+import Checkbox from "../../components/Checkbox/index";
 import { Button } from "mint-ui";
 export default {
   components: {
     Header,
     logoWrap,
-    Button
+    Button,
+    Checkbox
   },
   data() {
     return {
@@ -86,7 +88,6 @@ export default {
   color: #bdbdbd;
   font-size: 16px;
 }
-
 
 .row {
   display: flex;
@@ -153,7 +154,7 @@ export default {
 
   .infos {
     font-size: 14px;
-
+    margin-top: 16px;
     .info-link {
       color: #007aff;
     }
