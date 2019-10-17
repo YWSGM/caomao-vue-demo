@@ -16,7 +16,7 @@ const mutations = {
 }
 const actions = {
   async getHomelist({commit}){
-    const result = await reqHomelist('home')
+    const result = await reqHomelist('homelist')
     commit(RECEIVE_HOMELIST,result)
   }
 }
