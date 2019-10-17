@@ -15,6 +15,7 @@ import actions from './actions'
 // 引入模块文件
 import Search from './modules/Search'
 import Home from './modules/home'
+import classify from './modules/classify'
 
 export default new Vuex.Store( {
 	state,
@@ -23,6 +24,7 @@ export default new Vuex.Store( {
 	actions,
 	modules:{
 		Search,
-		Home
+		Home,
+		classify
   }
 })
