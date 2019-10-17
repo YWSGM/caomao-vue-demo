@@ -31,7 +31,7 @@
 
 <script>
 import { Button } from "mint-ui";
-import LogoWrap from "../../pages/Login/logoWrap";
+import LogoWrap from "../LogoWrap/index";
 export default {
   components: {
     LogoWrap,
