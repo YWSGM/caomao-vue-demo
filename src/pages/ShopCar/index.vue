@@ -81,7 +81,7 @@ export default {};
         .circle
           position absolute
           left -10px
-          top 2px
+          top 4px
   .shopCar-content
     width 100%
     height 100%

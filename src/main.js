@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import router from './router'
+// 引入store
+import store from './store'
+
 import 'mint-ui/lib/style.css'
 import { Swipe, SwipeItem } from 'mint-ui';
 
@@ -23,12 +26,12 @@ Vue.component(Footer.name, Footer)
 // 注册成全局组件(公共组件)
 Vue.component(Purchase.name, Purchase)
 
-
 new Vue({
 	el: '#app',
 	components: {
 		App
 	},
 	template: '<App/>',
-	router
+	router,
+	store
 })
