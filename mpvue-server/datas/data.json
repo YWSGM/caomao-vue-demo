@@ -15,28 +15,28 @@
     {
       "name": "美食酒水",
       "url": "https://yanxuan.nosdn.127.net/37520d1204a0c55474021b43dac2a69e.png"
-    },
-    {
-      "name": "个护清洁",
-      "url": "https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png"
-    },
-    {
-      "name": "母婴亲子",
-      "url": "https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png"
-    },
-    {
-      "name": "运动旅行",
-      "url": "https://yanxuan.nosdn.127.net/37520d1204a0c55474021b43dac2a69e.png"
-    },
-    {
-      "name": "全球特色",
-      "url": "https://yanxuan.nosdn.127.net/fede8b110c502ec5799702d5ec824792.png"
-    },
-    {
-      "name": "好货抄底",
-      "url": "https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png"
     }
   ],
+  "homelisttwo":[{
+    "name": "个护清洁",
+    "url": "https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png"
+  },
+  {
+    "name": "母婴亲子",
+    "url": "https://yanxuan.nosdn.127.net/6c3bd9d885c818b1f73e497335a68b47.png"
+  },
+  {
+    "name": "运动旅行",
+    "url": "https://yanxuan.nosdn.127.net/37520d1204a0c55474021b43dac2a69e.png"
+  },
+  {
+    "name": "全球特色",
+    "url": "https://yanxuan.nosdn.127.net/fede8b110c502ec5799702d5ec824792.png"
+  },
+  {
+    "name": "好货抄底",
+    "url": "https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png"
+  }],
   "goods": [
     {
       "url": "https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330",

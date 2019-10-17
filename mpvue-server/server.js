@@ -16,6 +16,11 @@ koaRouter.get('/homelist', (ctx, next) => {
   }
   
 })
+koaRouter.get('/homelisttwo', (ctx, next) => {
+  if(ctx.query.id === 'homelisttwo'){
+    ctx.body = datas.homelisttwo
+  }
+})
 //分类组件列表
 koaRouter.get('/classify', (ctx, next) => {
   if(ctx.query.id === 'classify'){
