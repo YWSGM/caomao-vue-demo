@@ -41,8 +41,8 @@
     {
       "url": "https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330",
       "text": "地表强温 女式派克毛领鹅绒",
-      "price": "934",
-      "norms": ['s','m','x','xl','xxl']
+      "price": "934"
+      
     },
     {
       "url": "https://yanxuan-item.nosdn.127.net/f8b80d9cfb95573de5ffe3ad8ac3e9fe.png?imageView&quality=65&thumbnail=330x330",
@@ -53,7 +53,7 @@
     {
       "url": "https://yanxuan-item.nosdn.127.net/273daf6a11ebf11a6c4ebe5b449deb2f.png?imageView&quality=65&thumbnail=330x330",
       "text": "双盖两用儿童保温杯",
-      "norms": ['400ml','450ml''500ml','550ml','600ml'],
+      
       "price": "110"
     },
     {
@@ -70,7 +70,7 @@
     {
       "url": "https://yanxuan-item.nosdn.127.net/f85b533c6c9e7a2a77944939d3ade312.png?imageView&quality=65&thumbnail=330x330",
       "text": "桂圆红枣枸杞茶",
-      "norms": ['40ml','45ml''50ml','55ml','60ml'],
+      
       "price": "300"
     },
     {
@@ -82,7 +82,7 @@
     {
       "url": "https://yanxuan-item.nosdn.127.net/273daf6a11ebf11a6c4ebe5b449deb2f.png?imageView&quality=65&thumbnail=330x330",
       "text": "双盖两用儿童保温杯",
-      "norms": ['400ml','450ml''500ml','550ml','600ml'],
+      
       "price": "110"
     }
   ],
