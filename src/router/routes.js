@@ -11,67 +11,67 @@ import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
 import Purchase from '../pages/Purchase/Purchase.vue'
 
-export default [
-	{
-		path:'/home',
+export default [{
+		path: '/home',
 		component: Home
 	},
 	{
-		path:'/login',
+		path: '/login',
 		component: Login
 	},
 	{
-		path:'/search',
+		path: '/search',
 		component: Search
 	},
 	{
-		path:'/classify',
+		path: '/classify',
 		component: Classify,
-		children:[
-			{
-				path:'/classify/recommend',
-				component:Right
+		children: [{
+				path: '/classify/recommend',
+				component: Right
 			},
 			{
-				path:'/classify/season',
-				component:Season
+				path: '/classify/season',
+				component: Season
 			},
 			{
-				path:'/classify/faddish',
-				component:Faddish
+				path: '/classify/faddish',
+				component: Faddish
 			},
 			{
-				path:'/classify/new',
-				component:Season
+				path: '/classify/new',
+				component: Season
 			},
 			{
-				path:'/classify',
+				path: '/classify',
 				redirect: '/classify/recommend'
 			}
 		]
 	},
 	{
-		path:'/personal',
+		path: '/personal',
 		component: Personal
 	},
 	{
-		path:'/detail',
-		component: Detail
+		path: '/detail',
+		component: Detail,
+		children: [
+			{
+				path: '/detail/purchase',
+				component: Purchase
+			},
+		]
 	},
 	{
-		path:'/purchase',
-		component:Purchase
-	},
-	{
-		path:'/cart',
+		path: '/cart',
 		component: Cart
 	},
 	{
-		path:'/homesearch',
+		path: '/homesearch',
 		component: HeaderSearch
 	},
 	{
-		path:'/',
+		path: '/',
 		redirect: '/home'
 	},
 ]
