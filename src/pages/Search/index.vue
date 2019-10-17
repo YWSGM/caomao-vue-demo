@@ -87,7 +87,7 @@
 </template>
 <script>
 import BScroll from "better-scroll";
-import {reqClassfiy,reqHomelist,reqSearchlist,reqGoods} from '../../api'
+// import {reqClassfiy,reqHomelist,reqSearchlist,reqGoods} from '../../api'
 export default {
   methods: {
     _initBscroll() {
@@ -99,8 +99,10 @@ export default {
   },
   async  mounted () {
     this._initBscroll();
-    let result = await reqSearchlist('search')
-    console.log(result);
+    this.$store.dispatch('getSearchList')
+    // console.log(this);
+    // let result = await reqSearchlist('search')
+    // console.log(result);
   }
 };
 </script>
