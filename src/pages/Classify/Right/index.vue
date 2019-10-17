@@ -44,7 +44,7 @@ export default {};
   box-sizing border-box
 	
 	.swipeWrap
-		height 160px
+		height 100px
 		img 
 			width 100%
 			height 100%

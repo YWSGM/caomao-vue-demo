@@ -1,11 +1,11 @@
 <template>
   <div class="conatiner">
-    <!-- <header class="header">
+    <header class="classify-header">
       <div class="search">
         <input type="text" placeholder="请输入搜索商品" />
       </div>
-    </header>-->
-    <Header />
+    </header>
+    <!-- <Header /> -->
     <div class="List">
       <div class="listLeft">
         <ul>
@@ -80,7 +80,7 @@ export default {
 </script>
 <style lang="stylus">
 @import '../../common/stylus/mixins.styl'
-.header
+.classify-header
   width 100%
   height 44px
 .search
@@ -94,7 +94,7 @@ export default {
     text-align center
     background-color #ccc
 .List
-  margin-top 38px
+  // margin-top 38px
   height calc(100vh - 38px - 51px)
   display flex
   flex-direction row
