@@ -17,7 +17,7 @@
           @click="sendCode"
         >{{ countdown ? `${countdown}秒后重发` : '获取验证码' }}</Button>
       </div>
-      <p class="error-msg">{{error}}</p>
+      <p class="error-msg" v-show="!hideError">{{error}}</p>
       <div>
         <div class="ad links">
           <span>遇到问题?</span>
@@ -64,8 +64,8 @@ export default {
   },
   data() {
     return {
-      phone: "18842606347",
-      code: "444444",
+      phone: "1884260347",
+      code: "44444",
       isAllowAgreements: true,
       hideError: true,
       countdown: 0
@@ -109,12 +109,16 @@ export default {
       this.isAllowAgreements = nextValue;
     },
     sendCode() {
-      this.countdown = 3;
+      this.hideError = false;
+      if (!this.phoneError) {
+        this.countdown = 3;
+      }
     },
     submit() {
+      this.hideError = false;
       if (!this.error && this.isAllowAgreements) {
         window.console.log("you can submit");
-      }else{
+      } else {
         window.console.error("you cant submit");
       }
     }
