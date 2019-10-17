@@ -1,10 +1,20 @@
 <template>
-  <div class="container">email login</div>
+  <div class="container">
+    <Header />
+  </div>
 </template>
 
 <script>
-export default {};
+import Header from './header'
+export default {
+  components: {
+    Header
+  }
+};
 </script>
-
-<style>
+<style lang="stylus" scoped>
+.container {
+  width: 100vw;
+  height: 100vh;
+}
 </style>

@@ -43,12 +43,15 @@ export default {
 .header
   width 350px
   height 38px
-  border-bottom  1px solid #666
-  margin auto
+  background-color #fff
+  // border-bottom  1px solid #666
   display flex
   position fixed
-  top 5px
-  left 12px
+  top 0px
+  left 0px
+  padding-left 10px
+  padding-right 15px
+  z-index 999
   .header-log
     width 70px
     height 30px
@@ -59,7 +62,7 @@ export default {
      display inline-block
      vertical-align middle
   .header-content
-    width 210px
+    width 236px
     height 25px
     background-color #EDEDED
     position absolute
@@ -69,11 +72,12 @@ export default {
     p
      font-size 13px
      position absolute
-     left 40px
+     left 55px
      top 5px
      color #666666
     .font
       font-weight 700 
+      left 29px
   .header-btn
     width 40px
     height 18px
