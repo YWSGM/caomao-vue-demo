@@ -6,7 +6,7 @@
       <div class="content-wrap">
         <div class="list-content">
           <div class="content">
-            <span>推荐</span>
+            <span>推荐使用</span>
             <span>居家生活</span>
             <span>服饰鞋包</span>
             <span>美食酒水</span>
@@ -127,24 +127,24 @@
               <p class="font-top">9.9超值专区</p>
               <p class="font-bottom">190款商品定价直降</p>
               <div class="content-img">
-                <img src="./images/item-6.png" alt />
-                <img src="./images/item-7.png" alt />
+                <img src="./images/item-22.png" alt />
+                <img src="./images/item-23.png" alt />
               </div>
             </div>
             <div class="content-bottom1">
               <p class="font-top">9.9超值专区</p>
               <p class="font-bottom">190款商品定价直降</p>
               <div class="content-img">
-                <img src="./images/item-6.png" alt />
-                <img src="./images/item-7.png" alt />
+                <img src="./images/item-24.png" alt />
+                <img src="./images/item-25.png" alt />
               </div>
             </div>
             <div class="content-bottom2">
               <p class="font-top">9.9超值专区</p>
               <p class="font-bottom">190款商品定价直降</p>
               <div class="content-img">
-                <img src="./images/item-6.png" alt />
-                <img src="./images/item-7.png" alt />
+                <img src="./images/item-26.png" alt />
+                <img src="./images/item-27.png" alt />
               </div>
             </div>
           </div>
@@ -683,7 +683,7 @@ export default {
   top 38px
   width 100%
   // height 100px
-  // background-color red
+  background-color #fff
   z-index 999
   .list-content
     width 300px
