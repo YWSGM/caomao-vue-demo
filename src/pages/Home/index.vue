@@ -5,8 +5,8 @@
     <div class="header-list" >
       <div class="content-wrap">
         <div class="list-content">
-          <div class="content">
-            <span>推荐使用</span>
+          <div class="content1">
+            <span class="active">推荐使用</span>
             <span>居家生活</span>
             <span>服饰鞋包</span>
             <span>美食酒水</span>
@@ -688,7 +688,7 @@ export default {
   .list-content
     width 300px
     height 50px
-    .content
+    .content1
       width 800px
       height 100px
       display flex
@@ -696,4 +696,6 @@ export default {
         flex 1
         padding-left 20px
         line-height 50px
+        &.active
+          color #b4282d
 </style>
