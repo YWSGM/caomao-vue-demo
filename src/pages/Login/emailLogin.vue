@@ -82,6 +82,8 @@ export default {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
+      }else{
+        window.console.error("you cant submit");
       }
     }
   },

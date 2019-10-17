@@ -2,33 +2,30 @@
   <div class="container">
     <Header />
     <logoWrap :size="{width:96,height:32}" :style="{padding: '28px 0 64px 0'}" />
-    <div class="email-form">
+    <div class="form">
       <div class="input-item bottom-border-1px">
-        <input type="text" placeholder="请输入手机号" v-model="email" />
+        <input type="text" placeholder="请输入手机号" v-model="phone" />
       </div>
       <div class="input-item ad">
-        <input type="password" placeholder="请输入短信验证码" v-model="password" />
+        <input type="text" placeholder="请输入短信验证码" v-model="code" />
         <Button
           type="default"
           plain
           size="small"
           :style="{height: `27px`, padding: '0 6px',marginRight:'8px'}"
-        >获取验证码</Button>
+          :disabled="countdown>0"
+          @click="sendCode"
+        >{{ countdown ? `${countdown}秒后重发` : '获取验证码' }}</Button>
       </div>
+      <p class="error-msg" v-show="!hideError">{{error}}</p>
       <div>
         <div class="ad links">
           <span>遇到问题?</span>
           <span :style="{color: '#333'}">使用密码验证登录</span>
         </div>
         <div>
-          <Button
-            :style="{ fontSize: `15px`}"
-            @click="$router.push('/emailLogin')"
-            type="danger"
-            size="large"
-          >
+          <Button :style="{ fontSize: `15px`}" @click="submit" type="danger" size="large">
             <div class="s">
-              <i class="icon icon-email mr-8"></i>
               <p>登录</p>
             </div>
           </Button>
@@ -67,18 +64,63 @@ export default {
   },
   data() {
     return {
-      email: "",
-      password: "",
-      isAllowAgreements: true
+      phone: "1884260347",
+      code: "44444",
+      isAllowAgreements: true,
+      hideError: true,
+      countdown: 0
     };
+  },
+  computed: {
+    phoneError() {
+      if (!this.phone || !/^1\d{10}$/.test(this.phone)) {
+        return "手机号格式不对";
+      } else {
+        return "";
+      }
+    },
+    codeError() {
+      if (!this.code || !/^\d{6}$/.test(this.code)) {
+        return "验证码格式不对";
+      } else {
+        return "";
+      }
+    },
+    error() {
+      return this.phoneError || this.codeError || "";
+    }
   },
   updated() {
     window.console.log("isAllowAgreements", this.isAllowAgreements);
+  },
+  watch: {
+    countdown() {
+      if (this.countdown > 0) {
+        setTimeout(() => {
+          const nextCount = this.countdown - 1;
+          this.countdown = nextCount;
+        }, 1000);
+      }
+    }
   },
   methods: {
     changeAllowAgreements() {
       const nextValue = !this.isAllowAgreements;
       this.isAllowAgreements = nextValue;
+    },
+    sendCode() {
+      this.hideError = false;
+      if (!this.phoneError) {
+        this.countdown = 3;
+      }
+    },
+    submit() {
+      this.hideError = false;
+      if (!this.error && this.isAllowAgreements) {
+        window.console.log("you can submit");
+      } else {
+        window.console.error("you cant submit");
+      }
     }
   }
 };
@@ -132,7 +174,7 @@ export default {
   width: 100vw;
   height: 100vh;
 
-  .email-form {
+  .form {
     width: 335px;
     margin: 0 auto;
     color: #999;
@@ -150,6 +192,12 @@ export default {
         width: 80;
         outline: none;
       }
+    }
+
+    .error-msg {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #dd1a21;
     }
 
     .links {

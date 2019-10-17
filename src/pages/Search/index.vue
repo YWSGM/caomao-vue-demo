@@ -7,7 +7,7 @@
         <a class="select-home" href="javascript:;">甄选家</a>
       </div>
       <div class="font-box">
-        <span class="iconfont icon-sousuo search-font"></span>
+        <span class="iconfont icon-sousuo search-font" @click="goto('/homesearch')"></span>
         <span class="iconfont icon-gouwuche1 car-font" @click="goto('/shopcar')"></span>
       </div>
     </header>

@@ -3,9 +3,8 @@
     <div class="header-log">
       <img src="./images/logo.png" />
     </div>
-    <div class="header-content">
+    <div class="header-content" @click="goto('/homesearch')">
       <span class="iconfont font">&#xe601;</span>
-
       <p>搜索商品, 共23255款好物</p>
     </div>
     <div class="header-btn" @click="goto('/login')">

@@ -3,7 +3,10 @@
     <div class="swipeWrap">
       <mt-swipe :auto="4000" class="swiper-item">
         <mt-swipe-item>
-          <img src="./img/qiudong1.jpg" alt />
+          <img src="../img/lunbotu1.jpg" alt />
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <img src="../img/lunbotu2.png" alt />
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -11,20 +14,28 @@
     <div class="shopWarp">
       <ul class="shopList">
         <li>
-          <img src="./img/qiudongxiao1.png" alt />
-          <p>秋冬床品</p>
+          <img src="../img/boutique/01.png" alt />
+          <p>明星商品地质69元</p>
         </li>
         <li>
-          <img src="./img/qiudongxiao2.png" alt />
-          <p>滋补美食</p>
+          <img src="../img/boutique/02.png" alt />
+          <p>999+好评</p>
         </li>
         <li>
-          <img src="./img/qiudongxiao3.png" alt />
-          <p>换季扫除</p>
+          <img src="../img/boutique/03.png" alt />
+          <p>员工精选好货低至15元</p>
         </li>
         <li>
-          <img src="./img/qiudongxiao4.png" alt />
-          <p>秋冬服饰新品</p>
+          <img src="../img/boutique/04.png" alt />
+          <p>秋冬服配特惠低至5折</p>
+        </li>
+        <li>
+          <img src="../img/boutique/04.png" alt />
+          <p>秋冬服配特惠低至5折</p>
+        </li>
+        <li>
+          <img src="../img/boutique/04.png" alt />
+          <p>秋冬服配特惠低至5折</p>
         </li>
       </ul>
     </div>
@@ -57,5 +68,5 @@ export default {};
 					width 60px
 					height 60px
 				p
-					font-size 12px
+					font-size 14px
 </style>
