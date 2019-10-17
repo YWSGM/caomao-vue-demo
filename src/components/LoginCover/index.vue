@@ -2,13 +2,13 @@
   <div class="cover">
     <LogoWrap :size="{width:134,height:45}" />
     <div class="btnWrap">
-      <Button @click="$router.push('/phoneLogin')" type="danger" size="large" class="mt-16">
+      <Button @click="onSwitch('phoneCodeForm')" type="danger" size="large" class="mt-16">
         <div class="s">
           <i class="icon icon-phone mr-8"></i>
           <p>手机号快捷登录</p>
         </div>
       </Button>
-      <Button @click="$router.push('/emailLogin')" type="danger" size="large" plain>
+      <Button @click="onSwitch('emailForm')" type="danger" size="large" plain>
         <div class="s">
           <i class="icon icon-email mr-8"></i>
           <p>邮箱账号登录</p>
@@ -36,6 +36,12 @@ export default {
   components: {
     LogoWrap,
     Button
+  },
+  props: {
+    onSwitch: {
+      required: true,
+      type: Function
+    }
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="header ad bottom-border-1px">
+  <div class="header ad">
     <div class="text-logo-holder">
       <i class="icon icon-text-logo"></i>
     </div>
@@ -67,6 +67,7 @@ export default {};
   border-color: #eee;
   width: 100vw;
   box-sizing: border-box;
+  border-bottom: 1px solid #d9d9d9;
 
   .right-10 {
     margin-right: 10px;
