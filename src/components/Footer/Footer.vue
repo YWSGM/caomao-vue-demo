@@ -5,7 +5,7 @@
       <span class="item">首页</span>
      <span class="iconfont font">&#xe615;</span>
     </li>
-    <li class="guide_item" @click="goto('/classify')" :class="{active:$route.path==='/classify'}">
+    <li class="guide_item" @click="goto('/classify')" :class="{active:$route.path==='/classify/recommend'}">
       <span class="item">分类</span>
      <span class="iconfont font">&#xe624;</span>
     </li>
@@ -13,7 +13,7 @@
       <span class="item">识物</span>
      <span class="iconfont font">&#xe7fd;</span>
     </li>
-    <li class="guide_item" @click="goto('/shopcar')" :class="{active:$route.path==='/shopcar'}">
+    <li class="guide_item" @click="goto('/cart')" :class="{active:$route.path==='/cart'}">
       <span class="item">购物车</span>
      <span class="iconfont font">&#xe657;</span>
     </li>
@@ -67,6 +67,7 @@ export default {
   border-top 1px solid #999999
   background-color #fff
   z-index 10
+  box-sizing border-box
   ul
     width 100%
     height 100%

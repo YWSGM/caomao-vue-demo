@@ -1,14 +1,14 @@
 <template>
   <div class="big">
     <header class="search-header">
-      <span class="iconfont font-home" @click="goto('/home')">&#xe642;</span>
+      <span class="iconfont icon-home font-home" @click="goto('/home')"></span>
       <div class="header-mid">
         <a class="font" href="javascript:;">发现</a>
         <a class="select-home" href="javascript:;">甄选家</a>
       </div>
       <div class="font-box">
-        <span class="iconfont search-font">&#xe658;</span>
-        <span class="iconfont car-font" @click="goto('/shopcar')">&#xe602;</span>
+        <span class="iconfont icon-sousuo search-font"></span>
+        <span class="iconfont icon-gouwuche1 car-font" @click="goto('/shopcar')"></span>
       </div>
     </header>
     <div class="topList">
@@ -90,18 +90,7 @@ import BScroll from "better-scroll";
 export default {
   methods: {
     _initBscroll() {
-      
       let scroll = new BScroll('.content-list')
-      /* this.rightScroll = new BScroll(".foods-wrapper", {
-        click: true,
-        // 计算滚动的位置
-        probeType: 2
-      });
-      // 右侧列表的滑动事件
-      this.rightScroll.on("scroll", ({ x, y }) => {
-        // console.log(y);
-        this.scrollY = Math.abs(y);
-      }); */
     },
     goto(path){
       this.$router.replace(path)
@@ -114,45 +103,29 @@ export default {
 </script>
 <style lang="stylus">
 @import '../../common/stylus/mixins.styl'
-@font-face {
-  font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot');
-  src: url('//at.alicdn.com/t/font_1461446_uge1knhxboh.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1461446_uge1knhxboh.svg#iconfont') format('svg');
-}
-.iconfont
-  font-family 'iconfont' !important
-  font-size 22px
-  font-style normal
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  color #666666
-  position absolute
-  left 17px
-  top 2px
-  font-weight 600
+
+
 .big
   width 100%
   height 100%
   position relative
   background-color #eee
   .search-header
-    bottom-border-1px(black)
+    border-bottom 1px solid #000
     position absolute
     left 0
     top 0
     z-index 99
-    background-color #d9d9d9
+    background-color #fff
     width 100%
     height 44px
     display flex
     justify-content space-evenly
     .font-home
-      margin-top 10px
+      margin-top 4px
+      font-size 30px
     .header-mid
+      padding-left 30px
       margin 10px auto
       .font
         font-size 20px
@@ -164,13 +137,14 @@ export default {
       position relative
       .search-font
         position absolute
-        left 0
-        top 10px
+        left -54px
+        top 8px
+        font-size 32px
       .car-font
         position absolute
-        right 15px
-        top 10px
-    
+        left 1px
+        top 8px
+        font-size 32px
   .font-box
     width 44px
     height 22px
@@ -178,14 +152,14 @@ export default {
   .topList
     position relative
     padding-top 40px
-    border-bottom 1px solid #666
+    border-bottom 1px solid #000
     .topList-ul
       padding-right 5px
       position absolute
       left 0
       top 40px
       z-index 99
-      background-color #d9d9d9
+      background-color #fff
       display flex
       white-space nowrap
       height 40px
@@ -206,12 +180,12 @@ export default {
     width 100%
     height 500px
     .content-ul
-      padding-top 40px
+      padding-top 30px
       width 100%
       .content-item
         margin-top 10px
         width 100%
-        height 200px
+        height 140px
         background-color #fff
         display flex
         .left
@@ -220,7 +194,7 @@ export default {
           padding 10px
           .top
             margin-top 20px
-            margin-bottom 30px
+            margin-bottom 22px
             display flex
             img
               width 30px
@@ -234,8 +208,9 @@ export default {
         .right
           padding-right 10px
           padding-top 20px
+          margin-left 32px
           img
-            width 150px
-            height 150px
+            width 100px
+            height 100px
             border-radius 10px
 </style>
