@@ -14,9 +14,7 @@
       </div>
     </div>
     <Header />
-    <div class="logoWrap s">
-      <i class="icon icon-logo-wrap"></i>
-    </div>
+    <LogoWrap :size="{width:134,height:45}" />
     <div class="btnWrap">
       <Button @click="$router.push('/phoneLogin')" type="danger" size="large" class="mt-16">
         <div class="s">
@@ -47,9 +45,10 @@
 
 <script>
 import { Button } from "mint-ui";
-import Header from './header'
+import Header from "./header";
+import LogoWrap from "./logoWrap";
 export default {
-  components: { Button , Header},
+  components: { Button, Header, LogoWrap },
   data() {
     return {
       defaultBannerSeen: true
@@ -193,21 +192,6 @@ export default {
         color: #fff;
         background-color: #b4282d;
       }
-    }
-  }
-
-
-
-  .logoWrap {
-    padding: 80px 0 116px 0;
-    width: 100%;
-
-    .icon-logo-wrap {
-      width: 134px;
-      height: 45px;
-      background-size: 100% 100%;
-      background-image: url('./logo-wrap.png');
-      background-position-y: 0px;
     }
   }
 
