@@ -48,7 +48,8 @@ export default {
       if (!this.error) {
         window.console.log(" you can submit");
        // loginWithPassword(this.phone, this.password).then(r => console.log(r));
-       // this.$store.dispatch(LOGIN_WITH_PASSWORD, {phone:this.phone, password: this.password})
+       this.$store.dispatch(LOGIN_WITH_PASSWORD, {phone:this.phone, password: this.password})
+       console.log(this.$store)
       } else {
         window.console.error("you cant submit");
       }
