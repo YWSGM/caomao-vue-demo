@@ -50,3 +50,21 @@ export const loginWithCode = (phone, code) => {
     data: { phone, code }
   });
 };
+// loginWithToken
+export const loginWithToken = token => {
+  const isValidToken = /^.*$/.test(token);
+  if (!isValidToken) {
+    throw new Error("token格式不正确");
+  }
+  return ajax.post(`${BAES}/loginAuto`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: { token }
+  });
+};
+
+export const logout = token => {
+  if (typeof token !== "string") {
+    throw new TypeError("token 格式不正确");
+  }
+  return ajax.get(`${BAES}/logout?token=${token}`);
+};

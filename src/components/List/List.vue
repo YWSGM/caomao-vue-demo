@@ -4,15 +4,16 @@
       <div class="content-wrap"  v-show="isShow">
         <div class="list-content">
           <div class="content1">
+            <span class="active">推荐使用</span>
             <span class="active" @click="goto('/home')">推荐使用</span>
             <span  @click="goto('/toplist')">居家生活</span>
-            <span>服饰鞋包</span>
-            <span>美食酒水</span>
-            <span>个护清洁</span>
-            <span>母婴亲子</span>
-            <span>运行旅游</span>
-            <span>数码家电</span>
-            <span>全球特色</span>
+            <span  @click="goto('/classify/season')">服饰鞋包</span>
+            <span  @click="goto('/classify')">美食酒水</span>
+            <span  @click="goto('/classify/recommend')">个护清洁</span>
+            <span @click="goto('/classify/season')">母婴亲子</span>
+            <span @click="goto('/classify/recommend')">运行旅游</span>
+            <span @click="goto('/classify/recommend')">数码家电</span>
+            <span @click="goto('/classify/recommend')">全球特色</span>
           </div>
           <div class="list-btn" @click="toggleShow">
              <span class="iconfont font">&#xe60c;</span>
@@ -37,42 +38,42 @@
               </div>
              
             </li>
-             <li class="moretext-item" @click="goto('/home')" >
+             <li class="moretext-item" @click="goto('/classify/season')" >
                <div class="item" >
                   <p>居家生活</p>
               </div>
             </li>
-             <li class="moretext-item"  @click="goto('/home')">
+             <li class="moretext-item"  @click="goto('/classify')">
               <div class="item" >
                   <p>服饰鞋包</p>
               </div>
             </li>
-            <li class="moretext-item"  @click="goto('/home')">
+            <li class="moretext-item"  @click="goto('/toplist')">
               <div class="item" >
                   <p>美食酒水</p>
               </div>
             </li>
-            <li class="moretext-item"  @click="goto('/home')">
+            <li class="moretext-item"  @click="goto('/toplist')">
               <div class="item" >
                   <p>个人清洁</p>
               </div>
             </li>
-            <li class="moretext-item"  @click="goto('/home')">
+            <li class="moretext-item"  @click="goto('/classify/recommend')">
               <div class="item" >
                   <p>母婴亲子</p>
               </div>
             </li>
-              <li class="moretext-item"  @click="goto('/home')">
+              <li class="moretext-item"  @click="goto('/classify/faddish')">
               <div class="item" >
                   <p>运动旅游</p>
               </div>
             </li>
-                <li class="moretext-item"  @click="goto('/home')">
+                <li class="moretext-item"  @click="goto('/classify/new')">
               <div class="item" >
                   <p>数码家电</p>
               </div>
             </li>
-               <li class="moretext-item"  @click="goto('/home')">
+               <li class="moretext-item"  @click="goto('/classify/faddish')">
               <div class="item" >
                   <p>全球特色</p>
               </div>

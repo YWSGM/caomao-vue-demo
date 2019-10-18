@@ -10,7 +10,9 @@ import Season from '../pages/Classify/Season'
 import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
 import Purchase from '../pages/Purchase/Purchase.vue'
+import Content from '../pages/Search/content'
 import TopList from '../pages/Toplist'
+import Seadetail from '../pages/Seadetail/Seadetail.vue'
 
 export default [{
 		path: '/home',
@@ -26,7 +28,33 @@ export default [{
 	},
 	{
 		path: '/search',
-		component: Search
+		component: Search,
+		children:[
+			{
+				path:'/search/searchrecommend',
+				component:Content
+			},
+			{
+				path:'/search/searchgoodthing',
+				component:Content
+			},
+			{
+				path:'/search/searchexchange',
+				component:Content
+			},
+			{
+				path:'/search/searchexchoose',
+				component:Content
+			},
+			{
+				path:'/search/searchunboxing',
+				component:Content
+			}
+		]
+	},
+	{
+		path: '/seadetail',
+		component: Seadetail
 	},
 	{
 		path: '/classify',

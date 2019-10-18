@@ -9,7 +9,7 @@
       <span class="item">分类</span>
      <span class="iconfont font">&#xe624;</span>
     </li>
-    <li class="guide_item" @click="goto('/search')" :class="{active:$route.path==='/search'}">
+    <li class="guide_item" @click="goto('/search/searchrecommend')" :class="{active:toppestRouteName==='/search'}">
       <span class="item">识物</span>
      <span class="iconfont font">&#xe7fd;</span>
     </li>

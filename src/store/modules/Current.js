@@ -1,11 +1,13 @@
 // 引入接口api
-import { loginWithPassword, loginWithEmail, loginWithCode } from "../../api";
+import { loginWithPassword, loginWithEmail, loginWithCode, loginWithToken, logout } from "../../api";
 
 import {
   LOGIN,
   LOGIN_WITH_PASSWORD,
   LOGIN_WITH_EMAIL,
-  LOGIN_WITH_CODE
+  LOGIN_WITH_CODE,
+  LOGIN_WITH_TOKEN,
+  LOGOUT
 } from "../mutation-type";
 
 const state = {
@@ -15,7 +17,7 @@ const state = {
 const mutations = {
   [LOGIN](state, current) {
     state.current = current;
-    window.localStorage.setItem('token', current.token)
+    window.localStorage.setItem("token", current.token);
     console.log("login current", current);
   }
 };
@@ -44,6 +46,23 @@ const actions = {
     if (response.code === 0) {
       const current = response.user;
       commit(LOGIN, current);
+    } else {
+      throw new Error(response.message);
+    }
+  },
+  async [LOGIN_WITH_TOKEN]({ commit }, token) {
+    const response = await loginWithToken(token);
+    if (response.code === 0) {
+      const current = response.user;
+      commit(LOGIN, current);
+    } else {
+      throw new Error(response.message);
+    }
+  },
+  async [LOGOUT]({ commit }, token) {
+    const response = await logout(token);
+    if (response.code === 0) {
+      commit(LOGIN, null);
     } else {
       throw new Error(response.message);
     }

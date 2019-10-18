@@ -94,9 +94,9 @@
   </div>
 </template>
 <script>
-import Swiper from "swiper";
-import "swiper/css/swiper.css";
-import BScroll from "better-scroll";
+import Swiper from "swiper"
+import "swiper/css/swiper.css"
+import BScroll from "better-scroll"
 export default {
   data(){
     return{
@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted() {
-    let scroll = new BScroll(".box1");
+    let scroll = new BScroll(".box1")
     //创建swiper对象，实现轮播效果
     let mySwiper = new Swiper(".swiper-container", {
       loop: true, // 循环模式选项
