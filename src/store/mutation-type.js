@@ -20,3 +20,4 @@ export const LOGIN_WITH_CODE = "LOGIN_WITH_CODE";
 export const RECEIVE_TOPLISTGOODS = "receive_toplistgoods";
 
 export const LOGIN_WITH_TOKEN = "LOGIN_WITH_TOKEN";
+export const LOGOUT = "LOGOUT";
