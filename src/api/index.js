@@ -21,12 +21,8 @@ export const loginWithPassword = (phone, password) => {
   if (!isValidPhone || !isValidPassword) {
     throw new Error("账号或密码格式不正确");
   }
-  //`${BAES}/loginWithPassword`
-  //   return ajax.get(BAES + `/homelist?id=homelist`, {
-  //     data: { phone, password }
-  //   });
-  return ajax.post(BAES + `/loginWithPassword`, {
-    headers: { "Content-Type": "application/json" },
+  return ajax.post(`${BAES}/loginWithPassword`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     data: { phone, password }
   });
 };
