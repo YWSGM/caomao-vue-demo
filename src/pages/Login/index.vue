@@ -25,7 +25,7 @@ export default {
   components: { Advertisement, LoginCover, Header, Login },
   data() {
     return {
-      yieldOut: "password"
+      yieldOut: "cover"
     };
   },
   methods: {
