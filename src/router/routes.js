@@ -14,6 +14,9 @@ import Content from '../pages/Search/content'
 import TopList from '../pages/Toplist'
 import Seadetail from '../pages/Seadetail/Seadetail.vue'
 
+
+const 
+
 export default [{
 		path: '/home',
 		component: Home
