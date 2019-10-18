@@ -21,3 +21,4 @@ export const RECEIVE_TOPLISTGOODS = "receive_toplistgoods";
 
 export const LOGIN_WITH_TOKEN = "LOGIN_WITH_TOKEN";
 export const LOGOUT = "LOGOUT";
+export const LOGOUT_ASYNC = "LOGOUT_ASYNC";
