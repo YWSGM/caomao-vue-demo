@@ -44,7 +44,7 @@
 </template>
 <script>
 export default {
-  name: 'Purchase'
+  // name: 'Purchase'
 };
 </script>
 <style  lang="stylus" rel="stylesheet/stylus">

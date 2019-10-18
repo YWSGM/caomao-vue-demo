@@ -1,4 +1,4 @@
-import{RECEIVE_HOMELIST,RECEIVE_HOMELIST_TWO,RECEIVE_HOMEGOODS}from '../mutation-type'
+import{RECEIVE_HOMELIST,RECEIVE_HOMELIST_TWO,RECEIVE_HOMEGOODS,RECEIVE_INDEX}from '../mutation-type'
 import {reqHomelist,reqHomelisttwo,reqGoods} from '../../api'
 
 const state = {
@@ -7,6 +7,7 @@ const state = {
   homegood:[],
   index:null
 }
+
 const mutations = {
   [RECEIVE_HOMELIST](state,homelist){
     state.homelist =homelist
@@ -16,6 +17,9 @@ const mutations = {
   },
   [RECEIVE_HOMEGOODS](state,homegood){
     state.homegood =homegood
+  },
+  [RECEIVE_INDEX](state,index){
+    state.index = index
   }
 }
 const actions = {
@@ -30,6 +34,9 @@ const actions = {
   async getHomegood({commit}){
     const result = await reqGoods('goods')
     commit(RECEIVE_HOMEGOODS,result)
+  },
+  getGood({commit},index){
+    commit(RECEIVE_INDEX,index)
   }
 }
 const getters = {}
