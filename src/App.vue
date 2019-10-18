@@ -5,7 +5,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted(){
+    
+  }
+};
 </script>
 <style lang="stylus">
 dangerColor = #dd1a21;

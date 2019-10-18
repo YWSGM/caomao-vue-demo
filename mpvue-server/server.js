@@ -57,7 +57,42 @@ koaRouter.post("/loginWithPassword", async (ctx, next) => {
   if (typeof data.phone === "string" && typeof data.password === "string") {
     const user = datas.users.find(user => user.phone === data.phone);
     if (user && user.password === data.password) {
+      user.token = "this is token";
       result = { code: 0, user };
+    }
+  }
+  if (!result) {
+    result = { code: 1, message: "not user match" };
+  }
+  ctx.body = result;
+});
+koaRouter.post("/loginWithEmail", async (ctx, next) => {
+  const data = ctx.request.body.data;
+  let result;
+  if (typeof data.email === "string" && typeof data.password === "string") {
+    const user = datas.users.find(user => user.email === data.email);
+    if (user && user.password === data.password) {
+      user.token = "this is token";
+      result = { code: 0, user };
+    }
+  }
+  if (!result) {
+    result = { code: 1, message: "not user match" };
+  }
+  ctx.body = result;
+});
+koaRouter.post("/loginWithCode", async (ctx, next) => {
+  const data = ctx.request.body.data;
+  let result;
+  if (typeof data.phone === "string" && typeof data.code === "string") {
+    if (data.code === "666666") {
+      const user = datas.users.find(user => user.phone === data.phone);
+      if (user) {
+        user.token = "this is token";
+        result = { code: 0, user };
+      }
+    } else {
+      result = { code: 1, message: "code wrong" };
     }
   }
   if (!result) {

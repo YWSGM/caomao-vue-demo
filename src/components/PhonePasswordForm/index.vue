@@ -58,19 +58,23 @@ export default {
       }
     },
     checkCurrent() {
-      const current = this.$store.getters.state.Current;
-      if (current) {
-        this.$router.replace("/personal");
+      if (this.current) {
+        this.$router.replace("/home");
       }
     }
   },
   mounted() {
     this.checkCurrent();
   },
-  updated() {
-    this.checkCurrent();
+  watch: {
+    current() {
+      this.checkCurrent();
+    }
   },
   computed: {
+    current() {
+      return this.$store.state.Current.current;
+    },
     phoneError() {
       if (!this.phone || !/^1\d{10}$/.test(this.phone)) {
         return "手机号格式不对";

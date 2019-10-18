@@ -11,10 +11,15 @@ import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
 import Purchase from '../pages/Purchase/Purchase.vue'
 import Content from '../pages/Search/content'
+import TopList from '../pages/Toplist'
 
 export default [{
 		path: '/home',
 		component: Home
+	},
+	{
+		path:'/toplist',
+		component:TopList
 	},
 	{
 		path: '/login',
@@ -110,12 +115,10 @@ export default [{
 	{
 		path: '/detail',
 		component: Detail,
-		children: [
-			{
-				path: '/detail/purchase',
-				component: Purchase
-			},
-		]
+	},
+	{
+		path: '/purchase',
+		component: Purchase
 	},
 	{
 		path: '/cart',
