@@ -28,9 +28,9 @@ const actions = {
     } else {
       throw new Error(response.message);
     }
-  },  
+  },
   async [LOGIN_WITH_CODE]({ commit }, { phone, code }) {
-    const response = await loginWithCode(phone, code );
+    const response = await loginWithCode(phone, code);
     if (response.code === 0) {
       const current = response.user;
       commit(LOGIN, current);
@@ -46,8 +46,7 @@ const actions = {
     } else {
       throw new Error(response.message);
     }
-  } ,
-
+  }
 };
 
 const getters = {};
