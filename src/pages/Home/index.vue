@@ -277,6 +277,7 @@
 <script>
 import Swiper from "swiper";
 import "swiper/css/swiper.css";
+import {RECEIVE_SELECTGOOD} from '../../store/mutation-type'
 // 引入 better-scroll
 import BScroll from "better-scroll";
 import { mapState } from "vuex";
@@ -321,17 +322,18 @@ export default {
       this.$router.replace(path)
     },
     goDetail(path, homegood) {
-     window.console.log("sss", homegood);
-      let id = JSON.stringify(homegood);
-      // map返回新数组  .join('&') 用 & 链接数组中的每一项变成字符串
-      const data = Object.keys(homegood)
-        .map(key => {
-          return `${key}=${homegood[key]}`;
-        })
-        .join("&");
-      //  '?id=xx&name=dd&password=ii'
-      //"{"url":"https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330","text":"地表强温 女式派克毛领鹅绒","price":"934","norms":"['s','m','x','xl','xxl']"}"
-      this.$router.push(path + `?${data}`);
+    //  window.console.log("sss", homegood);
+    //   let id = JSON.stringify(homegood);
+    //   // map返回新数组  .join('&') 用 & 链接数组中的每一项变成字符串
+    //   const data = Object.keys(homegood)
+    //     .map(key => {
+    //       return `${key}=${homegood[key]}`;
+    //     })
+    //     .join("&");
+    //   //  '?id=xx&name=dd&password=ii'
+    //   //"{"url":"https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330","text":"地表强温 女式派克毛领鹅绒","price":"934","norms":"['s','m','x','xl','xxl']"}"
+      this.$router.push(path);
+      this.$store.commit(RECEIVE_SELECTGOOD,homegood)
     }
   }
 };

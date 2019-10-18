@@ -7,16 +7,16 @@
           <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img :src="obj.url" alt />
+                <img :src="goodObj.url" alt />
               </div>
               <div class="swiper-slide">
-                <img :src="obj.url" alt />
+                <img :src="goodObj.url" alt />
               </div>
               <div class="swiper-slide">
-                <img :src="obj.url" alt />
+                <img :src="goodObj.url" alt />
               </div>
               <div class="swiper-slide">
-                <img :src="obj.url" alt />
+                <img :src="goodObj.url" alt />
               </div>
             </div>
             <!-- Add Pagination -->
@@ -33,7 +33,7 @@
         </div>
         <div class="content">
           <div class="content-price">
-            <p class="content-p">￥{{obj.price}}</p>
+            <p class="content-p">￥{{goodObj.price}}</p>
             <div class="content-discount">
               <div class="content-a">
                 <div class="content-c">
@@ -47,7 +47,7 @@
               </div>
               <div class="content-b">
                 <p class="content-b1">
-                  {{obj.text}}
+                  {{goodObj.text}}
                   <span class="content-b3">99.7%</span>
                 </p>
                 <p class="content-b2">
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="center-footer">
-          <div class="center-footer-top" @click="goto(obj)">
+          <div class="center-footer-top" @click="goto()">
             <span class="center-footer-text">请选择规格数量</span>
             <span class="iconfont center-footer-icon">&#xe65a;</span>
           </div>
@@ -97,10 +97,11 @@
 import Swiper from "swiper"
 import "swiper/css/swiper.css"
 import BScroll from "better-scroll"
+import { mapMutations, mapState } from 'vuex'
 export default {
   data(){
     return{
-      obj:{}
+      //obj:{}
     }
   },
   mounted() {
@@ -113,25 +114,31 @@ export default {
         el: ".swiper-pagination"
       }
     });
-   window.console.log(this, this.$route.query);
-    var obj = this.$route.query;
-    obj.norms = obj.norms
-      .replace("[", "")
-      .replace("]", "")
-      .split(",")
-      .map(item => item.replace(/\'/g, ""));
-   window.console.log("obj", obj);
-    this.obj = obj
+  //  window.console.log(this, this.$route.query);
+  //   var obj = this.$route.query;
+  //   obj.norms = obj.norms
+  //     .replace("[", "")
+  //     .replace("]", "")
+  //     .split(",")
+  //     .map(item => item.replace(/\'/g, ""));
+  //  window.console.log("obj", obj);
+  //   this.obj = obj
+      
   },
   methods: {
     goto(obj) {
-      let data = Object.keys(obj).map(key => {
-        return `${key}=${obj[key]}`
-      }).join('&')
-      console.log(data);
-      this.$router.push(`/purchase?${data}`);
-      // console.log(JSON.stringify(obj));
+      // let data = Object.keys(obj).map(key => {
+      //   return `${key}=${obj[key]}`
+      // }).join('&')
+      // console.log(data);
+      // this.$router.push(`/purchase?${data}`);
+      // // console.log(JSON.stringify(obj));
     }
+  },
+  computed: {
+    ...mapState({
+        goodObj :state=>state.shopCar.selectGood
+      })
   }
 };
 </script>
