@@ -1,5 +1,7 @@
 //引入koa
 let Koa = require('koa')
+// 可以接受请求体
+const bodyParser = require('koa-bodyparser');
 //引入koa-router
 let KoaRouter = require('koa-router')
 //实例化koa
@@ -9,6 +11,9 @@ let koaRouter = new KoaRouter()
 //引入datas数据
 let datas= require('./datas/data.json')
 // 定义接口返回数据
+
+koa.use(bodyParser());
+
 //首页分类的接口
 koaRouter.get('/homelist', (ctx, next) => {
   if(ctx.query.id === 'homelist'){
