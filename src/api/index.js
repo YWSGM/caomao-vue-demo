@@ -9,11 +9,11 @@ export const reqSearchlist = id => ajax.get(BAES + `/search?id=${id}`);
 //获取分类页分类
 export const reqClassfiy = id => ajax.get(BAES + `/classify?id=${id}`);
 //获取商品
-export const reqGoods = (id)=>ajax.get(BAES+`/goods?id=${id}`)
-
+export const reqGoods = id => ajax.get(BAES + `/goods?id=${id}`);
 
 // 获取搜索默认列表
-export const reqHomeSearchList = ()=> ajax.get('http://m.you.163.com/xhr/search/init.json')
+export const reqHomeSearchList = () =>
+  ajax.get("http://m.you.163.com/xhr/search/init.json");
 
 export const loginWithPassword = (phone, password) => {
   const isValidPhone = /^1\d{10}$/.test(phone);
@@ -22,8 +22,11 @@ export const loginWithPassword = (phone, password) => {
     throw new Error("账号或密码格式不正确");
   }
   //`${BAES}/loginWithPassword`
-//   return ajax.get(BAES + `/homelist?id=homelist`, {
-//     data: { phone, password }
-//   });
-  return ajax.post(BAES + `/loginWithPassword`);
+  //   return ajax.get(BAES + `/homelist?id=homelist`, {
+  //     data: { phone, password }
+  //   });
+  return ajax.post(BAES + `/loginWithPassword`, {
+    headers: { "Content-Type": "application/json" },
+    data: { phone, password }
+  });
 };

@@ -33,6 +33,7 @@ export default {
   font-style normal
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+
 .header
   width 350px
   height 38px

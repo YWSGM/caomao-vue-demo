@@ -2,7 +2,8 @@
   <section class="home">
     <!--首页头部-->
     <Header />
-    <div class="header-list">
+    <List />
+    <!-- <div class="header-list" >
       <div class="content-wrap">
         <div class="list-content">
           <div class="content1">
@@ -18,7 +19,9 @@
           </div>
         </div>
       </div>
-    </div>
+
+     
+    </div> -->
     <div class="firstView">
       <div class="content">
         <div class="swiper-container">
@@ -377,12 +380,12 @@ export default {
   mounted() {
     // 开始滑动
     /* eslint-disable */
-    let scroll = new BScroll(".firstView");
-    let scroll1 = new BScroll(".list-content", {
-      scrollX: true,
-      scrollY: false
-    });
-    console.log(scroll1);
+    let scroll = new BScroll('.firstView')
+    // let scroll1 = new BScroll('.list-content', {
+    //   scrollX:true,
+    //   scrollY:false,
+    // })
+    // console.log(scroll1)
     // 创建Swiper对象，实现轮播
     /* eslint-disable */
     var mySwiper = new Swiper(".swiper-container", {
@@ -701,27 +704,27 @@ export default {
           // background-color green
           span
             color red
-.header-list
-  position fixed
-  top 38px
-  width 100%
-  // height 100px
-  background-color #fff
-  z-index 999
-  .list-content
-    width 380px
-    height 50px
-    // background-color green
-    .content1
-      width 800px
-      height 50px
-      display flex
-      // background-color red
-      span
-        flex 1
-        padding-left 20px
-        line-height 50px
-        color #666
-        &.active
-          color #b4282d
+// .header-list
+//   position fixed
+//   top 38px
+//   width 100%
+//   // height 100px
+//   background-color #fff
+//   z-index 999
+//   .list-content
+//     width 380px
+//     height 50px
+//     // background-color green
+//     .content1
+//       width 800px
+//       height 50px
+//       display flex
+//       // background-color red
+//       span
+//         flex 1
+//         padding-left 20px
+//         line-height 50px
+//         color #666
+//         &.active
+//           color #b4282d
 </style>
