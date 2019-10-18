@@ -116,17 +116,21 @@ export default {
         el: ".swiper-pagination"
       }
     });
-    console.log(this,  this.$route.query);
-   var obj =  this.$route.query
-   obj.norms = obj.norms.replace('[', '').replace(']', '').split(',').map(item => item.replace(/\'/g, ''))
-   console.log('obj', obj)
+    console.log(this, this.$route.query);
+    var obj = this.$route.query;
+    obj.norms = obj.norms
+      .replace("[", "")
+      .replace("]", "")
+      .split(",")
+      .map(item => item.replace(/\'/g, ""));
+    console.log("obj", obj);
   },
-  methods:{
-    goto(){
-      this.$router.replace('/detail/purchase')
+  methods: {
+    goto() {
+      this.$router.replace("/detail/purchase");
     }
   }
-}
+};
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 @font-face
@@ -318,7 +322,7 @@ export default {
             position absolute
             top 5px
             left 335px
-        .center-footer-center   
+        .center-footer-center
           position relative
           width 100%
           height 60px
@@ -354,13 +358,13 @@ export default {
     width 100%
     height 50px
     position fixed
-    bottom 0;
+    bottom 0
     z-index 999
     div
       display inline-block
       height 50px
       text-align center
-      line-height 50px   
+      line-height 50px
     .shopcardetailA
       width 20%
       background-color #fff
@@ -370,12 +374,5 @@ export default {
       background-color #fff
     .shopcardetailC
       width 40%
-      background-color #b4282d   
-
-
-
-
-
-
-            
+      background-color #b4282d
 </style>
