@@ -155,7 +155,7 @@ import BScroll from 'better-scroll'
 export default {
   data () {
     return {
-      good:{},
+      goodArr:[],
       isSelected:false,
       isFullSelected:false
     }
@@ -174,7 +174,6 @@ export default {
     },
     changeFullSelected(){
       this.isFullSelected = !this.isFullSelected
-      this.isSelected = !this.isSelected
     }
   }
 };
