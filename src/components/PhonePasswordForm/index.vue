@@ -26,9 +26,8 @@
 </template>
 
 <script>
-import { Button } from "mint-ui";
+import { Button, Toast } from "mint-ui";
 import { LOGIN_WITH_PASSWORD } from "../../store/mutation-type";
-
 export default {
   components: {
     Button
@@ -51,6 +50,9 @@ export default {
         this.$store.dispatch(LOGIN_WITH_PASSWORD, {
           phone: this.phone,
           password: this.password
+        }).catch((err)=>{
+          Toast('登录失败')
+          console.log(err)
         });
        window.console.log(this.$store);
       } else {

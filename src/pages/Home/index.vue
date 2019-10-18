@@ -48,14 +48,14 @@
         </div>
         <div class="swiper-slide1">
           <ul class="slide-top">
-            <li class="top-item" v-for="(homelist,index) in homelists" :key="index">
+            <li class="top-item" v-for="(homelist,index) in homelists" :key="index" @click="goto('/classify')">
               <img :src="homelist.url" alt />
               <span>{{homelist.name}}</span>
             </li>
            
           </ul>
           <ul class="slide-top">
-            <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index">
+            <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index" @click="goto('//toplist')">
               <img :src="homelisttwo.url" alt />
               <span>{{homelisttwo.name}}</span>
             </li>
@@ -317,6 +317,9 @@ export default {
     })
   },
   methods: {
+    goto(path){
+      this.$router.replace(path)
+    },
     goDetail(path, homegood) {
      window.console.log("sss", homegood);
       let id = JSON.stringify(homegood);

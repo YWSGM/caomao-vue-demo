@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { Button } from "mint-ui";
+import { Button, Toast } from "mint-ui";
 import Checkbox from "../Checkbox/index";
 import { LOGIN_WITH_CODE } from "../../store/mutation-type";
 export default {
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       phone: "18842606347",
-      code: "666666",
+      code: "666667",
       isAllowAgreements: true,
       hideError: true,
       countdown: 0
@@ -82,6 +82,9 @@ export default {
         this.$store.dispatch(LOGIN_WITH_CODE, {
           code: this.code,
           phone: this.phone
+        }).catch((err)=>{
+          Toast('登录失败')
+          console.log(err)
         });
       } else {
         window.console.error("you cant submit");
