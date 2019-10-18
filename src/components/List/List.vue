@@ -4,8 +4,8 @@
       <div class="content-wrap"  v-show="isShow">
         <div class="list-content">
           <div class="content1">
-            <span class="active">推荐使用</span>
-            <span>居家生活</span>
+            <span class="active" @click="goto('/home')">推荐使用</span>
+            <span  @click="goto('/toplist')">居家生活</span>
             <span>服饰鞋包</span>
             <span>美食酒水</span>
             <span>个护清洁</span>
@@ -32,54 +32,52 @@
         <div class="moretext">
           <ul class="moretext-list">
             <li class="moretext-item">
-              <div class="item active" >
+              <div class="item active"  @click="goto('/home')">
                   <p>推荐</p>
               </div>
              
             </li>
-             <li class="moretext-item">
+             <li class="moretext-item" @click="goto('/home')" >
                <div class="item" >
                   <p>居家生活</p>
               </div>
             </li>
-             <li class="moretext-item">
+             <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>服饰鞋包</p>
               </div>
             </li>
-            <li class="moretext-item">
+            <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>美食酒水</p>
               </div>
             </li>
-            <li class="moretext-item">
+            <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>个人清洁</p>
               </div>
             </li>
-            <li class="moretext-item">
+            <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>母婴亲子</p>
               </div>
             </li>
-              <li class="moretext-item">
+              <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>运动旅游</p>
               </div>
             </li>
-                <li class="moretext-item">
+                <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>数码家电</p>
               </div>
             </li>
-               <li class="moretext-item">
+               <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>全球特色</p>
               </div>
             </li>
             
-            
-           
           </ul>
           <div class="moretext-shade"></div>
         </div>
@@ -107,6 +105,9 @@ export default {
   methods:{
     toggleShow(){
       this.isShow=!this.isShow
+    },
+    goto(path){
+      this.$router.replace(path)
     }
   }
 }
@@ -166,26 +167,15 @@ export default {
   .moretext
     width 100%
     height 140px
-    // background-color red
+   
     .moretext-list
       width 380px
       height 140px
       display flex
       flex-wrap wrap
-      // background-color red
-     
       .moretext-item
         flex 1
         padding-left 10px
-        // width 10px
-        // height 40px
-        // background-color #f5f5f5
-        // flex 1
-        // line-height 40px
-        // border 1px solid #ededed
-        // border-radius 5px
-        // font-size 12px
-        // text-align center
         .item
           width 70px
           height 28px

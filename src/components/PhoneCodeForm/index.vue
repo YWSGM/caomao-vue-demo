@@ -43,6 +43,7 @@
 <script>
 import { Button } from "mint-ui";
 import Checkbox from "../Checkbox/index";
+import { LOGIN_WITH_CODE } from "../../store/mutation-type";
 export default {
   components: {
     Button,
@@ -56,8 +57,8 @@ export default {
   },
   data() {
     return {
-      phone: "1884260347",
-      code: "44444",
+      phone: "18842606347",
+      code: "666666",
       isAllowAgreements: true,
       hideError: true,
       countdown: 0
@@ -78,24 +79,27 @@ export default {
       this.hideError = false;
       if (!this.error && this.isAllowAgreements) {
         window.console.log("you can submit");
+        this.$store.dispatch(LOGIN_WITH_CODE, {
+          code: this.code,
+          phone: this.phone
+        });
       } else {
         window.console.error("you cant submit");
       }
     },
     checkCurrent() {
-      const current = this.$store.getters.state.Current;
-      if (current) {
-        this.$router.replace("/personal");
+      if (this.current) {
+        this.$router.replace("/home");
       }
     }
   },
   mounted() {
     this.checkCurrent();
   },
-  updated() {
-    this.checkCurrent();
-  },
   computed: {
+    current() {
+      return this.$store.state.Current.current;
+    },
     phoneError() {
       if (!this.phone || !/^1\d{10}$/.test(this.phone)) {
         return "手机号格式不对";
@@ -115,6 +119,9 @@ export default {
     }
   },
   watch: {
+    current() {
+      this.checkCurrent();
+    },
     countdown() {
       if (this.countdown > 0) {
         setTimeout(() => {

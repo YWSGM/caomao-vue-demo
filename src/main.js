@@ -21,7 +21,6 @@ import Control from'./components/Control'
 //引入purchase
 // import Purchase from './components/Purchase/Purchase.vue'
 Vue.config.productionTip = false
-
 // 注册成全局组件(公共组件)
 Vue.component(Header.name, Header)
 // 注册成全局组件(公共组件)
