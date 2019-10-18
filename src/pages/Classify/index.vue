@@ -1,10 +1,5 @@
 <template>
   <div class="conatiner">
-    <!-- <header class="classify-header">
-      <div class="search">
-        <input type="text" placeholder="请输入搜索商品" />
-      </div>
-    </header> -->
     <Header />
     <div class="List">
       <div class="listLeft">
@@ -117,5 +112,5 @@ export default {
           width 100%
           padding 2px
           &.active
-            border-left red solid 4px
+            border-left #b4282d solid 4px
 </style>

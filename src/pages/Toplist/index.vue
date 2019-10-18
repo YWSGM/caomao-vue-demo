@@ -130,4 +130,6 @@ export default {
               height 150px
             p
               color #666
+            span 
+              color #b4282d
 </style>
