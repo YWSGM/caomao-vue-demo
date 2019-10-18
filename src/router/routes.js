@@ -12,6 +12,7 @@ import HeaderSearch from '../pages/HeardSearch'
 import Purchase from '../pages/Purchase/Purchase.vue'
 import Content from '../pages/Search/content'
 import TopList from '../pages/Toplist'
+import Seadetail from '../pages/Seadetail/Seadetail.vue'
 
 export default [{
 		path: '/home',
@@ -50,6 +51,10 @@ export default [{
 				component:Content
 			}
 		]
+	},
+	{
+		path: '/seadetail',
+		component: Seadetail
 	},
 	{
 		path: '/classify',
