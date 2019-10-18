@@ -15,6 +15,7 @@ const state = {
 const mutations = {
   [LOGIN](state, current) {
     state.current = current;
+    window.localStorage.setItem('token', current.token)
     console.log("login current", current);
   }
 };

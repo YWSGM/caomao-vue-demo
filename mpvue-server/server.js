@@ -57,8 +57,8 @@ koaRouter.post("/loginWithPassword", async (ctx, next) => {
   if (typeof data.phone === "string" && typeof data.password === "string") {
     const user = datas.users.find(user => user.phone === data.phone);
     if (user && user.password === data.password) {
-      const token = "this is token";
-      result = { code: 0, user, token };
+      user.token = "this is token";
+      result = { code: 0, user };
     }
   }
   if (!result) {
@@ -72,8 +72,8 @@ koaRouter.post("/loginWithEmail", async (ctx, next) => {
   if (typeof data.email === "string" && typeof data.password === "string") {
     const user = datas.users.find(user => user.email === data.email);
     if (user && user.password === data.password) {
-      const token = "this is token";
-      result = { code: 0, user, token };
+      user.token = "this is token";
+      result = { code: 0, user };
     }
   }
   if (!result) {
@@ -88,8 +88,8 @@ koaRouter.post("/loginWithCode", async (ctx, next) => {
     if (data.code === "666666") {
       const user = datas.users.find(user => user.phone === data.phone);
       if (user) {
-        const token = "this is token";
-        result = { code: 0, user, token };
+        user.token = "this is token";
+        result = { code: 0, user };
       }
     } else {
       result = { code: 1, message: "code wrong" };
