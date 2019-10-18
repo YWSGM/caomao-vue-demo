@@ -21,29 +21,29 @@
           <li @click="goto('/classify/new')" :class="{active:$route.path==='/classify/new'}">
             <span :class="{active:$route.path==='/classify/new'}">新品专区</span>
           </li>
-          <li>
-            <span>居家生活</span>
+          <li @click="goto('/classify/living')" :class="{active:$route.path==='/classify/living'}">
+            <span :class="{active:$route.path==='/classify/living'}">居家生活</span>
           </li>
-          <li>
-            <span>服饰鞋包</span>
+          <li @click="goto('/classify/costume')" :class="{active:$route.path==='/classify/costume'}">
+            <span :class="{active:$route.path==='/classify/costume'}">服饰鞋包</span>
           </li>
-          <li>
-            <span>美食酒水</span>
+          <li @click="goto('/classify/food')" :class="{active:$route.path==='/classify/food'}">
+            <span :class="{active:$route.path==='/classify/food'}">美食酒水</span>
           </li>
-          <li>
-            <span>个人清护</span>
+          <li @click="goto('/classify/person')" :class="{active:$route.path==='/classify/person'}">
+            <span :class="{active:$route.path==='/classify/person'}">个人清护</span>
           </li>
-          <li>
-            <span>母婴亲子</span>
+          <li @click="goto('/classify/son')" :class="{active:$route.path==='/classify/son'}">
+            <span :class="{active:$route.path==='/classify/son'}">母婴亲子</span>
           </li>
-          <li>
-            <span>运动旅行</span>
+          <li @click="goto('/classify/run')" :class="{active:$route.path==='/classify/run'}">
+            <span :class="{active:$route.path==='/classify/run'}">运动旅行</span>
           </li>
-          <li>
-            <span>数码家电</span>
+          <li @click="goto('/classify/appliances')" :class="{active:$route.path==='/classify/appliances'}">
+            <span :class="{active:$route.path==='/classify/appliances'}">数码家电</span>
           </li>
-          <li>
-            <span>数码家电</span>
+          <li @click="goto('/classify/summer')" :class="{active:$route.path==='/classify/summer'}">
+            <span :class="{active:$route.path==='/classify/summer'}">反季服饰</span>
           </li>
         </ul>
       </div>

@@ -10,6 +10,8 @@ export const reqSearchlist = id => ajax.get(BAES + `/search?id=${id}`);
 export const reqClassfiy = id => ajax.get(BAES + `/classify?id=${id}`);
 //获取商品
 export const reqGoods = id => ajax.get(BAES + `/goods?id=${id}`);
+//获取商品
+export const reqGood = id => ajax.get(BAES + `/good?id=${id}`);
 
 // 获取搜索默认列表
 export const reqHomeSearchList = () =>
@@ -21,12 +23,30 @@ export const loginWithPassword = (phone, password) => {
   if (!isValidPhone || !isValidPassword) {
     throw new Error("账号或密码格式不正确");
   }
-  //`${BAES}/loginWithPassword`
-  //   return ajax.get(BAES + `/homelist?id=homelist`, {
-  //     data: { phone, password }
-  //   });
-  return ajax.post(BAES + `/loginWithPassword`, {
-    headers: { "Content-Type": "application/json" },
+  return ajax.post(`${BAES}/loginWithPassword`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     data: { phone, password }
+  });
+};
+export const loginWithEmail = (email, password) => {
+  const isValidPhone = /^\w{1,32}@163.com$/.test(email);
+  const isValidPassword = /^\w{8,16}$/.test(password);
+  if (!isValidPhone || !isValidPassword) {
+    throw new Error("邮箱或密码格式不正确");
+  }
+  return ajax.post(`${BAES}/loginWithEmail`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: { email, password }
+  });
+};
+export const loginWithCode = (phone, code) => {
+  const isValidPhone = /^1\d{10}$/.test(phone);
+  const isValidCode = /^\d{6}$/.test(code);
+  if (!isValidPhone || !isValidCode) {
+    throw new Error("邮箱或验证码格式不正确");
+  }
+  return ajax.post(`${BAES}/loginWithCode`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: { phone, code }
   });
 };

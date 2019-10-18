@@ -4,8 +4,9 @@ import {reqHomelist,reqHomelisttwo,reqGoods} from '../../api'
 const state = {
   homelist:[],
   homelisttwo:[],
-  homegood:[]
+  homegood:[],
 }
+
 const mutations = {
   [RECEIVE_HOMELIST](state,homelist){
     state.homelist =homelist

@@ -5,6 +5,7 @@
         <div class="list-content">
           <div class="content1">
             <span class="active">推荐使用</span>
+            <span class="active" @click="goto('/home')">推荐使用</span>
             <span  @click="goto('/toplist')">居家生活</span>
             <span>服饰鞋包</span>
             <span>美食酒水</span>
@@ -32,54 +33,52 @@
         <div class="moretext">
           <ul class="moretext-list">
             <li class="moretext-item">
-              <div class="item active" >
+              <div class="item active"  @click="goto('/home')">
                   <p>推荐</p>
               </div>
              
             </li>
-             <li class="moretext-item">
+             <li class="moretext-item" @click="goto('/home')" >
                <div class="item" >
                   <p>居家生活</p>
               </div>
             </li>
-             <li class="moretext-item">
+             <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>服饰鞋包</p>
               </div>
             </li>
-            <li class="moretext-item">
+            <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>美食酒水</p>
               </div>
             </li>
-            <li class="moretext-item">
+            <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>个人清洁</p>
               </div>
             </li>
-            <li class="moretext-item">
+            <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>母婴亲子</p>
               </div>
             </li>
-              <li class="moretext-item">
+              <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>运动旅游</p>
               </div>
             </li>
-                <li class="moretext-item">
+                <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>数码家电</p>
               </div>
             </li>
-               <li class="moretext-item">
+               <li class="moretext-item"  @click="goto('/home')">
               <div class="item" >
                   <p>全球特色</p>
               </div>
             </li>
             
-            
-           
           </ul>
           <div class="moretext-shade"></div>
         </div>

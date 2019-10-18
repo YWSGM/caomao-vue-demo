@@ -8,7 +8,7 @@
       <div class="content">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" >
+            <div class="swiper-slide">
               <img src="./images/e.jpg" alt />
             </div>
             <div class="swiper-slide">
@@ -55,7 +55,7 @@
            
           </ul>
           <ul class="slide-top">
-            <li class="top-item"  v-for="(homelisttwo,index) in homelisttwos" :key="index">
+            <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index">
               <img :src="homelisttwo.url" alt />
               <span>{{homelisttwo.name}}</span>
             </li>
@@ -252,74 +252,32 @@
         <div class="ctn">
           <div class="slide-list">
             <ul>
-              <li v-for="(homegood,index) in homegoods" :key="index">
+              <li
+                v-for="(homegood,index) in homegoods"
+                :key="index"
+                @click="goDetail('/detail',homegood)"
+              >
                 <div class="list-books">
                   <img :src="homegood.url" alt />
                 </div>
-                <p >
+                <p>
                   {{homegood.text}}
                   <span>￥{{homegood.price}}</span>
                 </p>
               </li>
-              <!-- <li>
-                <div class="list-books">
-                  <img src="./images/item-16.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-17.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-18.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-19.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-21.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li> -->
             </ul>
           </div>
         </div>
       </div>
     </div>
-
     <Footer />
   </section>
 </template>
 <script>
-import Swiper from 'swiper'
-import 'swiper/css/swiper.css'
+import Swiper from "swiper";
+import "swiper/css/swiper.css";
 // 引入 better-scroll
-import BScroll from 'better-scroll'
+import BScroll from "better-scroll";
 import { mapState } from "vuex";
 export default {
   methods: {
@@ -335,45 +293,57 @@ export default {
       autoplay: true,
       // 如果需要分页器
       pagination: {
-        el: '.swiper-pagination'
+        el: ".swiper-pagination"
       }
-    })
-    var mySwiper = new Swiper('.swiper-content-profile', {
+    });
+    var mySwiper = new Swiper(".swiper-content-profile", {
       loop: true, //循环模式选项
       autoplay: true,
       // 如果需要分页器
       pagination: {
         // el: '.swiper-pagination'
       }
-    })
-    this.$store.dispatch('getHomelist')
-    this.$store.dispatch('getHomelisttwo')
-    this.$store.dispatch('getHomegood')
+    });
+    this.$store.dispatch("getHomelist");
+    this.$store.dispatch("getHomelisttwo");
+    this.$store.dispatch("getHomegood");
   },
   computed: {
     ...mapState({
-      homelists:state=>state.Home.homelist,
-      homelisttwos:state=>state.Home.homelisttwo,
-      homegoods:state=>state.Home.homegood
+      homelists: state => state.Home.homelist,
+      homelisttwos: state => state.Home.homelisttwo,
+      homegoods: state => state.Home.homegood
     })
+  },
+  methods: {
+    goDetail(path, homegood) {
+      console.log("sss", homegood);
+      let id = JSON.stringify(homegood);
+      // map返回新数组  .join('&') 用 & 链接数组中的每一项变成字符串
+      const data = Object.keys(homegood)
+        .map(key => {
+          return `${key}=${homegood[key]}`;
+        })
+        .join("&");
+      //  '?id=xx&name=dd&password=ii'
+      //"{"url":"https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330","text":"地表强温 女式派克毛领鹅绒","price":"934","norms":"['s','m','x','xl','xxl']"}"
+      this.$router.push(path + `?${data}`);
+    }
   }
-}
+};
 </script>
 <style lang="stylus" scoped>
 .firstView
   height 600px
- 
 .home
   width 100%
   height 100%
   position fixed
   top 80px
-  
   .swiper-container
     // padding-top 1px
     width 100%
     height 200px
-    
     img
       width 100%
       height 100%

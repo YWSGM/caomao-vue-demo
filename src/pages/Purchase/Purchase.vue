@@ -2,49 +2,55 @@
   <div class="box">
     <div class="head1">
       <div class="imgs">
-        <img src="./6.png" alt="">
+        <img :src="good.url" alt="">
       </div>
       <div class="text">
-        <p class="p1">价格：499</p>
-        <p class="p2">已选择：请选择规格</p>
-      </div>
-    </div>
-    <div class="head2">
-      颜色
-    </div>
-    <div class="head3">
-      <div>
-        <span>孔雀绿</span>
-      </div>
-      <div>
-        <span>孔雀绿</span>
-      </div>
-      <div>
-        <span>孔雀绿</span>
-      </div>
-      <div>
-        <span>孔雀绿</span>
+        <p class="p1">价格：{{good.price}}</p>
+        <p class="p2">已选择：{{arr[highLightIndex]}}  型号</p>
       </div>
     </div>
     <div class="head4">
       尺寸
     </div>
     <div class="head5">
-      <div>
-        <span>1.5m（5英尺）床</span>
-      </div>
-      <div>
-        <span>1.5m（5英尺）床</span>
+      <div v-for="(item,index) in arr" :key="index">
+        <span :class="{active:index===highLightIndex}" @click="changeHighLightIndex(index)">{{item}}</span>
       </div>
     </div>
     <div class="head6">
       数量
     </div>
+    <div class="count">
+      <Control/>
+    </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'Purchase'
+  data () {
+    return {
+      good:{} ,
+      arr:[],
+      isSelected:false,
+      highLightIndex:0,
+    }
+  },
+  // name: 'Purchase'
+  mounted () {
+    console.log(this.$route.query);
+    this.good = this.$route.query
+    this.arr = this.$route.query.norms.split(',')
+    console.log(this.arr);
+  },
+  methods: {
+    changeHighLightIndex(index){
+      if(typeof index !== 'number'){
+        throw new TypeError('index error')
+      }
+      console.log('index', index);
+      this.highLightIndex = index;
+    }
+  }
 };
 </script>
 <style  lang="stylus" rel="stylesheet/stylus">
@@ -95,12 +101,13 @@ export default {
     // background-color green  
     line-height 30px
     padding-left 10px
+    margin-top 15px
   .head5
     width 100%
     height 40px
     // background-color blue
     div
-      width 50%
+      width 20%
       float left
       height 40px
       line-height 40px
@@ -108,10 +115,14 @@ export default {
       span  
         padding 7px
         border 1px #000 solid
+        &.active
+          background-color orange 
   .head6
     width 100%
     height 30px
     line-height 30px
     // background-color orange  
-    padding-left 10px  
+    padding-left 10px 
+  .count
+    margin-left 14px
 </style>
