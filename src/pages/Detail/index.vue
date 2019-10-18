@@ -2,24 +2,13 @@
   <div class="box">
     <Header />
     <div class="box1">
+      <div class="back" @click.stop="goback">←</div>
       <div class="detail">
         <div class="photo">
           <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="./images/1.png" alt />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/2.jpg" alt />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/3.png" alt />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/4.png" alt />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/5.png" alt />
+                <img :src="obj.url" alt />
               </div>
             </div>
             <!-- Add Pagination -->
@@ -36,7 +25,7 @@
         </div>
         <div class="content">
           <div class="content-price">
-            <p class="content-p">￥449</p>
+            <p class="content-p">￥{{obj.price}}</p>
             <div class="content-discount">
               <div class="content-a">
                 <div class="content-c">
@@ -51,7 +40,7 @@
               <div class="content-b">
                 <div class="iconfont btn1">&#xe65a;</div>
                 <p class="content-b1">
-                  60s臻密绒磨毛四件套
+                  {{obj.text}}
                   <span class="content-b3">99.7%</span>
                 </p>
                 <p class="content-b2">
@@ -106,6 +95,11 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 import BScroll from "better-scroll";
 export default {
+  data(){
+    return{
+      obj:{}
+    }
+  },
   mounted() {
     let scroll = new BScroll(".box1");
     //创建swiper对象，实现轮播效果
@@ -116,17 +110,26 @@ export default {
         el: ".swiper-pagination"
       }
     });
-    console.log(this,  this.$route.query);
-   var obj =  this.$route.query
-   obj.norms = obj.norms.replace('[', '').replace(']', '').split(',').map(item => item.replace(/\'/g, ''))
-   console.log('obj', obj)
+    console.log(this, this.$route.query);
+    var obj = this.$route.query;
+    obj.norms = obj.norms
+      .replace("[", "")
+      .replace("]", "")
+      .split(",")
+      .map(item => item.replace(/\'/g, ""));
+    console.log("obj", obj);
+    this.obj = obj
   },
-  methods:{
-    goto(){
-      this.$router.replace('/detail/purchase')
+  methods: {
+    goto() {
+      this.$router.replace("/detail/purchase");
+    },
+    goback(){
+      console.log(11);
+      this.$router.back()
     }
   }
-}
+};
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
 @font-face
@@ -145,6 +148,16 @@ export default {
   position relative
   .box1
     height 600px
+    .back
+      width 25px
+      height 25px
+      text-align center
+      line-height 25px
+      background-color #ccc
+      position absolute
+      left 10px
+      top 60px
+      border-radius 50%
     .detail
       width 100%
       height 800px
@@ -224,7 +237,9 @@ export default {
                 margin-top 5px
                 margin-bottom 10px
                 .content-b3
-                  margin-left 110px
+                  position absolute
+                  right 20px
+                  top 10px
                   color #b4282d
                   font-weight 700
               .content-b2
@@ -318,7 +333,7 @@ export default {
             position absolute
             top 5px
             left 335px
-        .center-footer-center   
+        .center-footer-center
           position relative
           width 100%
           height 60px
@@ -354,13 +369,13 @@ export default {
     width 100%
     height 50px
     position fixed
-    bottom 0;
+    bottom 0
     z-index 999
     div
       display inline-block
       height 50px
       text-align center
-      line-height 50px   
+      line-height 50px
     .shopcardetailA
       width 20%
       background-color #fff
@@ -370,12 +385,5 @@ export default {
       background-color #fff
     .shopcardetailC
       width 40%
-      background-color #b4282d   
-
-
-
-
-
-
-            
+      background-color #b4282d
 </style>

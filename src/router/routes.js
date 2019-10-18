@@ -43,9 +43,41 @@ export default [{
 				component: Season
 			},
 			{
+				path: '/classify/living',
+				component: Season
+			},
+			{
+				path: '/classify/costume',
+				component: Faddish
+			},
+			{
+				path: '/classify/food',
+				component: Season
+			},
+			{
+				path: '/classify/person',
+				component: Faddish
+			},
+			{
+				path: '/classify/son',
+				component: Faddish
+			},
+			{
+				path: '/classify/run',
+				component: Faddish
+			},
+			{
+				path: '/classify/appliances',
+				component: Faddish
+			},
+			{
+				path: '/classify/summer',
+				component: Faddish
+			},
+			{
 				path: '/classify',
 				redirect: '/classify/recommend'
-			}
+			},
 		]
 	},
 	{
