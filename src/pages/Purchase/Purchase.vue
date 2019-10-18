@@ -42,8 +42,8 @@ http://localhost:8080/purchase?url=https%3A%2F%2Fyanxuan-item.nosdn.127.net%2F54
 export default {
   data () {
     return {
-      good:{} ,
-      arr:[],
+      // good:{} ,
+      // arr:[],
       isSelected:false,
       highLightIndex:0,
     }

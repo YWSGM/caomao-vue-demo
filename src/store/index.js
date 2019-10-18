@@ -18,6 +18,7 @@ import Home from "./modules/home";
 import classify from "./modules/classify";
 import Current from "./modules/Current";
 import toplist from "./modules/toplist";
+import shopCar from "./modules/shopCar";
 export default new Vuex.Store({
   state,
   getters,
@@ -28,6 +29,7 @@ export default new Vuex.Store({
     Home,
     classify,
     Current,
-    toplist
+    toplist,
+    shopCar
   }
 });

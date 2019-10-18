@@ -44,66 +44,7 @@
               <Control/>
             </div>
           </li>
-          <li class="shopItem">
-            <div class="circle"></div>
-            <img src="./imgs/01.jpg" alt />
-            <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
-            </div>
-            <div class="CartControl"></div>
-          </li>
-          <li class="shopItem">
-            <div class="circle"></div>
-            <img src="./imgs/01.jpg" alt />
-            <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
-            </div>
-            <div class="CartControl"></div>
-          </li>
-          <li class="shopItem">
-            <div class="circle"></div>
-            <img src="./imgs/01.jpg" alt />
-            <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
-            </div>
-            <div class="CartControl"></div>
-          </li>
-           <li class="shopItem">
-            <div class="circle"></div>
-            <img src="./imgs/01.jpg" alt />
-            <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
-            </div>
-            <div class="CartControl"></div>
-          </li>
-           <li class="shopItem">
-            <div class="circle"></div>
-            <img src="./imgs/01.jpg" alt />
-            <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
-            </div>
-            <div class="CartControl"></div>
-          </li>
-           <li class="shopItem">
-            <div class="circle"></div>
-            <img src="./imgs/01.jpg" alt />
-            <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
-            </div>
-            <div class="CartControl"></div>
-          </li>
+        
         </ul>
       </div>
       </div>
@@ -273,6 +214,8 @@ export default {
           height 100%
           border 1px solid #eeeeee
           box-sizing border-box
+          margin 0
+          padding 0
           .shopItem
             width 100%
             height 100px
