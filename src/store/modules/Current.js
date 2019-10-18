@@ -6,6 +6,7 @@ const state = {
 };
 
 export const LOGIN = "LOGIN";
+export const LOGIN_WITH_PASSWORD = 'LOGIN_WITH_PASSWORD'
 
 const mutations = {
   [LOGIN](state, current) {
@@ -14,7 +15,7 @@ const mutations = {
 };
 
 const actions = {
-  async loginWithPassword({ commit }, { phone, password }) {
+  async [LOGIN_WITH_PASSWORD]({ commit }, { phone, password }) {
     const response = await loginWithPassword(phone, password);
     const current = response.user;
     commit(LOGIN, current);
