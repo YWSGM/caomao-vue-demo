@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div class="header-log">
+    <div class="header-log" @click="goto('/home')">
       <img src="./images/logo.png" />
     </div>
     <div class="header-content" @click="goto('/homesearch')">
@@ -8,7 +8,7 @@
       <p>搜索商品, 共23255款好物</p>
     </div>
     <div class="header-btn" @click="goto('/login')">
-      <p>登录</p>
+      <p @click="goto('/login')">登录</p>
     </div>
   </header>
 </template>
