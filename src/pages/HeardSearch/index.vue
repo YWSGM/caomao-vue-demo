@@ -34,11 +34,17 @@
   </div>
 </template>
 <script>
+import {reqHomeSearchList} from '../../api'
 export default {
 	methods: {
 		goto(){
 			this.$router.replace('/home')
 		}
+		
+	},
+	async	mounted () {
+		let result = await reqHomeSearchList()
+		console.log(result);
 	}
 };
 </script>
