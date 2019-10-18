@@ -52,52 +52,14 @@
               <img :src="homelist.url" alt />
               <span>{{homelist.name}}</span>
             </li>
-<<<<<<< HEAD
            
-=======
-            <!-- <li class="top-item">
-              <img src="./images/item-3.png" alt />
-              <span>居家生活</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-4.png" alt />
-              <span>服饰鞋包</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-4.png" alt />
-              <span>美食酒水</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-5.png" alt />
-              <span>个人清洁</span>
-            </li>-->
->>>>>>> 6728068d8366f944d5e96462fb8a67cfbac0da4c
           </ul>
           <ul class="slide-top">
             <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index">
               <img :src="homelisttwo.url" alt />
               <span>{{homelisttwo.name}}</span>
             </li>
-<<<<<<< HEAD
         
-=======
-            <!-- <li class="top-item">
-              <img src="./images/item-5.png" alt />
-              <span>居家生活</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-2.png" alt />
-              <span>服饰鞋包</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-1.png" alt />
-              <span>美食酒水</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-6.gif" alt />
-              <span>个人清洁</span>
-            </li>-->
->>>>>>> 6728068d8366f944d5e96462fb8a67cfbac0da4c
           </ul>
         </div>
         <div class="bgImage">
@@ -325,19 +287,8 @@ export default {
     // 开始滑动
     /* eslint-disable */
     let scroll = new BScroll('.firstView')
-<<<<<<< HEAD
     
     var mySwiper = new Swiper('.swiper-container', {
-=======
-    // let scroll1 = new BScroll('.list-content', {
-    //   scrollX:true,
-    //   scrollY:false,
-    // })
-    // console.log(scroll1)
-    // 创建Swiper对象，实现轮播
-    /* eslint-disable */
-    var mySwiper = new Swiper(".swiper-container", {
->>>>>>> 6728068d8366f944d5e96462fb8a67cfbac0da4c
       loop: true, //循环模式选项
       autoplay: true,
       // 如果需要分页器
