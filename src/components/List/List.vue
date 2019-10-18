@@ -4,7 +4,6 @@
       <div class="content-wrap"  v-show="isShow">
         <div class="list-content">
           <div class="content1">
-            <span class="active">推荐使用</span>
             <span class="active" @click="goto('/home')">推荐使用</span>
             <span  @click="goto('/toplist')">居家生活</span>
             <span  @click="goto('/classify/season')">服饰鞋包</span>
