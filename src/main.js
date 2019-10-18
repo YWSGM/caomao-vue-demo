@@ -29,8 +29,6 @@ Vue.component(Footer.name, Footer)
 Vue.component(List.name, List)
 // 注册成全局组件(公共组件)
 // Vue.component(Purchase.name, Purchase)
-// Vue.component(Purchase.name, Purchase)
-
 new Vue({
 	el: '#app',
 	components: {
