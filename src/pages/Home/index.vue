@@ -3,25 +3,7 @@
     <!--首页头部-->
     <Header />
     <List />
-    <!-- <div class="header-list" >
-      <div class="content-wrap">
-        <div class="list-content">
-          <div class="content1">
-            <span class="active">推荐使用</span>
-            <span>居家生活</span>
-            <span>服饰鞋包</span>
-            <span>美食酒水</span>
-            <span>个护清洁</span>
-            <span>母婴亲子</span>
-            <span>运行旅游</span>
-            <span>数码家电</span>
-            <span>全球特色</span>
-          </div>
-        </div>
-      </div>
-
-     
-    </div> -->
+    
     <div class="firstView">
       <div class="content">
         <div class="swiper-container">
@@ -70,44 +52,14 @@
               <img :src="homelist.url" alt />
               <span>{{homelist.name}}</span>
             </li>
-            <!-- <li class="top-item">
-              <img src="./images/item-3.png" alt />
-              <span>居家生活</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-4.png" alt />
-              <span>服饰鞋包</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-4.png" alt />
-              <span>美食酒水</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-5.png" alt />
-              <span>个人清洁</span>
-            </li> -->
+           
           </ul>
           <ul class="slide-top">
             <li class="top-item"  v-for="(homelisttwo,index) in homelisttwos" :key="index">
               <img :src="homelisttwo.url" alt />
               <span>{{homelisttwo.name}}</span>
             </li>
-            <!-- <li class="top-item">
-              <img src="./images/item-5.png" alt />
-              <span>居家生活</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-2.png" alt />
-              <span>服饰鞋包</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-1.png" alt />
-              <span>美食酒水</span>
-            </li>
-            <li class="top-item">
-              <img src="./images/item-6.gif" alt />
-              <span>个人清洁</span>
-            </li> -->
+        
           </ul>
         </div>
         <div class="bgImage">
@@ -377,13 +329,7 @@ export default {
     // 开始滑动
     /* eslint-disable */
     let scroll = new BScroll('.firstView')
-    // let scroll1 = new BScroll('.list-content', {
-    //   scrollX:true,
-    //   scrollY:false,
-    // })
-    // console.log(scroll1)
-    // 创建Swiper对象，实现轮播
-    /* eslint-disable */
+    
     var mySwiper = new Swiper('.swiper-container', {
       loop: true, //循环模式选项
       autoplay: true,
@@ -688,27 +634,5 @@ export default {
           // background-color green
           span
             color red
-// .header-list
-//   position fixed
-//   top 38px
-//   width 100%
-//   // height 100px
-//   background-color #fff
-//   z-index 999
-//   .list-content
-//     width 380px
-//     height 50px
-//     // background-color green
-//     .content1
-//       width 800px
-//       height 50px
-//       display flex
-//       // background-color red
-//       span
-//         flex 1
-//         padding-left 20px
-//         line-height 50px
-//         color #666
-//         &.active
-//           color #b4282d
+          color #b4282d
 </style>

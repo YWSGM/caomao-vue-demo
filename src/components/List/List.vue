@@ -5,7 +5,7 @@
         <div class="list-content">
           <div class="content1">
             <span class="active">推荐使用</span>
-            <span>居家生活</span>
+            <span  @click="goto('/toplist')">居家生活</span>
             <span>服饰鞋包</span>
             <span>美食酒水</span>
             <span>个护清洁</span>
@@ -107,6 +107,9 @@ export default {
   methods:{
     toggleShow(){
       this.isShow=!this.isShow
+    },
+    goto(path){
+      this.$router.replace(path)
     }
   }
 }
@@ -166,26 +169,15 @@ export default {
   .moretext
     width 100%
     height 140px
-    // background-color red
+   
     .moretext-list
       width 380px
       height 140px
       display flex
       flex-wrap wrap
-      // background-color red
-     
       .moretext-item
         flex 1
         padding-left 10px
-        // width 10px
-        // height 40px
-        // background-color #f5f5f5
-        // flex 1
-        // line-height 40px
-        // border 1px solid #ededed
-        // border-radius 5px
-        // font-size 12px
-        // text-align center
         .item
           width 70px
           height 28px
