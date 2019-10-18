@@ -28,7 +28,7 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(response => {
   return response.data
 }, error => {
-  console.log(error)
+ window.console.log(error)
  // 请求的错误---没有token
 //  if(!error.response){
 //   if(error.status===401){

@@ -1,11 +1,11 @@
 <template>
   <div class="conatiner">
-    <header class="classify-header">
+    <!-- <header class="classify-header">
       <div class="search">
         <input type="text" placeholder="请输入搜索商品" />
       </div>
-    </header>
-    <!-- <Header /> -->
+    </header> -->
+    <Header />
     <div class="List">
       <div class="listLeft">
         <ul>
@@ -99,9 +99,11 @@ export default {
   display flex
   flex-direction row
   .listLeft
+    
     width 80px
     top-border-1px(#ccc)
     ul
+      padding-top 40px
       li
         width 80px
         height 50px

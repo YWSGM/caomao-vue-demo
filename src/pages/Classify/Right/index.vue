@@ -40,11 +40,13 @@ export default {
   box-sizing border-box
 	
 	.swipeWrap
+    padding-top 40px
 		height 100px
 		img 
 			width 100%
 			height 100%
 	.shopWarp
+    padding-top 20px
 		.shopList
 			display flex
 			flex-wrap wrap

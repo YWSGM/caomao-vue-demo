@@ -113,14 +113,14 @@ export default {
         el: ".swiper-pagination"
       }
     });
-    console.log(this, this.$route.query);
+   window.console.log(this, this.$route.query);
     var obj = this.$route.query;
     obj.norms = obj.norms
       .replace("[", "")
       .replace("]", "")
       .split(",")
       .map(item => item.replace(/\'/g, ""));
-    console.log("obj", obj);
+   window.console.log("obj", obj);
     this.obj = obj
   },
   methods: {

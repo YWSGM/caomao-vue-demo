@@ -7,7 +7,8 @@ import {
   LOGIN_WITH_EMAIL,
   LOGIN_WITH_CODE,
   LOGIN_WITH_TOKEN,
-  LOGOUT
+  LOGOUT,
+  LOGOUT_ASYNC,
 } from "../mutation-type";
 
 const state = {
@@ -18,7 +19,12 @@ const mutations = {
   [LOGIN](state, current) {
     state.current = current;
     window.localStorage.setItem("token", current.token);
-    console.log("login current", current);
+   window.console.log("login current", current);
+  }  ,
+  [LOGOUT](state) {
+    state.current = null;
+    window.localStorage.removeItem("token");
+   window.console.log("LOGOUT current");
   }
 };
 
@@ -59,10 +65,11 @@ const actions = {
       throw new Error(response.message);
     }
   },
-  async [LOGOUT]({ commit }, token) {
+  async [LOGOUT_ASYNC]({ commit }, token) {
     const response = await logout(token);
+   window.console.log(111111, token, response)
     if (response.code === 0) {
-      commit(LOGIN, null);
+      commit(LOGOUT);
     } else {
       throw new Error(response.message);
     }

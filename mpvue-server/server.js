@@ -103,14 +103,14 @@ koaRouter.post("/loginWithCode", async (ctx, next) => {
 koaRouter.post("/loginAuto", async (ctx, next) => {
   const data = ctx.request.body.data;
   let result;
-  if(typeof data.token==='string'){
-    if(data.token === "this is token"){
+  if (typeof data.token === "string") {
+    if (data.token === "this is token") {
       const user = datas.users.find(user => user.id === 1);
       if (user) {
-        user.token = data.token
+        user.token = data.token;
         result = { code: 0, user };
       }
-    }else{
+    } else {
       result = { code: 1, message: "token无效或过期" };
     }
   }
@@ -121,9 +121,8 @@ koaRouter.post("/loginAuto", async (ctx, next) => {
 });
 
 koaRouter.get("/logout", async (ctx, next) => {
-  // const data = ctx.request.body.data;
-  // let result;
-  ctx.body = ctx.request.query
+  //ctx.request.query {token: "this is token"}
+  ctx.body = { code: 0 };
 });
 
 //声明使用所有的路由及路由的相关的所有的方法

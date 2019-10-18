@@ -5,115 +5,101 @@
     <!--列表-->
     <List />
     <div class="firstView-content">
-      <div class="content">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="./images/e.jpg" alt />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/a.jpg" alt />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/b.jpg" alt />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/c.jpg" alt />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/d.jpg" alt />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/f.png" alt />
+      <div class="parent">
+        <div class="content">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/e.jpg" alt />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/a.jpg" alt />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/b.jpg" alt />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/c.jpg" alt />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/d.jpg" alt />
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/f.png" alt />
+              </div>
             </div>
           </div>
         </div>
+        <!--中间图体-->
+        <div class="content-two" style="border-top:10px solid #ededed">
+          <p class="content-text">秋冬好物</p>
+          <p class="content-botton">秋冬好物</p>
+        </div>
+        <!-- list列表 -->
+        <div class="list">
+          <ul class="content-list">
+            <li class="content-item" v-for="(toplistgood,index) in toplistgoods" :key="index">
+              <div class="box">
+                <img :src="toplistgood.url" alt />
+                <p>{{toplistgood.text}}</p>
+                <span>￥{{toplistgood.price}}</span>
+              </div>
+            </li>
+            <!-- <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li>
+            <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li>
+            <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li>
+            <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li>
+            <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li>
+            <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li>
+            <li class="content-item">
+              <div class="box">
+                <img src="./images/1-4.png" alt />
+                <p>60s臻密绒磨毛四件套</p>
+                <span>￥399</span>
+              </div>
+            </li> -->
+          </ul>
+        </div>
       </div>
-      <!--中间图体-->
-      <div class="content" style="border-top:10px solid #ededed">
-        <p class="content-text">秋冬好物</p>
-        <p class="content-botton">秋冬好物</p>
-      </div>
-      <!-- list列表 -->
-      <div class="list">
-        <ul class="content-list">
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-          <li class="content-item">
-            <div class="box">
-              <img src="./images/1-4.png" alt />
-              <p>
-                60s臻密绒磨毛四件套
-                <span>￥399</span>
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <!--底部-->
-      <Footer />
     </div>
+    <!--底部-->
+    <Footer />
   </div>
 </template>
 <script>
@@ -121,11 +107,17 @@ import Swiper from "swiper";
 import "swiper/css/swiper.css";
 // 引入 better-scroll
 import BScroll from "better-scroll";
+import { mapState } from 'vuex';
 export default {
+  data () {
+    return {
+      goods:{}  
+    }
+  },
   mounted() {
     // 开始滑动
     /* eslint-disable */
-    let scroll = new BScroll(".firstView");
+    let scroll = new BScroll(".firstView-content");
     var mySwiper = new Swiper(".swiper-container", {
       loop: true, //循环模式选项
       autoplay: true,
@@ -134,60 +126,56 @@ export default {
         el: ".swiper-pagination"
       }
     });
+    this.$store.dispatch('gettoplistgood')
+  },
+  computed: {
+    ...mapState({
+      toplistgoods:state => state.toplist.toplistgood
+    })
   }
 };
 </script>
 <style lang="stylus" scoped>
-.firstView
+.firstView-content
+  padding-top 80px
+  width 100%
   height 600px
-  margin-top 90px
-  .home
+  .parent
+    padding-top 80px
     width 100%
-    position fixed
-    top 80px
-    .swiper-container
-      width 100%
-      height 200px
-      img
-        width 100%
-        height 100%
+    height 1000px
     .content
-      border 10px soild green
       width 100%
-      height 60px
+      .swiper-container
+        width 100%
+        height 200px
+        img
+          width 100%
+          height 100%
+    .content-two
       text-align center
-      line-height 40px
+      padding-top 20px
+      .content-text
+        font-size 16px
       .content-botton
-        margin-top -20px
-        font-size 12px
+        font-size 14px
         color #666
     .list
-      width 100%
-      height 1000px
       .content-list
-        width 380px
-        height 100%
-        padding 0
-        // background-color red
+        padding 20px
         display flex
         flex-wrap wrap
+        position relative
+        // padding 0
         .content-item
-          // flex 1
-          justify-content space-around
-          padding-left 12px
+          height 200px
           .box
-            width 170px
-            height 220px
-            // background-color green
+            width 180px
+            height 200px
+            // background-color red
             img
-              width 170px
-              height 180px
+              width 150px
+              height 150px
             p
-              height 20px
-              line-height 18px
-              font-size 14px
-              color #333
-              margin-top 2px
-              span
-                color #b4282d
+              color #666
 </style>
