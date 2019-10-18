@@ -16,3 +16,4 @@ export const LOGIN = "LOGIN";
 export const LOGIN_WITH_PASSWORD = "LOGIN_WITH_PASSWORD";
 export const LOGIN_WITH_EMAIL = "LOGIN_WITH_EMAIL";
 export const LOGIN_WITH_CODE = "LOGIN_WITH_CODE";
+export const LOGIN_WITH_TOKEN = "LOGIN_WITH_TOKEN";
