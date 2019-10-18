@@ -38,13 +38,18 @@
 
 <script>
 import { Button } from "mint-ui";
+import { LOGIN_WITH_EMAIL } from "../../store/mutation-type";
 const emailPattern = /^\w{1,63}@(163.com|126.com|yeah.net|188.com|vip.163.com)$/;
 export default {
   components: {
     Button
   },
   data() {
-    return { email: "", password: "", hideError: true };
+    return {
+      email: "w18842606347@163.com",
+      password: "qwer1234",
+      hideError: true
+    };
   },
   methods: {
     paddingEmail() {
@@ -63,24 +68,32 @@ export default {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
+        this.$store.dispatch(LOGIN_WITH_EMAIL, {
+          email: this.email,
+          password: this.password
+        });
       } else {
         window.console.error("you cant submit");
       }
     },
     checkCurrent() {
-      const current = this.$store.getters.state.Current;
-      if (current) {
-        this.$router.replace("/personal");
+      if(this.current){
+        this.$router.replace("/home");
       }
     }
   },
   mounted() {
     this.checkCurrent();
   },
-  updated() {
-    this.checkCurrent();
+  watch:{
+    current(){
+      this.checkCurrent();
+    },
   },
   computed: {
+    current() {
+      return this.$store.state.Current.current;
+    },
     emailError() {
       if (!this.email) {
         return "请输入账号";

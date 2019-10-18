@@ -1,4 +1,3 @@
-
 /* mutations中的类型 */
 // 获取首页列表
 export const RECEIVE_HOMELIST = "receive_homelist";
@@ -14,4 +13,6 @@ export const LASSIFY_LIST = "classify_list";
 export const RECEIVE_INDEX = "receive_index";
 
 export const LOGIN = "LOGIN";
-export const LOGIN_WITH_PASSWORD = 'LOGIN_WITH_PASSWORD'
+export const LOGIN_WITH_PASSWORD = "LOGIN_WITH_PASSWORD";
+export const LOGIN_WITH_EMAIL = "LOGIN_WITH_EMAIL";
+export const LOGIN_WITH_CODE = "LOGIN_WITH_CODE";

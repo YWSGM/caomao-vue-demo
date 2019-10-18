@@ -65,6 +65,21 @@ koaRouter.post("/loginWithPassword", async (ctx, next) => {
   }
   ctx.body = result;
 });
+koaRouter.post("/loginWithEmail", async (ctx, next) => {
+  const data = ctx.request.body.data;
+  console.log(data)
+  let result;
+  if (typeof data.email === "string" && typeof data.password === "string") {
+    const user = datas.users.find(user => user.email === data.email);
+    if (user && user.password === data.password) {
+      result = { code: 0, user };
+    }
+  }
+  if (!result) {
+    result = { code: 1, message: "not user match" };
+  }
+  ctx.body = result;
+});
 
 //声明使用所有的路由及路由的相关的所有的方法
 koa.use(koaRouter.routes()).use(koaRouter.allowedMethods());

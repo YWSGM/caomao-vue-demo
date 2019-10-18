@@ -28,3 +28,14 @@ export const loginWithPassword = (phone, password) => {
     data: { phone, password }
   });
 };
+export const loginWithEmail = (email, password) => {
+  const isValidPhone = /^\w{1,32}@163.com$/.test(email);
+  const isValidPassword = /^\w{8,16}$/.test(password);
+  if (!isValidPhone || !isValidPassword) {
+    throw new Error("邮箱或密码格式不正确");
+  }
+  return ajax.post(`${BAES}/loginWithEmail`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: { email, password }
+  });
+};
