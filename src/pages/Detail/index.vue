@@ -46,7 +46,6 @@
                 </div>
               </div>
               <div class="content-b">
-                <div class="iconfont btn1">&#xe65a;</div>
                 <p class="content-b1">
                   {{obj.text}}
                   <span class="content-b3">99.7%</span>
@@ -67,12 +66,10 @@
             <span class="span1">领券：</span>
             <span class="span2">新人15元直减</span>
             <span class="span3">每满200减20</span>
-            <span class="iconfont span4">&#xe65a;</span>
           </div>
           <div class="inner2">
             <span>购物返：新用户最高返</span>
             <span class="span5">￥4.99回馈金+49积分</span>
-            <span class="iconfont span6">&#xe65a;</span>
           </div>
         </div>
         <div class="center-footer">
@@ -81,12 +78,10 @@
             <span class="iconfont center-footer-icon">&#xe65a;</span>
           </div>
           <div class="center-footer-center">
-            <span>配送：请选择配送地址</span>
-            <span class="iconfont center-center-icon">&#xe65a;</span>
+            <span>配送：北京市昌平区尚硅谷大学三楼</span>
           </div>
           <div class="center-footer-bottom">
             <span class="center-footer-text">服务：支持7天无理由退货，48小时极速退款</span>
-            <span class="iconfont center-bottom-icon">&#xe65a;</span>
           </div>
         </div>
       </div>
@@ -118,14 +113,14 @@ export default {
         el: ".swiper-pagination"
       }
     });
-    console.log(this, this.$route.query);
+   window.console.log(this, this.$route.query);
     var obj = this.$route.query;
     obj.norms = obj.norms
       .replace("[", "")
       .replace("]", "")
       .split(",")
       .map(item => item.replace(/\'/g, ""));
-    console.log("obj", obj);
+   window.console.log("obj", obj);
     this.obj = obj
   },
   methods: {
@@ -133,9 +128,9 @@ export default {
       let data = Object.keys(obj).map(key => {
         return `${key}=${obj[key]}`
       }).join('&')
-      console.log(data);
+     window.console.log(data);
       this.$router.replace(`/purchase?${data}`);
-      // console.log(JSON.stringify(obj));
+      //window.console.log(JSON.stringify(obj));
     }
   }
 };

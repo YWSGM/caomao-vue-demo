@@ -36,7 +36,7 @@ export default {
     }
   },
   updated () {
-    console.log('footer',this.$route, this.toppestRouteName)
+   window.console.log('footer',this.$route, this.toppestRouteName)
   },
   computed:{
     toppestRouteName(){

@@ -14,7 +14,7 @@ export default {
 
 <style  lang="stylus" rel="stylesheet/stylus">
 .controlContainer
-  width 40%
+  width 100%
   height 30px
   border 1px solid #666666
   display flex

@@ -100,7 +100,7 @@ export default {
       scrollX:true,
       scrollY:false,
     })
-    console.log(scroll1)
+   window.console.log(scroll1)
   },
   methods:{
     toggleShow(){

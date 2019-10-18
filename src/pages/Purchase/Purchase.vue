@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <Header/>
     <div class="head1">
       <div class="imgs">
         <img :src="good.url" alt="">
@@ -23,6 +24,11 @@
     <div class="count">
       <Control/>
     </div>
+    <div class="shopcardetail">
+      <div class="shopcardetailA">返回</div>
+      <div class="shopcardetailB">立即购买</div>
+      <div class="shopcardetailC">加入购物车</div>
+    </div>
   </div>
 </template>
 <script>
@@ -37,17 +43,17 @@ export default {
   },
   // name: 'Purchase'
   mounted () {
-    console.log(this.$route.query);
+   window.console.log(this.$route.query);
     this.good = this.$route.query
     this.arr = this.$route.query.norms.split(',')
-    console.log(this.arr);
+   window.console.log(this.arr);
   },
   methods: {
     changeHighLightIndex(index){
       if(typeof index !== 'number'){
         throw new TypeError('index error')
       }
-      console.log('index', index);
+     window.console.log('index', index);
       this.highLightIndex = index;
     }
   }
@@ -125,4 +131,26 @@ export default {
     padding-left 10px 
   .count
     margin-left 14px
+  .shopcardetail
+    display inline-block
+    width 100%
+    height 50px
+    position fixed
+    bottom 0
+    z-index 999
+    div
+      display inline-block
+      height 50px
+      text-align center
+      line-height 50px
+    .shopcardetailA
+      width 20%
+      background-color #fff
+      // border-right 1px solid #fff
+    .shopcardetailB
+      width 40%
+      background-color #fff
+    .shopcardetailC
+      width 40%
+      background-color #b4282d
 </style>

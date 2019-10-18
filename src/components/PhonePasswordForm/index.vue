@@ -47,19 +47,19 @@ export default {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
-        // loginWithPassword(this.phone, this.password).then(r => console.log(r));
+        // loginWithPassword(this.phone, this.password).then(r =>window.console.log(r));
         this.$store.dispatch(LOGIN_WITH_PASSWORD, {
           phone: this.phone,
           password: this.password
         });
-        console.log(this.$store);
+       window.console.log(this.$store);
       } else {
         window.console.error("you cant submit");
       }
     },
     checkCurrent() {
       if (this.current) {
-        this.$router.replace("/home");
+        this.$router.replace("/personal");
       }
     }
   },

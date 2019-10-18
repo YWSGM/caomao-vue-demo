@@ -89,7 +89,7 @@ export default {
     },
     checkCurrent() {
       if (this.current) {
-        this.$router.replace("/home");
+        this.$router.replace("/personal");
       }
     }
   },

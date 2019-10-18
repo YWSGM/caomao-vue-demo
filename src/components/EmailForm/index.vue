@@ -78,7 +78,7 @@ export default {
     },
     checkCurrent() {
       if(this.current){
-        this.$router.replace("/home");
+        this.$router.replace("/personal");
       }
     }
   },
@@ -87,7 +87,7 @@ export default {
   },
   watch:{
     current(){
-      console.log('emailddd')
+     window.console.log('emailddd')
       this.checkCurrent();
     },
   },

@@ -7,7 +7,7 @@
       <span class="edit" style="display:none">编辑</span>
     </div>
     <!-- 内容区 有数据时-->
-    <div class="content" style="display:none">
+    <div class="content" >
       <div class="shopCart">
          <div class="shopCar-safe">
         <ul>
@@ -33,14 +33,16 @@
       <div class="shopCar-contented">
         <ul class="shopList">
           <li class="shopItem">
-            <div class="circle"></div>
+            <div class="circle" :class="{active:isSelected}" @click="changeStyle"></div>
             <img src="./imgs/01.jpg" alt />
             <div class="selectionsText">
               <p class="name">白胖子 温润净颜卸妆水</p>
               <p class="specification">400ml ></p>
               <p class="price">￥59.5</p>
             </div>
-            <div class="CartControl"></div>
+            <div class="control">
+              <Control/>
+            </div>
           </li>
           <li class="shopItem">
             <div class="circle"></div>
@@ -107,9 +109,9 @@
       </div>
     </div>
     <!-- 购物车结算清单 -->
-    <div class="shopCar-order" style="display:none">
+    <div class="shopCar-order" >
       <div class="shopCar-left">
-        <div class="left-circle"></div>
+        <div class="left-circle" :class="{on:isFullSelected}" @click="changeFullSelected"></div>
         <span>已选(0)</span>
       </div>
       <div class="shopCar-price">
@@ -120,7 +122,7 @@
       </div>
     </div>
     <!-- 内容区 没有登录时-->
-    <div class="shopCar-content">
+    <div class="shopCar-content" style="display:none">
       <div class="shopCar-safe">
         <ul>
           <li>
@@ -143,7 +145,6 @@
         <div class="btn" @click="goLogin">登录</div>
       </div>
     </div>
-    
     <!-- 底部导航 -->
     <Footer />
   </div>
@@ -152,6 +153,13 @@
 <script>
 import BScroll from 'better-scroll'
 export default {
+  data () {
+    return {
+      good:{},
+      isSelected:false,
+      isFullSelected:false
+    }
+  },
   mounted () {
     let scroll = new BScroll('.content',{
       click:true
@@ -160,6 +168,13 @@ export default {
   methods: {
     goLogin(){
       this.$router.replace('/login')
+    },
+    changeStyle(){
+      this.isSelected = !this.isSelected
+    },
+    changeFullSelected(){
+      this.isFullSelected = !this.isFullSelected
+      this.isSelected = !this.isSelected
     }
   }
 };
@@ -266,12 +281,15 @@ export default {
             margin 10px 0
             display flex
             align-items center
+            position relative
             .circle
               width 14px
               height 14px
               border 2px solid #eeeeee
               border-radius 50%
               margin 0 10px
+              &.active
+                background-color red
             img
               width 80px
               height 80px
@@ -291,6 +309,13 @@ export default {
                 display inline
               .price
                 margin-top 20px
+            .control
+              width 25%
+              height 31px
+              // background-color red
+              position absolute
+              bottom 0
+              right 0
   .shopCar-order
     width 100%
     height 46px
@@ -317,6 +342,9 @@ export default {
         border-radius 50%
         margin-top 16px
         margin-right 8px
+        border 1px solid #666666
+        &.on
+          background-color red
     .shopCar-price
       width 33%
       height 100%
