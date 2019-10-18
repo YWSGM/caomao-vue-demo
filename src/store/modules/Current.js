@@ -1,5 +1,5 @@
 // 引入接口api
-import { loginWithPassword, loginWithEmail } from "../../api";
+import { loginWithPassword, loginWithEmail, loginWithCode } from "../../api";
 
 import {
   LOGIN,
@@ -28,6 +28,15 @@ const actions = {
     } else {
       throw new Error(response.message);
     }
+  },  
+  async [LOGIN_WITH_CODE]({ commit }, { phone, code }) {
+    const response = await loginWithCode(phone, code );
+    if (response.code === 0) {
+      const current = response.user;
+      commit(LOGIN, current);
+    } else {
+      throw new Error(response.message);
+    }
   },
   async [LOGIN_WITH_EMAIL]({ commit }, { email, password }) {
     const response = await loginWithEmail(email, password);
@@ -37,7 +46,8 @@ const actions = {
     } else {
       throw new Error(response.message);
     }
-  }
+  } ,
+
 };
 
 const getters = {};

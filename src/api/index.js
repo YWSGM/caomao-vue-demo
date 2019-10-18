@@ -39,3 +39,14 @@ export const loginWithEmail = (email, password) => {
     data: { email, password }
   });
 };
+export const loginWithCode = (phone, code) => {
+  const isValidPhone = /^1\d{10}$/.test(phone);
+  const isValidCode = /^\d{6}$/.test(code);
+  if (!isValidPhone || !isValidCode) {
+    throw new Error("邮箱或验证码格式不正确");
+  }
+  return ajax.post(`${BAES}/loginWithCode`, {
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    data: { phone, code }
+  });
+};
