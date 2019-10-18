@@ -2,7 +2,8 @@
   <section class="home">
     <!--首页头部-->
     <Header />
-    <div class="header-list" >
+    <List />
+    <!-- <div class="header-list" >
       <div class="content-wrap">
         <div class="list-content">
           <div class="content1">
@@ -20,12 +21,12 @@
       </div>
 
      
-    </div>
+    </div> -->
     <div class="firstView">
       <div class="content">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" >
+            <div class="swiper-slide">
               <img src="./images/e.jpg" alt />
             </div>
             <div class="swiper-slide">
@@ -84,10 +85,10 @@
             <li class="top-item">
               <img src="./images/item-5.png" alt />
               <span>个人清洁</span>
-            </li> -->
+            </li>-->
           </ul>
           <ul class="slide-top">
-            <li class="top-item"  v-for="(homelisttwo,index) in homelisttwos" :key="index">
+            <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index">
               <img :src="homelisttwo.url" alt />
               <span>{{homelisttwo.name}}</span>
             </li>
@@ -106,7 +107,7 @@
             <li class="top-item">
               <img src="./images/item-6.gif" alt />
               <span>个人清洁</span>
-            </li> -->
+            </li>-->
           </ul>
         </div>
         <div class="bgImage">
@@ -299,11 +300,15 @@
         <div class="ctn">
           <div class="slide-list">
             <ul>
-              <li v-for="(homegood,index) in homegoods" :key="index" @click="goDetail(index)">
+              <li
+                v-for="(homegood,index) in homegoods"
+                :key="index"
+                @click="goDetail('/detail',homegood)"
+              >
                 <div class="list-books">
                   <img :src="homegood.url" alt />
                 </div>
-                <p >
+                <p>
                   {{homegood.text}}
                   <span>￥{{homegood.price}}</span>
                 </p>
@@ -317,10 +322,10 @@
   </section>
 </template>
 <script>
-import Swiper from 'swiper'
-import 'swiper/css/swiper.css'
+import Swiper from "swiper";
+import "swiper/css/swiper.css";
 // 引入 better-scroll
-import BScroll from 'better-scroll'
+import BScroll from "better-scroll";
 import { mapState } from "vuex";
 export default {
   methods: {
@@ -330,63 +335,69 @@ export default {
     // 开始滑动
     /* eslint-disable */
     let scroll = new BScroll('.firstView')
-    let scroll1 = new BScroll('.list-content', {
-      scrollX:true,
-      scrollY:false,
-    })
-    console.log(scroll1)
+    // let scroll1 = new BScroll('.list-content', {
+    //   scrollX:true,
+    //   scrollY:false,
+    // })
+    // console.log(scroll1)
     // 创建Swiper对象，实现轮播
     /* eslint-disable */
-    var mySwiper = new Swiper('.swiper-container', {
+    var mySwiper = new Swiper(".swiper-container", {
       loop: true, //循环模式选项
       autoplay: true,
       // 如果需要分页器
       pagination: {
-        el: '.swiper-pagination'
+        el: ".swiper-pagination"
       }
-    })
-    var mySwiper = new Swiper('.swiper-content-profile', {
+    });
+    var mySwiper = new Swiper(".swiper-content-profile", {
       loop: true, //循环模式选项
       autoplay: true,
       // 如果需要分页器
       pagination: {
         // el: '.swiper-pagination'
       }
-    })
-    this.$store.dispatch('getHomelist')
-    this.$store.dispatch('getHomelisttwo')
-    this.$store.dispatch('getHomegood')
+    });
+    this.$store.dispatch("getHomelist");
+    this.$store.dispatch("getHomelisttwo");
+    this.$store.dispatch("getHomegood");
   },
   computed: {
     ...mapState({
-      homelists:state=>state.Home.homelist,
-      homelisttwos:state=>state.Home.homelisttwo,
-      homegoods:state=>state.Home.homegood
+      homelists: state => state.Home.homelist,
+      homelisttwos: state => state.Home.homelisttwo,
+      homegoods: state => state.Home.homegood
     })
   },
   methods: {
-    goDetail(index){
-      this.$router.push('/detail')
-      this.$store.dispatch('getHomegood')
+    goDetail(path, homegood) {
+      console.log("sss", homegood);
+      let id = JSON.stringify(homegood);
+      // map返回新数组  .join('&') 用 & 链接数组中的每一项变成字符串
+      const data = Object.keys(homegood)
+        .map(key => {
+          return `${key}=${homegood[key]}`;
+        })
+        .join("&");
+      //  '?id=xx&name=dd&password=ii'
+      //"{"url":"https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330","text":"地表强温 女式派克毛领鹅绒","price":"934","norms":"['s','m','x','xl','xxl']"}"
+      this.$router.push(path + `?${data}`);
     }
   }
-}
+};
 </script>
 <style lang="stylus" scoped>
 .firstView
   height 600px
- 
 .home
   width 100%
   height 100%
   position fixed
   top 80px
-  
   .swiper-container
     // padding-top 1px
     width 100%
     height 200px
-    
     img
       width 100%
       height 100%
@@ -647,27 +658,27 @@ export default {
           // background-color green
           span
             color red
-.header-list
-  position fixed
-  top 38px
-  width 100%
-  // height 100px
-  background-color #fff
-  z-index 999
-  .list-content
-    width 380px
-    height 50px
-    // background-color green
-    .content1
-      width 800px
-      height 50px
-      display flex
-      // background-color red
-      span
-        flex 1
-        padding-left 20px
-        line-height 50px
-        color #666
-        &.active
-          color #b4282d
+// .header-list
+//   position fixed
+//   top 38px
+//   width 100%
+//   // height 100px
+//   background-color #fff
+//   z-index 999
+//   .list-content
+//     width 380px
+//     height 50px
+//     // background-color green
+//     .content1
+//       width 800px
+//       height 50px
+//       display flex
+//       // background-color red
+//       span
+//         flex 1
+//         padding-left 20px
+//         line-height 50px
+//         color #666
+//         &.active
+//           color #b4282d
 </style>
