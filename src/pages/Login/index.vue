@@ -33,7 +33,20 @@ export default {
       if (["email", "password", "code", "cover"].includes(name)) {
         this.yieldOut = name;
       }
+    },
+    checkCurrent() {
+      if (this.current) {
+        this.$router.replace("/personal");
+      }
     }
+  },
+  computed: {
+    current() {
+      return this.$store.state.Current.current;
+    }
+  },
+  mounted() {
+    this.checkCurrent();
   }
 };
 </script>
