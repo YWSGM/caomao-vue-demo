@@ -9,6 +9,4 @@ export const RECEIVE_HOMEGOODS='receive_homegoods'
 export const SEARCH_LIST = 'search_list'
 // 获取分类列表
 export const LASSIFY_LIST = 'classify_list'
-//获取商品索引
-export const RECEIVE_INDEX = 'receive_index'
 
