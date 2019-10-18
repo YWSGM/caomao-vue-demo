@@ -299,7 +299,7 @@
         <div class="ctn">
           <div class="slide-list">
             <ul>
-              <li v-for="(homegood,index) in homegoods" :key="index">
+              <li v-for="(homegood,index) in homegoods" :key="index" @click="goDetail(index)">
                 <div class="list-books">
                   <img :src="homegood.url" alt />
                 </div>
@@ -308,57 +308,11 @@
                   <span>￥{{homegood.price}}</span>
                 </p>
               </li>
-              <!-- <li>
-                <div class="list-books">
-                  <img src="./images/item-16.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-17.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-18.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-19.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li>
-              <li>
-                <div class="list-books">
-                  <img src="./images/item-21.png" alt />
-                </div>
-                <p>
-                  严选礼品卡 500元面值
-                  <span>￥50</span>
-                </p>
-              </li> -->
             </ul>
           </div>
         </div>
       </div>
     </div>
-
     <Footer />
   </section>
 </template>
@@ -409,6 +363,12 @@ export default {
       homelisttwos:state=>state.Home.homelisttwo,
       homegoods:state=>state.Home.homegood
     })
+  },
+  methods: {
+    goDetail(index){
+      this.$router.push('/detail')
+      this.$store.dispatch('getHomegood')
+    }
   }
 }
 </script>
