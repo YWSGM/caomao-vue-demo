@@ -4,6 +4,9 @@
     <div class="box1">
       <div class="detail">
         <div class="searchname">
+          <div class="back">
+            <span><</span>
+          </div>
           <div class="photo">
             <img src="./1.jpg" alt />
           </div>
@@ -54,6 +57,17 @@ export default {
         // background-color skyblue
         padding-top 10px
         padding-left 10px
+        display flex
+        .back
+          padding-top 4px
+          box-sizing border-box
+          margin-bottom 10px
+          background-color #ccc
+          width 25px
+          height 25px
+          border-radius 50%
+          text-align center
+          margin-right 20px
         .photo
           width 30px
           height 30px
