@@ -10,10 +10,15 @@ import Season from '../pages/Classify/Season'
 import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
 import Purchase from '../pages/Purchase/Purchase.vue'
+import TopList from '../pages/Toplist'
 
 export default [{
 		path: '/home',
 		component: Home
+	},
+	{
+		path:'/toplist',
+		component:TopList
 	},
 	{
 		path: '/login',
