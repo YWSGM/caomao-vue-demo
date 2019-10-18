@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="center-footer">
-          <div class="center-footer-top" @click="goto('/detail/purchase')">
+          <div class="center-footer-top" @click="goto">
             <span class="center-footer-text">请选择规格数量</span>
             <span class="iconfont center-footer-icon">&#xe65a;</span>
           </div>
@@ -122,8 +122,8 @@ export default {
    console.log('obj', obj)
   },
   methods:{
-    goto(path){
-      this.$router.replace(path)
+    goto(){
+      this.$router.replace('/detail/purchase')
     }
   }
 }
@@ -352,8 +352,9 @@ export default {
   .shopcardetail
     display inline-block
     width 100%
-    height 30px
-    position absolute
+    height 50px
+    position fixed
+    bottom 0;
     z-index 999
     div
       display inline-block
