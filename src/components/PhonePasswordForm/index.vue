@@ -27,7 +27,8 @@
 
 <script>
 import { Button } from "mint-ui";
- import {loginWithPassword, reqHomelist} from '../../api/index'
+import { loginWithPassword, reqHomelist } from "../../api/index";
+import axios from "axios";
 
 export default {
   components: {
@@ -47,8 +48,12 @@ export default {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
-        reqHomelist('homelist').then((r)=>console.log(r))
-        loginWithPassword(this.phone, this.password).then(r=>console.log(r))
+        axios
+          .post("/api/loginWithPassword", {
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            data: { phone: this.phone, password: this.password }
+          })
+          .then(r => console.log(r));
       } else {
         window.console.error("you cant submit");
       }
