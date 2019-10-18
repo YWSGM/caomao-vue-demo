@@ -5,7 +5,7 @@
       <span class="item">首页</span>
      <span class="iconfont font">&#xe615;</span>
     </li>
-    <li class="guide_item" @click="goto('/classify')" :class="{active:$route.path==='/classify'}">
+    <li class="guide_item" @click="goto('/classify')" :class="{active:toppestRouteName==='/classify'}">
       <span class="item">分类</span>
      <span class="iconfont font">&#xe624;</span>
     </li>
@@ -33,6 +33,14 @@ export default {
   methods: {
     goto(path){
       this.$router.replace(path)
+    }
+  },
+  updated () {
+    console.log('footer',this.$route, this.toppestRouteName)
+  },
+  computed:{
+    toppestRouteName(){
+      return this.$route.fullPath.match(/^\/[^\/]+/)[0]
     }
   }
 }

@@ -44,6 +44,13 @@ koaRouter.get("/goods", (ctx, next) => {
   }
 });
 
+// 顶部导航
+koaRouter.get("/good", (ctx, next) => {
+  if (ctx.query.id === "good") {
+    ctx.body = datas.good;
+  }
+});
+
 koaRouter.post("/loginWithPassword", async (ctx, next) => {
   const data = ctx.request.body.data;
   let result;
