@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { Button } from "mint-ui";
+import { Button, Toast } from "mint-ui";
 import { LOGIN_WITH_EMAIL } from "../../store/mutation-type";
 const emailPattern = /^\w{1,63}@(163.com|126.com|yeah.net|188.com|vip.163.com)$/;
 export default {
@@ -68,16 +68,21 @@ export default {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
-        this.$store.dispatch(LOGIN_WITH_EMAIL, {
-          email: this.email,
-          password: this.password
-        });
+        this.$store
+          .dispatch(LOGIN_WITH_EMAIL, {
+            email: this.email,
+            password: this.password
+          })
+          .catch(err => {
+            Toast("登录失败");
+            console.log(err);
+          });
       } else {
         window.console.error("you cant submit");
       }
     },
     checkCurrent() {
-      if(this.current){
+      if (this.current) {
         this.$router.replace("/personal");
       }
     }
@@ -85,11 +90,11 @@ export default {
   mounted() {
     this.checkCurrent();
   },
-  watch:{
-    current(){
-     window.console.log('emailddd')
+  watch: {
+    current() {
+      window.console.log("emailddd");
       this.checkCurrent();
-    },
+    }
   },
   computed: {
     current() {

@@ -4,7 +4,7 @@
     <Header />
     <!--列表-->
     <List />
-    <div class="firstView-content">
+    <div class="firstViewgi-content">
       <div class="parent">
         <div class="content">
           <div class="swiper-container">
@@ -45,55 +45,7 @@
                 <span>￥{{toplistgood.price}}</span>
               </div>
             </li>
-            <!-- <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套</p>
-                <span>￥399</span>
-              </div>
-            </li> -->
+           
           </ul>
         </div>
       </div>
