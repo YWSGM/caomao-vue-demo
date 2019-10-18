@@ -16,6 +16,7 @@ import actions from './actions'
 import Search from './modules/Search'
 import Home from './modules/home'
 import classify from './modules/classify'
+import Current from './modules/Current'
 
 export default new Vuex.Store( {
 	state,
@@ -25,6 +26,7 @@ export default new Vuex.Store( {
 	modules:{
 		Search,
 		Home,
-		classify
+		classify,
+		Current
   }
 })
