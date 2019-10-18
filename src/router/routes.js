@@ -1,21 +1,18 @@
-import Home from '../pages/Home'
-import Search from '../pages/Search'
-import Classify from '../pages/Classify'
-import Personal from '../pages/Personal'
-import Cart from '../pages/Cart'
-import Login from '../pages/Login/index.vue'
-import Detail from '../pages/Detail'
-import Right from '../pages/Classify/Right'
-import Season from '../pages/Classify/Season'
-import Faddish from '../pages/Classify/Faddish'
-import HeaderSearch from '../pages/HeardSearch'
-import Purchase from '../pages/Purchase/Purchase.vue'
-import Content from '../pages/Search/content'
-import TopList from '../pages/Toplist'
-import Seadetail from '../pages/Seadetail/Seadetail.vue'
-
-
-const 
+const Home = ()=>import ('../pages/Home')
+const Search = ()=>import ('../pages/Search')
+const Classify = ()=>import ('../pages/Classify')
+const Personal = ()=>import ('../pages/Personal')
+const Cart = ()=>import ('../pages/Cart')
+const Login = ()=>import ('../pages/Login/index.vue')
+const Detail = ()=>import ('../pages/Detail')
+const Right = ()=>import ('../pages/Classify/Right')
+const Season = ()=>import ('../pages/Classify/Season')
+const Faddish = ()=>import ('../pages/Classify/Faddish')
+const HeaderSearch = ()=>import ('../pages/HeardSearch')
+const Purchase = ()=>import ('../pages/Purchase/Purchase.vue')
+const Content = ()=>import ('../pages/Search/content')
+const TopList = ()=>import ('../pages/Toplist')
+const Seadetail = ()=>import ('../pages/Seadetail/Seadetail.vue')
 
 export default [{
 		path: '/home',
