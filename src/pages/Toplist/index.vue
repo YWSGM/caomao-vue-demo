@@ -167,6 +167,7 @@ export default {
       .content-list
         width 380px
         height 100%
+        padding 0
         // background-color red
         display flex
         flex-wrap wrap
