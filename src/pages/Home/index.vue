@@ -256,6 +256,7 @@
                 v-for="(homegood,index) in homegoods"
                 :key="index"
                 @click="goDetail('/detail',homegood)"
+               
               >
                 <div class="list-books">
                   <img :src="homegood.url" alt />

@@ -17,6 +17,7 @@ import Search from "./modules/Search";
 import Home from "./modules/home";
 import classify from "./modules/classify";
 import Current from "./modules/Current";
+import toplist from "./modules/toplist";
 export default new Vuex.Store({
   state,
   getters,
@@ -26,6 +27,7 @@ export default new Vuex.Store({
     Search,
     Home,
     classify,
-    Current
+    Current,
+    toplist
   }
 });

@@ -33,71 +33,15 @@
         <!-- list列表 -->
         <div class="list">
           <ul class="content-list">
-            <li class="content-item">
+            <li class="content-item" v-for="(toplistgood,index) in toplistgoods" :key="index">
               <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
+                <img :src="toplistgood.url" alt />
+                <p>{{toplistgood.text}}
+                  <span>￥{{toplistgood.price}}</span>
                 </p>
               </div>
             </li>
-            <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-             <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-             <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-             <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-             <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-             <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-             <li class="content-item">
-              <div class="box">
-                <img src="./images/1-4.png" alt />
-                <p>60s臻密绒磨毛四件套
-                  <span>￥399</span>
-                </p>
-              </div>
-            </li>
-            
+
             
           </ul>
         </div>
@@ -113,6 +57,7 @@ import Swiper from 'swiper'
 import 'swiper/css/swiper.css'
 // 引入 better-scroll
 import BScroll from 'better-scroll'
+import { mapState } from "vuex";
 export default {
   mounted() {
     // 开始滑动
@@ -125,8 +70,16 @@ export default {
       pagination: {
         el: '.swiper-pagination'
       }
+    });
+    this.$store.dispatch("gettoplistgood");
+  },
+    computed: {
+    ...mapState({
+      toplistgoods: state => state.toplist.toplistgood
     })
   }
+  
+
 }
 </script>
 <style lang="stylus" scoped>
@@ -159,6 +112,7 @@ export default {
       .content-list
         width 380px
         height 100%
+        padding 0
         // background-color red
         display flex
         flex-wrap wrap
