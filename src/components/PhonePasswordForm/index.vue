@@ -51,7 +51,8 @@ export default {
         axios
           .post("/api/loginWithPassword", {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            data: { phone: this.phone, password: this.password }
+            data: { phone: this.phone, password: this.password },
+            params: { phone: this.phone, password: this.password }
           })
           .then(r => console.log(r));
       } else {
