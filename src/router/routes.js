@@ -11,7 +11,7 @@ import Faddish from '../pages/Classify/Faddish'
 import HeaderSearch from '../pages/HeardSearch'
 import Purchase from '../pages/Purchase/Purchase.vue'
 import TopList from '../pages/Toplist'
-import Seadetail from '../pages/SearchDetail/Seadetail.vue'
+import Seadetail from '../pages/Seadetail/Seadetail.vue'
 
 export default [{
 		path: '/home',
