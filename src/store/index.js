@@ -16,7 +16,7 @@ import actions from './actions'
 import Search from './modules/Search'
 import Home from './modules/home'
 import classify from './modules/classify'
-// import Current from './modules/Current'
+import Current from './modules/Current'
 console.log('getters', {
 	Search,
 	Home,
@@ -32,6 +32,5 @@ export default new Vuex.Store( {
 		Search,
 		Home,
 		classify,
-		Current
   }
 })
