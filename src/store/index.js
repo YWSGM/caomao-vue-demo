@@ -16,8 +16,13 @@ import actions from './actions'
 import Search from './modules/Search'
 import Home from './modules/home'
 import classify from './modules/classify'
-import Current from './modules/Current'
-
+// import Current from './modules/Current'
+console.log('getters', {
+	Search,
+	Home,
+	classify,
+	Current
+})
 export default new Vuex.Store( {
 	state,
 	getters,
