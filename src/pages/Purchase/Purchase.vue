@@ -43,17 +43,17 @@ export default {
   },
   // name: 'Purchase'
   mounted () {
-    console.log(this.$route.query);
+   window.console.log(this.$route.query);
     this.good = this.$route.query
     this.arr = this.$route.query.norms.split(',')
-    console.log(this.arr);
+   window.console.log(this.arr);
   },
   methods: {
     changeHighLightIndex(index){
       if(typeof index !== 'number'){
         throw new TypeError('index error')
       }
-      console.log('index', index);
+     window.console.log('index', index);
       this.highLightIndex = index;
     }
   }

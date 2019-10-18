@@ -2,6 +2,15 @@
   <div class="container">
     <div v-if="current" class="content">
       <div>个人中心</div>
+      <div>
+        <span>用户名:</span>
+        <span>{{current.name}}</span>
+      </div>
+      <div>
+        <span>手机号:</span>
+        <span>{{current.phone}}</span>
+      </div>
+      <button @click="$router.push('/home')">home</button>
       <button @click="logout">登出</button>
     </div>
     <Spinner v-else-if="token" type="fading-circle"></Spinner>
@@ -42,7 +51,7 @@ export default {
       }
     },
     logout() {
-      console.log("登出", this.token);
+     window.console.log("登出", this.token);
       this.$store.dispatch(LOGOUT_ASYNC, this.token);
     }
   }

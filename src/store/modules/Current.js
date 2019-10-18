@@ -19,12 +19,12 @@ const mutations = {
   [LOGIN](state, current) {
     state.current = current;
     window.localStorage.setItem("token", current.token);
-    console.log("login current", current);
+   window.console.log("login current", current);
   }  ,
   [LOGOUT](state) {
     state.current = null;
     window.localStorage.removeItem("token");
-    console.log("LOGOUT current");
+   window.console.log("LOGOUT current");
   }
 };
 
@@ -67,7 +67,7 @@ const actions = {
   },
   async [LOGOUT_ASYNC]({ commit }, token) {
     const response = await logout(token);
-    console.log(111111, token, response)
+   window.console.log(111111, token, response)
     if (response.code === 0) {
       commit(LOGOUT);
     } else {

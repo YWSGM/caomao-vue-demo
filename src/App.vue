@@ -9,7 +9,7 @@ import { LOGIN_WITH_TOKEN } from "./store/mutation-type";
 export default {
   mounted() {
     const token = window.localStorage.getItem("token");
-    console.log(token)
+   window.console.log(token)
     if (token) {
       this.$store.dispatch(LOGIN_WITH_TOKEN, token);
     }

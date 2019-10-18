@@ -318,7 +318,7 @@ export default {
   },
   methods: {
     goDetail(path, homegood) {
-      console.log("sss", homegood);
+     window.console.log("sss", homegood);
       let id = JSON.stringify(homegood);
       // map返回新数组  .join('&') 用 & 链接数组中的每一项变成字符串
       const data = Object.keys(homegood)
