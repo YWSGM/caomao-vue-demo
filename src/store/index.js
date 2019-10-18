@@ -1,30 +1,31 @@
 // 引入Vue
-import Vue from 'vue'
+import Vue from "vue";
 // 引入Vuex
-import Vuex from 'vuex'
+import Vuex from "vuex";
 
 // 声明使用
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 // 引入暴露文件
-import state from './state'
-import getters from './getters'
-import mutations from './mutations'
-import actions from './actions'
+import state from "./state";
+import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 
 // 引入模块文件
-import Search from './modules/Search'
-import Home from './modules/home'
-import classify from './modules/classify'
-
-export default new Vuex.Store( {
-	state,
-	getters,
-	mutations,
-	actions,
-	modules:{
-		Search,
-		Home,
-		classify
+import Search from "./modules/Search";
+import Home from "./modules/home";
+import classify from "./modules/classify";
+import Current from "./modules/Current";
+export default new Vuex.Store({
+  state,
+  getters,
+  mutations,
+  actions,
+  modules: {
+    Search,
+    Home,
+    classify,
+    Current
   }
-})
+});
