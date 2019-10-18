@@ -25,13 +25,20 @@
       <Control/>
     </div>
     <div class="shopcardetail">
-      <div class="shopcardetailA">返回</div>
+      <div class="shopcardetailA" @click="$router.back()">返回</div>
       <div class="shopcardetailB">立即购买</div>
-      <div class="shopcardetailC">加入购物车</div>
+      <div class="shopcardetailC" @click="sendGood">加入购物车</div>
     </div>
   </div>
 </template>
 <script>
+/*
+http://localhost:8080/purchase?url=https%3A%2F%2Fyanxuan-item.nosdn.127.net%2F54e9c325ef69dfead72bdb6859feb2f3.png%3FimageView&quality=65&thumbnail=330x330&text=%E5%9C%B0%E8%A1%A8%E5%BC%BA%E6%B8%A9%20%E5%A5%B3%E5%BC%8F%E6%B4%BE%E5%85%8B%E6%AF%9B%E9%A2%86%E9%B9%85%E7%BB%92&price=934&norms=s,m,x,xl,xxl
+*/
+/**
+ * 全局vuex 
+ * 父子 props向下  event callback向上
+ */
 export default {
   data () {
     return {
@@ -131,6 +138,8 @@ export default {
     padding-left 10px 
   .count
     margin-left 14px
+    width 150px
+    height 35px
   .shopcardetail
     display inline-block
     width 100%

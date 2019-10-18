@@ -87,7 +87,7 @@
       </div>
     </div>
     <div class="shopcardetail">
-      <div class="shopcardetailA">图片</div>
+      <div class="shopcardetailA" @click="$router.back()">返回</div>
       <div class="shopcardetailB">立即购买</div>
       <div class="shopcardetailC">加入购物车</div>
     </div>
@@ -129,7 +129,7 @@ export default {
         return `${key}=${obj[key]}`
       }).join('&')
       console.log(data);
-      this.$router.replace(`/purchase?${data}`);
+      this.$router.push(`/purchase?${data}`);
       // console.log(JSON.stringify(obj));
     }
   }

@@ -24,19 +24,15 @@ export default {
     border-right 1px solid #666666
     line-height 30px
     text-align center
-    box-sizing border-box
   .count
     width 30%
     height 100%
     border-right 1px solid #666666
     line-height 30px
     text-align center
-    box-sizing border-box
   .addCount
     width 30%
     height 100%
-    border-left  1px solid #666666
     line-height 30px
     text-align center
-    box-sizing border-box
 </style>
