@@ -1,11 +1,12 @@
 // 引入接口api
 import { loginWithPassword } from "../../api";
 
-import {LOGIN, LOGIN_WITH_PASSWORD} from '../mutation-type'
-
 const state = {
   current: null
 };
+
+export const LOGIN = "LOGIN";
+export const LOGIN_WITH_PASSWORD = 'LOGIN_WITH_PASSWORD'
 
 const mutations = {
   [LOGIN](state, current) {
