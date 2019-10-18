@@ -48,7 +48,7 @@
         </div>
         <div class="swiper-slide1">
           <ul class="slide-top">
-            <li class="top-item" v-for="(homelist,index) in homelists" :key="index">
+            <li class="top-item" v-for="(homelist,index) in homelists" :key="index" >
               <img :src="homelist.url" alt />
               <span>{{homelist.name}}</span>
             </li>
