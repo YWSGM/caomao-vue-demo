@@ -27,7 +27,7 @@
 
 <script>
 import { Button } from "mint-ui";
- import { LOGIN_WITH_PASSWORD } from "../../store/mutation-type";
+import { LOGIN_WITH_PASSWORD } from "../../store/mutation-type";
 
 export default {
   components: {
@@ -47,13 +47,28 @@ export default {
       this.hideError = false;
       if (!this.error) {
         window.console.log(" you can submit");
-       // loginWithPassword(this.phone, this.password).then(r => console.log(r));
-       this.$store.dispatch(LOGIN_WITH_PASSWORD, {phone:this.phone, password: this.password})
-       console.log(this.$store)
+        // loginWithPassword(this.phone, this.password).then(r => console.log(r));
+        this.$store.dispatch(LOGIN_WITH_PASSWORD, {
+          phone: this.phone,
+          password: this.password
+        });
+        console.log(this.$store);
       } else {
         window.console.error("you cant submit");
       }
+    },
+    checkCurrent() {
+      const current = this.$store.getters.state.Current;
+      if (current) {
+        this.$router.replace("/personal");
+      }
     }
+  },
+  mounted() {
+    this.checkCurrent();
+  },
+  updated() {
+    this.checkCurrent();
   },
   computed: {
     phoneError() {

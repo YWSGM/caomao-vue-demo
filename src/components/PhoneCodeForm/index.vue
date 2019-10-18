@@ -48,8 +48,8 @@ export default {
     Button,
     Checkbox
   },
-  props:{
-    onSwitchForm:{
+  props: {
+    onSwitchForm: {
       required: true,
       type: Function
     }
@@ -81,7 +81,19 @@ export default {
       } else {
         window.console.error("you cant submit");
       }
+    },
+    checkCurrent() {
+      const current = this.$store.getters.state.Current;
+      if (current) {
+        this.$router.replace("/personal");
+      }
     }
+  },
+  mounted() {
+    this.checkCurrent();
+  },
+  updated() {
+    this.checkCurrent();
   },
   computed: {
     phoneError() {
@@ -101,9 +113,6 @@ export default {
     error() {
       return this.phoneError || this.codeError || "";
     }
-  },
-  updated() {
-    window.console.log("isAllowAgreements", this.isAllowAgreements);
   },
   watch: {
     countdown() {
