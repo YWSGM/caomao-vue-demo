@@ -2,11 +2,19 @@
   <div class="box">
     <Header />
     <div class="box1">
-      <div class="back" @click.stop="goback">←</div>
       <div class="detail">
         <div class="photo">
           <div class="swiper-container">
             <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img :src="obj.url" alt />
+              </div>
+              <div class="swiper-slide">
+                <img :src="obj.url" alt />
+              </div>
+              <div class="swiper-slide">
+                <img :src="obj.url" alt />
+              </div>
               <div class="swiper-slide">
                 <img :src="obj.url" alt />
               </div>
@@ -68,7 +76,7 @@
           </div>
         </div>
         <div class="center-footer">
-          <div class="center-footer-top" @click="goto">
+          <div class="center-footer-top" @click="goto(obj)">
             <span class="center-footer-text">请选择规格数量</span>
             <span class="iconfont center-footer-icon">&#xe65a;</span>
           </div>
@@ -91,9 +99,9 @@
   </div>
 </template>
 <script>
-import Swiper from "swiper";
-import "swiper/css/swiper.css";
-import BScroll from "better-scroll";
+import Swiper from "swiper"
+import "swiper/css/swiper.css"
+import BScroll from "better-scroll"
 export default {
   data(){
     return{
@@ -101,7 +109,7 @@ export default {
     }
   },
   mounted() {
-    let scroll = new BScroll(".box1");
+    let scroll = new BScroll(".box1")
     //创建swiper对象，实现轮播效果
     let mySwiper = new Swiper(".swiper-container", {
       loop: true, // 循环模式选项
@@ -121,12 +129,13 @@ export default {
     this.obj = obj
   },
   methods: {
-    goto() {
-      this.$router.replace("/detail/purchase");
-    },
-    goback(){
-      console.log(11);
-      this.$router.back()
+    goto(obj) {
+      let data = Object.keys(obj).map(key => {
+        return `${key}=${obj[key]}`
+      }).join('&')
+      console.log(data);
+      this.$router.replace(`/purchase?${data}`);
+      // console.log(JSON.stringify(obj));
     }
   }
 };

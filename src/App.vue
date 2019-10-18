@@ -5,7 +5,16 @@
 </template>
 
 <script>
-export default {};
+import { LOGIN_WITH_TOKEN } from "./store/mutation-type";
+export default {
+  mounted() {
+    const token = window.localStorage.getItem("token");
+    console.log(token)
+    if (token) {
+      this.$store.dispatch(LOGIN_WITH_TOKEN, token);
+    }
+  }
+};
 </script>
 <style lang="stylus">
 dangerColor = #dd1a21;

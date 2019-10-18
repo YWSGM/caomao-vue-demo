@@ -87,6 +87,7 @@ export default {
   },
   watch:{
     current(){
+      console.log('emailddd')
       this.checkCurrent();
     },
   },

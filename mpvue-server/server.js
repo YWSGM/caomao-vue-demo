@@ -57,6 +57,7 @@ koaRouter.post("/loginWithPassword", async (ctx, next) => {
   if (typeof data.phone === "string" && typeof data.password === "string") {
     const user = datas.users.find(user => user.phone === data.phone);
     if (user && user.password === data.password) {
+      user.token = "this is token";
       result = { code: 0, user };
     }
   }
@@ -67,11 +68,11 @@ koaRouter.post("/loginWithPassword", async (ctx, next) => {
 });
 koaRouter.post("/loginWithEmail", async (ctx, next) => {
   const data = ctx.request.body.data;
-  console.log(data)
   let result;
   if (typeof data.email === "string" && typeof data.password === "string") {
     const user = datas.users.find(user => user.email === data.email);
     if (user && user.password === data.password) {
+      user.token = "this is token";
       result = { code: 0, user };
     }
   }
@@ -79,6 +80,50 @@ koaRouter.post("/loginWithEmail", async (ctx, next) => {
     result = { code: 1, message: "not user match" };
   }
   ctx.body = result;
+});
+koaRouter.post("/loginWithCode", async (ctx, next) => {
+  const data = ctx.request.body.data;
+  let result;
+  if (typeof data.phone === "string" && typeof data.code === "string") {
+    if (data.code === "666666") {
+      const user = datas.users.find(user => user.phone === data.phone);
+      if (user) {
+        user.token = "this is token";
+        result = { code: 0, user };
+      }
+    } else {
+      result = { code: 1, message: "code wrong" };
+    }
+  }
+  if (!result) {
+    result = { code: 1, message: "not user match" };
+  }
+  ctx.body = result;
+});
+koaRouter.post("/loginAuto", async (ctx, next) => {
+  const data = ctx.request.body.data;
+  let result;
+  if(typeof data.token==='string'){
+    if(data.token === "this is token"){
+      const user = datas.users.find(user => user.id === 1);
+      if (user) {
+        user.token = data.token
+        result = { code: 0, user };
+      }
+    }else{
+      result = { code: 1, message: "token无效或过期" };
+    }
+  }
+  if (!result) {
+    result = { code: 1, message: "token typeError" };
+  }
+  ctx.body = result;
+});
+
+koaRouter.get("/logout", async (ctx, next) => {
+  // const data = ctx.request.body.data;
+  // let result;
+  ctx.body = ctx.request.query
 });
 
 //声明使用所有的路由及路由的相关的所有的方法

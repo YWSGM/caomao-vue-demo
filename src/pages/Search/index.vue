@@ -14,19 +14,27 @@
     <div class="topList">
       <ul class="topList-ul">
         <li>
-          <a class="active" href="javascript:;" >推荐</a>
+          <a
+            href="javascript:;"
+            :class="{active:$route.path==='/search/searchrecommend'}"
+            @click="goto('/search/searchrecommend')"
+          >推荐</a>
         </li>
         <li>
-          <a href="javascript:;">好物大赏</a>
+          <a 
+            href="javascript:;"
+            :class="{active:$route.path==='/search/searchgoodthing'}"
+            @click="goto('/search/searchgoodthing')"
+          >好物大赏</a>
         </li>
         <li>
-          <a href="javascript:;">好货内部比价</a>
+          <a href="javascript:;" :class="{active:$route.path==='/search/searchexchange'}" @click="goto('/search/searchexchange')">好货内部比价</a>
         </li>
         <li>
-          <a href="javascript:;">选购指南</a>
+          <a href="javascript:;" :class="{active:$route.path==='/search/searchexchoose'}" @click="goto('/search/searchexchoose')">选购指南</a>
         </li>
         <li>
-          <a href="javascript:;">晒单</a>
+          <a href="javascript:;" :class="{active:$route.path==='/search/searchunboxing'}" @click="goto('/search/searchunboxing')">晒单</a>
         </li>
       </ul>
     </div>
@@ -53,7 +61,7 @@ export default {
   },
   mounted() {
     this._initBscroll();
-    this.$store.dispatch("getSearchList")
+    this.$store.dispatch("getSearchList");
   },
   computed: {
     ...mapState({

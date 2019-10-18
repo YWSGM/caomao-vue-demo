@@ -19,3 +19,4 @@ export const LOGIN_WITH_CODE = "LOGIN_WITH_CODE";
 //获取商品列表
 export const RECEIVE_TOPLISTGOODS = "receive_toplistgoods";
 
+export const LOGIN_WITH_TOKEN = "LOGIN_WITH_TOKEN";
