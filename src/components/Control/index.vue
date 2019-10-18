@@ -1,0 +1,42 @@
+<template>
+  <div class="controlContainer">
+    <div class="reduceCount">-</div>
+    <div class="count">1</div>
+    <div class="addCount">+</div>
+  </div>
+</template>
+
+<script>
+export default {
+ name: 'Control'
+}
+</script>
+
+<style  lang="stylus" rel="stylesheet/stylus">
+.controlContainer
+  width 40%
+  height 30px
+  border 1px solid #666666
+  display flex
+  .reduceCount
+    width 30%
+    height 100%
+    border-right 1px solid #666666
+    line-height 30px
+    text-align center
+    box-sizing border-box
+  .count
+    width 30%
+    height 100%
+    border-right 1px solid #666666
+    line-height 30px
+    text-align center
+    box-sizing border-box
+  .addCount
+    width 30%
+    height 100%
+    border-left  1px solid #666666
+    line-height 30px
+    text-align center
+    box-sizing border-box
+</style>

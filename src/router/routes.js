@@ -87,12 +87,10 @@ export default [{
 	{
 		path: '/detail',
 		component: Detail,
-		children: [
-			{
-				path: '/detail/purchase',
-				component: Purchase
-			},
-		]
+	},
+	{
+		path: '/purchase',
+		component: Purchase
 	},
 	{
 		path: '/cart',
