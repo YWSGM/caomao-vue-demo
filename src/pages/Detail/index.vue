@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="center-footer">
-          <div class="center-footer-top" @click="goto()">
+          <div class="center-footer-top" @click="goto">
             <span class="center-footer-text">请选择规格数量</span>
             <span class="iconfont center-footer-icon">&#xe65a;</span>
           </div>
@@ -89,7 +89,7 @@
     <div class="shopcardetail">
       <div class="shopcardetailA" @click="$router.back()">返回</div>
       <div class="shopcardetailB">立即购买</div>
-      <div class="shopcardetailC">加入购物车</div>
+      <div class="shopcardetailC" @click="goto">加入购物车</div>
     </div>
   </div>
 </template>
@@ -126,12 +126,12 @@ export default {
       
   },
   methods: {
-    goto(obj) {
+    goto() {
       // let data = Object.keys(obj).map(key => {
       //   return `${key}=${obj[key]}`
       // }).join('&')
       // console.log(data);
-      // this.$router.push(`/purchase?${data}`);
+      this.$router.push(`/purchase`);
       // // console.log(JSON.stringify(obj));
     }
   },

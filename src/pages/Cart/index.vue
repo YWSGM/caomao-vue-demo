@@ -7,7 +7,7 @@
       <span class="edit" style="display:none">编辑</span>
     </div>
     <!-- 内容区 有数据时-->
-    <div class="content" >
+    <div class="content" v-show="arr.length>0">
       <div class="shopCart">
          <div class="shopCar-safe">
         <ul>
@@ -32,17 +32,17 @@
       </div>
       <div class="shopCar-contented">
         <ul class="shopList">
-          <li class="shopItem">
-            <div class="circle" :class="{active:isSelected}" @click="changeStyle"></div>
-            <img src="./imgs/01.jpg" alt />
+          <li class="shopItem" v-for="(good,index) in arr" :key="index">
+            <!-- <div class="circle" :class="{active:isSelected}" @click="changeStyle(index)"></div> -->
+            <img :src="good.url" alt />
             <div class="selectionsText">
-              <p class="name">白胖子 温润净颜卸妆水</p>
-              <p class="specification">400ml ></p>
-              <p class="price">￥59.5</p>
+              <p class="name">{{good.text}}</p>
+              <p class="price">￥{{good.price}}</p>
             </div>
             <div class="control">
-              <Control/>
+              <Control :good='good'/>
             </div>
+            <span @click="deleteGood(good)">X</span>
           </li>
         
         </ul>
@@ -50,20 +50,20 @@
       </div>
     </div>
     <!-- 购物车结算清单 -->
-    <div class="shopCar-order" >
+    <div class="shopCar-order" v-show="arr.length>0">
       <div class="shopCar-left">
-        <div class="left-circle" :class="{on:isFullSelected}" @click="changeFullSelected"></div>
-        <span>已选(0)</span>
+        <!-- <div class="left-circle" :class="{on:isFullSelected}" @click="changeFullSelected"></div> -->
+        <span>已加入({{arr.length}})件商品</span>
       </div>
       <div class="shopCar-price">
-        <span>合计:￥0</span>
+        <span>合计:￥{{totalPrice}}</span>
       </div>
       <div class="shopCar-count">
         <span>下单</span>
       </div>
     </div>
     <!-- 内容区 没有登录时-->
-    <div class="shopCar-content" style="display:none">
+    <div class="shopCar-content" v-show="arr.length<=0">
       <div class="shopCar-safe">
         <ul>
           <li>
@@ -82,8 +82,8 @@
       </div>
       <div class="emptyShop">
         <img src="./imgs/shopCar.png" alt="">
-        <span class="font">去添点什么吧</span>
-        <div class="btn" @click="goLogin">登录</div>
+        <!-- <span class="font">去添点什么吧</span> -->
+        <div class="btn" @click="gohome">去添点什么吧</div>
       </div>
     </div>
     <!-- 底部导航 -->
@@ -93,6 +93,7 @@
  
 <script>
 import BScroll from 'better-scroll'
+import { mapState, mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -107,15 +108,22 @@ export default {
     })
   },
   methods: {
-    goLogin(){
-      this.$router.replace('/login')
-    },
-    changeStyle(){
-      this.isSelected = !this.isSelected
+    gohome(){
+      this.$router.replace('/home')
     },
     changeFullSelected(){
       this.isFullSelected = !this.isFullSelected
+    },
+    deleteGood(good){
+      this.$store.dispatch('deleteGood',good)
     }
+  },
+  computed: {
+    ...mapState({
+      good:state => state.shopCar.selectGood,
+      arr:state=>state.shopCar.carGoods
+    }),
+   ...mapGetters(['totalPrice'])
   }
 };
 </script>
@@ -224,14 +232,10 @@ export default {
             display flex
             align-items center
             position relative
-            .circle
-              width 14px
-              height 14px
-              border 2px solid #eeeeee
-              border-radius 50%
-              margin 0 10px
-              &.active
-                background-color red
+            span 
+              position absolute
+              top 10px
+              right 10px
             img
               width 80px
               height 80px
@@ -270,6 +274,7 @@ export default {
     z-index 99
     display flex
     align-items center
+    font-size 14px
     .shopCar-left
       width  33%
       height 100%
@@ -278,26 +283,18 @@ export default {
       display flex
       box-sizing border-box
       padding-left 10px
-      .left-circle
-        width 14px
-        height 14px
-        border-radius 50%
-        margin-top 16px
-        margin-right 8px
-        border 1px solid #666666
-        &.on
-          background-color red
+      font-size 14px
     .shopCar-price
       width 33%
       height 100%
       box-sizing border-box
       line-height 46px
-      padding-left 52px
       color #b4282d
+      font-size 14px
     .shopCar-count
       width 34%
       height 100%
-      background-color #CCCCCC
+      background-color orange
       text-align center
       line-height 46px
       color white

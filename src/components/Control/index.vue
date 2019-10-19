@@ -1,14 +1,23 @@
 <template>
   <div class="controlContainer">
-    <div class="reduceCount">-</div>
-    <div class="count">1</div>
-    <div class="addCount">+</div>
+    <div class="reduceCount"  @click.stop="updateGoodCount(false)">-</div>
+    <div class="count">{{good.count}}</div>
+    <div class="addCount" @click.stop="updateGoodCount(true)">+</div>
   </div>
 </template>
-
 <script>
+// import Vue from 'vue'
 export default {
- name: 'Control'
+  props: {
+    good:Object
+  },
+  name: 'Control',
+  methods: {
+    updateGoodCount(isAdd){
+      console.log(this)
+     this.$store.dispatch('updateGoodCount',{isAdd,good:this.good})
+    }
+  }
 }
 </script>
 
@@ -25,7 +34,7 @@ export default {
     line-height 30px
     text-align center
   .count
-    width 30%
+    width 40%
     height 100%
     border-right 1px solid #666666
     line-height 30px

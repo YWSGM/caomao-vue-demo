@@ -1,33 +1,29 @@
 <template>
   <div class="box">
-    <Header/>
+    <Header />
     <div class="head1">
       <div class="imgs">
-        <img :src="good.url" alt="">
+        <img :src="goodObj.url" alt />
       </div>
       <div class="text">
-        <p class="p1">价格：{{good.price}}</p>
-        <p class="p2">已选择：{{arr[highLightIndex]}}  型号</p>
+        <p class="p1">价格：{{goodObj.price}}</p>
+        <p class="p2">已选择：{{arr[highLightIndex]}} 型号</p>
       </div>
     </div>
-    <div class="head4">
-      尺寸
-    </div>
+    <div class="head4">尺寸</div>
     <div class="head5">
       <div v-for="(item,index) in arr" :key="index">
         <span :class="{active:index===highLightIndex}" @click="changeHighLightIndex(index)">{{item}}</span>
       </div>
     </div>
-    <div class="head6">
-      数量
-    </div>
+    <div class="head6">数量</div>
     <div class="count">
-      <Control/>
+      <Control :good="goodObj" />
     </div>
     <div class="shopcardetail">
-      <div class="shopcardetailA" @click="$router.back()">返回</div>
+      <div class="shopcardetailA" @click="godetail">返回</div>
       <div class="shopcardetailB">立即购买</div>
-      <div class="shopcardetailC" @click="sendGood">加入购物车</div>
+      <div class="shopcardetailC" @click="addShopCar">加入购物车</div>
     </div>
   </div>
 </template>
@@ -36,33 +32,58 @@
 http://localhost:8080/purchase?url=https%3A%2F%2Fyanxuan-item.nosdn.127.net%2F54e9c325ef69dfead72bdb6859feb2f3.png%3FimageView&quality=65&thumbnail=330x330&text=%E5%9C%B0%E8%A1%A8%E5%BC%BA%E6%B8%A9%20%E5%A5%B3%E5%BC%8F%E6%B4%BE%E5%85%8B%E6%AF%9B%E9%A2%86%E9%B9%85%E7%BB%92&price=934&norms=s,m,x,xl,xxl
 */
 /**
- * 全局vuex 
+ * 全局vuex
  * 父子 props向下  event callback向上
  */
+import { mapState } from "vuex";
+import Vue from 'vue'
 export default {
-  data () {
+  data() {
     return {
       // good:{} ,
-      // arr:[],
-      isSelected:false,
-      highLightIndex:0,
-    }
+      arr: [],
+      isSelected: false,
+      highLightIndex: 0
+    };
   },
   // name: 'Purchase'
-  mounted () {
-   window.console.log(this.$route.query);
-    this.good = this.$route.query
-    this.arr = this.$route.query.norms.split(',')
-   window.console.log(this.arr);
+  mounted() {
+    window.console.log(this);
+
+    let arr = this.goodObj.norms;
+    console.log(typeof arr);
+    arr = arr
+      .replace("[", "")
+      .replace("]", "")
+      .replace('"/g', "");
+    arr = arr.split(",");
+
+    console.log(arr);
+
+    this.arr = arr;
+    Vue.set(this.goodObj,'count',1)
+    console.log(this);
   },
   methods: {
-    changeHighLightIndex(index){
-      if(typeof index !== 'number'){
-        throw new TypeError('index error')
+    changeHighLightIndex(index) {
+      if (typeof index !== "number") {
+        throw new TypeError("index error");
       }
-     window.console.log('index', index);
+      window.console.log("index", index);
       this.highLightIndex = index;
+    },
+    addShopCar() {
+      this.$store.dispatch("addShopCar");
+      this.$router.replace('/cart')
+    },
+    godetail() {
+      this.$router.replace("/detail");
     }
+  },
+  computed: {
+    ...mapState({
+      goodObj: state => state.shopCar.selectGood
+    })
   }
 };
 </script>
@@ -77,9 +98,9 @@ export default {
     position relative
     div
       float left
-    .imgs 
+    .imgs
       width 30%
-      img 
+      img
         width 110px
         height 110px
     .text
@@ -89,7 +110,7 @@ export default {
       left 40%
       font-size 14px
       .p1
-        color red    
+        color red
   .head2
     width 100%
     height 30px
@@ -105,13 +126,13 @@ export default {
     div
       float left
       width 25%
-      span 
+      span
         padding 7px
         border 1px #000 solid
-  .head4  
+  .head4
     width 100%
     height 30px
-    // background-color green  
+    // background-color green
     line-height 30px
     padding-left 10px
     margin-top 15px
@@ -125,17 +146,17 @@ export default {
       height 40px
       line-height 40px
       text-align center
-      span  
+      span
         padding 7px
         border 1px #000 solid
         &.active
-          background-color orange 
+          background-color orange
   .head6
     width 100%
     height 30px
     line-height 30px
-    // background-color orange  
-    padding-left 10px 
+    // background-color orange
+    padding-left 10px
   .count
     margin-left 14px
     width 150px
