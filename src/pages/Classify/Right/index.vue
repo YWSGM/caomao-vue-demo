@@ -34,11 +34,9 @@ export default {
 </script>
 <style lang="stylus">
 .listRight
-  // border-top 1px solid #ccc
   top-border-1px(#ccc)
 	height 100%
   box-sizing border-box
-	
 	.swipeWrap
     padding-top 40px
 		height 100px
@@ -55,7 +53,6 @@ export default {
 			li
 				width 80px
 				height 80px
-        
 				img
 					width 60px
 					height 60px
