@@ -4,7 +4,7 @@
     <Header />
     <!--列表-->
     <List />
-    <div class="firstViewgi-content">
+    <div class="firstView-content">
       <div class="parent">
         <div class="content">
           <div class="swiper-container">
@@ -114,7 +114,7 @@ export default {
         color #666
     .list
       .content-list
-        padding 20px
+        padding 30px
         display flex
         flex-wrap wrap
         position relative
@@ -122,9 +122,10 @@ export default {
         .content-item
           height 200px
           .box
-            width 180px
-            height 200px
-            // background-color red
+            padding 10px
+            box-sizing border-box
+            width 150px
+            height 160px
             img
               width 150px
               height 150px

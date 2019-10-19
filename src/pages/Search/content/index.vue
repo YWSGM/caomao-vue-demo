@@ -1,7 +1,7 @@
 <template>
   <div class="content-list">
     <ul class="content-ul">
-      <li class="content-item" v-for="(list,index) in lists" :key="index">
+      <li class="content-item" v-for="(list,index) in lists" :key="index" @click="goto('/seadetail')">
         <div class="left">
           <div class="top">
             <img :src="list.photo" alt />
@@ -24,9 +24,9 @@ export default {
     _initBscroll() {
       let scroll = new BScroll('.content-list')
 		},
-		mounted () {
-			this._initBscroll()
-		}
+		goto(path){
+      this.$router.replace(path)
+    }
   },
 };
 </script>
