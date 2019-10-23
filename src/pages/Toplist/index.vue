@@ -45,7 +45,6 @@
                 <span>￥{{toplistgood.price}}</span>
               </div>
             </li>
-           
           </ul>
         </div>
       </div>
