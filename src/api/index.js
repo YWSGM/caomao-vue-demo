@@ -13,10 +13,6 @@ export const reqGoods = id => ajax.get(BAES + `/goods?id=${id}`);
 //获取商品
 export const reqGood = id => ajax.get(BAES + `/good?id=${id}`);
 
-// 获取搜索默认列表
-export const reqHomeSearchList = () =>
-  ajax.get("http://m.you.163.com/xhr/search/init.json");
-
 export const loginWithPassword = (phone, password) => {
   const isValidPhone = /^1\d{10}$/.test(phone);
   const isValidPassword = /^\w{8,16}$/.test(password);

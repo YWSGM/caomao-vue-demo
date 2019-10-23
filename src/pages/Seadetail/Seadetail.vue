@@ -2,6 +2,10 @@
   <div class="box">
     <Header />
     <div class="box1">
+      <div class="goback">
+        <span class="back" @click="goBack('/search/searchrecommend')">《</span>
+        <span class="iconfont icon-fen_xiang"></span>
+      </div>
       <div class="detail">
         <div class="searchname">
           <div class="back" @click="$router.replace('/search/searchrecommend')">
@@ -32,12 +36,17 @@
   </div>
 </template>
 <script>
-import BScroll from "better-scroll"
+import BScroll from "better-scroll";
 export default {
-  mounted(){
-     let scroll = new BScroll(".box1")
+  mounted() {
+    let scroll = new BScroll(".box1");
+  },
+  methods: {
+    goBack(path){
+      this.$router.replace(path)
+    }
   }
-}
+};
 </script>
 <style lang="stylus">
 .box
@@ -46,11 +55,33 @@ export default {
   .box1
     width 100%
     height 600px
+    padding-top 40px
+    .goback
+      width 100%
+      height 25px
+      display flex
+      justify-content space-between
+      padding-left 10px
+      padding-right 10px
+      box-sizing border-box
+      .back
+        position relative
+        padding-top 4px
+        display block
+        width 25px
+        height 25px
+        box-sizing border-box
+        margin-bottom 10px
+        background-color #ccc
+        border-radius 50%
+        text-align center
+        margin-right 20px
+        padding-right 6px
     .detail
       height 800px
       width 100%
       .searchname
-        margin-top 40px
+        // margin-top 40px
         border-top 1px solid #f5f5f5
         height 30px
         width 100%
@@ -58,16 +89,6 @@ export default {
         padding-top 10px
         padding-left 10px
         display flex
-        .back
-          padding-top 4px
-          box-sizing border-box
-          margin-bottom 10px
-          background-color #ccc
-          width 25px
-          height 25px
-          border-radius 50%
-          text-align center
-          margin-right 20px
         .photo
           width 30px
           height 30px
@@ -116,5 +137,4 @@ export default {
           margin-top 15px
           color #333333
           font-size 16px
-   
 </style>
