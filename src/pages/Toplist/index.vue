@@ -40,7 +40,7 @@
           <ul class="content-list">
             <li class="content-item" v-for="(toplistgood,index) in toplistgoods" :key="index" @click="goDetail('/detail',toplistgood)">
               <div class="box">
-                <img :src="toplistgood.url" alt />
+                <img v-lazy="toplistgood.url" alt />
                 <p>{{toplistgood.text}}</p>
                 <span>￥{{toplistgood.price}}</span>
               </div>

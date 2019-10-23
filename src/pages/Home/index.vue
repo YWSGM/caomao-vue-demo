@@ -259,7 +259,7 @@
                
               >
                 <div class="list-books">
-                  <img :src="homegood.url" alt />
+                  <img v-lazy="homegood.url" alt />
                 </div>
                 <p>
                   {{homegood.text}}
@@ -332,6 +332,9 @@ export default {
     //     .join("&");
     //   //  '?id=xx&name=dd&password=ii'
     //   //"{"url":"https://yanxuan-item.nosdn.127.net/54e9c325ef69dfead72bdb6859feb2f3.png?imageView&quality=65&thumbnail=330x330","text":"地表强温 女式派克毛领鹅绒","price":"934","norms":"['s','m','x','xl','xxl']"}"
+      let good = JSON.stringify(homegood)
+      console.log(good);
+      window.localStorage.setItem('homegood',good)
       this.$router.push(path);
       this.$store.commit(RECEIVE_SELECTGOOD,homegood)
     }

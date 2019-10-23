@@ -102,6 +102,7 @@ export default {
   data(){
     return{
       //obj:{}
+      goodObj:{}
     }
   },
   mounted() {
@@ -114,6 +115,9 @@ export default {
         el: ".swiper-pagination"
       }
     });
+    let goodObj = JSON.parse(window.localStorage.getItem('homegood'))
+    console.log(goodObj);
+    this.goodObj = goodObj
   //  window.console.log(this, this.$route.query);
   //   var obj = this.$route.query;
   //   obj.norms = obj.norms
@@ -136,9 +140,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-        goodObj :state=>state.shopCar.selectGood
-      })
+    // ...mapState({
+    //     goodObj :state=>state.shopCar.selectGood
+    //   })
   }
 };
 </script>
