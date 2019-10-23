@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <router-view></router-view>
   </div>
 </template>
@@ -20,8 +20,13 @@ export default {
 dangerColor = #dd1a21;
 
 body, html {
+  width 100%
+  height  100%
   overflow: hidden;
 }
+.app 
+  width 100%
+  height 100%
 
 .mint-button--danger {
   background-color: dangerColor;

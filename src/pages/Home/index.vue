@@ -55,7 +55,7 @@
            
           </ul>
           <ul class="slide-top">
-            <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index" @click="goto('//toplist')">
+            <li class="top-item" v-for="(homelisttwo,index) in homelisttwos" :key="index" @click="goto('/toplist')">
               <img :src="homelisttwo.url" alt />
               <span>{{homelisttwo.name}}</span>
             </li>

@@ -5,14 +5,14 @@
         <div class="list-content">
           <div class="content1">
             <span class="active" @click="goto('/home')">推荐使用</span>
-            <span  @click="goto('/toplist')">居家生活</span>
-            <span  @click="goto('/classify/season')">服饰鞋包</span>
-            <span  @click="goto('/classify')">美食酒水</span>
-            <span  @click="goto('/classify/recommend')">个护清洁</span>
-            <span @click="goto('/classify/season')">母婴亲子</span>
-            <span @click="goto('/classify/recommend')">运行旅游</span>
-            <span @click="goto('/classify/recommend')">数码家电</span>
-            <span @click="goto('/classify/recommend')">全球特色</span>
+            <span  @click="goto('/classify/season')">秋冬好物</span>
+            <span  @click="goto('/classify/faddish')">爆款专区</span>
+            <span  @click="goto('/classify/new')">新品专区</span>
+            <span  @click="goto('/classify/living')">居家生活</span>
+            <span @click="goto('/classify/costume')">服饰鞋包</span>
+            <span @click="goto('/classify/food')">美食酒水</span>
+            <span @click="goto('/classify/person')">个人清护</span>
+            <span @click="goto('/classify/son')">母婴亲子</span>
           </div>
           <div class="list-btn" @click="toggleShow">
              <span class="iconfont font">&#xe60c;</span>
@@ -33,13 +33,13 @@
           <ul class="moretext-list">
             <li class="moretext-item">
               <div class="item active"  @click="goto('/home')">
-                  <p>推荐</p>
+                  <p>推荐使用</p>
               </div>
              
             </li>
              <li class="moretext-item" @click="goto('/classify/season')" >
                <div class="item" >
-                  <p>居家生活</p>
+                  <p>秋冬好物</p>
               </div>
             </li>
              <li class="moretext-item"  @click="goto('/classify')">
