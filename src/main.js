@@ -3,6 +3,8 @@ import router from './router'
 // 引入store
 import store from './store'
 
+import VueLazyload from 'vue-lazyload'
+
 import 'mint-ui/lib/style.css'
 import { Swipe, SwipeItem } from 'mint-ui';
 
@@ -30,6 +32,15 @@ Vue.component(List.name, List)
 Vue.component(Control.name, Control)
 // 注册成全局组件(公共组件)
 // Vue.component(Purchase.name, Purchase)
+
+// 使用图片懒加载
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'dist/error.png',
+  loading: 'dist/loading.gif',
+  attempt: 1
+})
+
 new Vue({
 	el: '#app',
 	components: {

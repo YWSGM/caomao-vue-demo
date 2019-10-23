@@ -43,12 +43,16 @@ export default {
       // good:{} ,
       arr: [],
       isSelected: false,
-      highLightIndex: 0
+      highLightIndex: 0,
+      goodObj:{}
     };
   },
   // name: 'Purchase'
   mounted() {
     window.console.log(this);
+    let goodObj = JSON.parse(window.localStorage.getItem('homegood'))
+    console.log(goodObj);
+    this.goodObj = goodObj
 
     let arr = this.goodObj.norms;
     console.log(typeof arr);
@@ -63,6 +67,7 @@ export default {
     this.arr = arr;
     Vue.set(this.goodObj,'count',1)
     console.log(this);
+    
   },
   methods: {
     changeHighLightIndex(index) {
@@ -81,9 +86,9 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      goodObj: state => state.shopCar.selectGood
-    })
+    // ...mapState({
+    //   goodObj: state => state.shopCar.selectGood
+    // })
   }
 };
 </script>
