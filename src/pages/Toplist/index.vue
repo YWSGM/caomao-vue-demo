@@ -38,7 +38,7 @@
         <!-- list列表 -->
         <div class="list">
           <ul class="content-list">
-            <li class="content-item" v-for="(toplistgood,index) in toplistgoods" :key="index">
+            <li class="content-item" v-for="(toplistgood,index) in toplistgoods" :key="index" @click="goDetail('/detail',toplistgood)">
               <div class="box">
                 <img :src="toplistgood.url" alt />
                 <p>{{toplistgood.text}}</p>
