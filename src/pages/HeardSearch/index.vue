@@ -41,11 +41,11 @@ export default {
 			this.$router.replace('/home')
 		}
 		
-	},
-	async	mounted () {
-		let result = await reqHomeSearchList()
-		console.log(result);
 	}
+	// async	mounted () {
+	// 	let result = await reqHomeSearchList()
+	// 	console.log(result);
+	// }
 };
 </script>
 <style lang="stylus">
