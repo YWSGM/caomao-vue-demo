@@ -4,7 +4,7 @@
     <div class="box1">
       <div class="detail">
         <div class="searchname">
-          <div class="back">
+          <div class="back" @click="$router.replace('/search/searchrecommend')">
             <span><</span>
           </div>
           <div class="photo">
