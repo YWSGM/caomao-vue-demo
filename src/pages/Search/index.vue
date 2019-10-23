@@ -91,6 +91,7 @@ export default {
     .font-home
       margin-top 4px
       font-size 30px
+      margin-left 10px
     .header-mid
       padding-left 30px
       margin 10px auto

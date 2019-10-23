@@ -1,7 +1,12 @@
 <template>
   <div class="content-list">
     <ul class="content-ul">
-      <li class="content-item" v-for="(list,index) in lists" :key="index" @click="goto('/seadetail')">
+      <li
+        class="content-item"
+        v-for="(list,index) in lists"
+        :key="index"
+        @click="goto('/seadetail')"
+      >
         <div class="left">
           <div class="top">
             <img :src="list.photo" alt />
@@ -13,21 +18,30 @@
           <img :src="list.url" alt />
         </div>
       </li>
-      
     </ul>
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
+import BScroll from "better-scroll";
 export default {
-	props:['lists'],
-	 methods: {
+  // props:['lists'],
+  methods: {
     _initBscroll() {
-      let scroll = new BScroll('.content-list')
-		},
-		goto(path){
-      this.$router.replace(path)
+      this.$nextTick(() => {
+        let scroll = new BScroll(".content-list");
+      });
+    },
+    goto(path) {
+      this.$router.replace(path);
     }
   },
+  computed: {
+    ...mapState(["lists"])
+  },
+  mounted() {
+    this._initBscroll();
+  }
 };
 </script>
 <style lang="stylus">
@@ -39,6 +53,7 @@ export default {
   .content-ul
     padding-top 30px
     width 100%
+    background-color #fff
     .content-item
       margin-top 10px
       width 100%

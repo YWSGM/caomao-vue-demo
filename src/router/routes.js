@@ -131,7 +131,13 @@ export default [{
 	},
 	{
 		path: '/homesearch',
-		component: HeaderSearch
+		component: HeaderSearch,
+		children:[
+			{
+				path:"/homesearch/searchrecommend",
+				component:Content
+			}
+		]
 	},
 	{
 		path: '/',

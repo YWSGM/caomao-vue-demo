@@ -12,10 +12,36 @@
     </div>
 
     <div class="shopWarp">
-      <ul class="shopList">
+     <!--  <ul class="shopList">
         <li v-for="(list,index) in lists" :key="index" >
           <img :src="list.url" alt />
           <p>{{list.text}}</p>
+        </li>
+      </ul> -->
+      <ul class="shopList">
+        <li>
+          <img src="../img/boutique/01.png" alt />
+          <p>明星商品地质69元</p>
+        </li>
+        <li>
+          <img src="../img/boutique/02.png" alt />
+          <p>999+好评</p>
+        </li>
+        <li>
+          <img src="../img/boutique/03.png" alt />
+          <p>员工精选好货低至15元</p>
+        </li>
+        <li>
+          <img src="../img/boutique/04.png" alt />
+          <p>秋冬服配特惠低至5折</p>
+        </li>
+        <li>
+          <img src="../img/boutique/04.png" alt />
+          <p>秋冬服配特惠低至5折</p>
+        </li>
+        <li>
+          <img src="../img/boutique/04.png" alt />
+          <p>秋冬服配特惠低至5折</p>
         </li>
       </ul>
     </div>
