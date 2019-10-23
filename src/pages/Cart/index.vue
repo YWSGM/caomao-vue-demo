@@ -42,7 +42,7 @@
             <div class="control">
               <Control :good='good'/>
             </div>
-            <span @click="deleteGood(good)">X</span>
+            <span @click="deleteGood(good)">×</span>
           </li>
         
         </ul>

@@ -1,10 +1,5 @@
 <template>
   <div class="container">
-    <h2>时间有限 没搭建页面</h2>
-    <br>
-     <br> <br>
-      <br>
-       <br>
     <div v-if="current" class="content">
       <div>个人中心</div>
       <div>
@@ -62,4 +57,12 @@ export default {
   }
 };
 </script>
-<style lang="stylus"></style>
+<style lang="stylus">
+.container
+  width 100%
+  height 100%
+  background-color orange 
+
+
+
+</style>

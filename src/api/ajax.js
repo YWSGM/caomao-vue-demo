@@ -1,8 +1,8 @@
 import axios from 'axios'
-import qs from 'qs'
-import store from '../store'
-import {Toast} from 'mint-ui'
-import router from '../router'
+// import qs from 'qs'
+// import store from '../store'
+// import {Toast} from 'mint-ui'
+// import router from '../router'
 axios.interceptors.request.use(config => {
   // const {
   //   method,
