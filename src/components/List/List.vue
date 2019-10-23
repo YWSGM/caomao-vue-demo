@@ -35,46 +35,45 @@
               <div class="item active"  @click="goto('/home')">
                   <p>推荐使用</p>
               </div>
-             
             </li>
              <li class="moretext-item" @click="goto('/classify/season')" >
                <div class="item" >
                   <p>秋冬好物</p>
               </div>
             </li>
-             <li class="moretext-item"  @click="goto('/classify')">
+             <li class="moretext-item"  @click="goto('/classify/faddish')">
+              <div class="item" >
+                  <p>爆款专区</p>
+              </div>
+            </li>
+            <li class="moretext-item"  @click="goto('/classify/new')">
+              <div class="item" >
+                  <p>新品专区</p>
+              </div>
+            </li>
+            <li class="moretext-item"  @click="goto('/classify/living')">
+              <div class="item" >
+                  <p>居家生活</p>
+              </div>
+            </li>
+            <li class="moretext-item"  @click="goto('/classify/costume')">
               <div class="item" >
                   <p>服饰鞋包</p>
               </div>
             </li>
-            <li class="moretext-item"  @click="goto('/toplist')">
+              <li class="moretext-item"  @click="goto('/classify/food')">
               <div class="item" >
                   <p>美食酒水</p>
               </div>
             </li>
-            <li class="moretext-item"  @click="goto('/toplist')">
+                <li class="moretext-item"  @click="goto('/classify/person')">
               <div class="item" >
-                  <p>个人清洁</p>
+                  <p>个人清护</p>
               </div>
             </li>
-            <li class="moretext-item"  @click="goto('/classify/recommend')">
+               <li class="moretext-item"  @click="goto('/classify/son')">
               <div class="item" >
                   <p>母婴亲子</p>
-              </div>
-            </li>
-              <li class="moretext-item"  @click="goto('/classify/faddish')">
-              <div class="item" >
-                  <p>运动旅游</p>
-              </div>
-            </li>
-                <li class="moretext-item"  @click="goto('/classify/new')">
-              <div class="item" >
-                  <p>数码家电</p>
-              </div>
-            </li>
-               <li class="moretext-item"  @click="goto('/classify/faddish')">
-              <div class="item" >
-                  <p>全球特色</p>
               </div>
             </li>
             
