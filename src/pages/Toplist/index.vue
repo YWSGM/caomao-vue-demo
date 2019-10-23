@@ -60,6 +60,7 @@ import "swiper/css/swiper.css";
 // 引入 better-scroll
 import BScroll from "better-scroll";
 import { mapState } from 'vuex';
+import {RECEIVE_SELECTGOOD} from '../../store/mutation-type.js';
 export default {
   data () {
     return {
@@ -84,8 +85,16 @@ export default {
     ...mapState({
       toplistgoods:state => state.toplist.toplistgood
     })
+  },
+  methods: {
+    goDetail(path, topgood) {
+      let good = JSON.stringify(topgood)
+      window.localStorage.setItem('homegood',good)
+      this.$router.push(path);
+      this.$store.commit(RECEIVE_SELECTGOOD,topgood)
+    }
   }
-};
+}
 </script>
 <style lang="stylus" scoped>
 .firstView-content

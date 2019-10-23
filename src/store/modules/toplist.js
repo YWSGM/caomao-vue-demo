@@ -3,12 +3,13 @@ import {reqGood} from '../../api'
 
 const state = {
   toplistgood:[],
+ 
 }
 
 const mutations = {
   [RECEIVE_TOPLISTGOODS](state,toplistgood){
     state.toplistgood =toplistgood
-  }
+  },
 }
 const actions = {
   async gettoplistgood({commit}){
