@@ -29,7 +29,7 @@ const actions = {
   },
   async getHomegood({commit}){
     const result = await reqGoods('goods')
-    commit(RECEIVE_HOMEGOODS,result)
+    commit(RECEIVE_HOMEGOODS,result) 
   }
 }
 const getters = {}

@@ -44,15 +44,16 @@ export default {
       arr: [],
       isSelected: false,
       highLightIndex: 0,
-      goodObj:{}
+      // goodObj:{}
     };
   },
   // name: 'Purchase'
   mounted() {
     window.console.log(this);
-    let goodObj = JSON.parse(window.localStorage.getItem('homegood'))
-    console.log(goodObj);
-    this.goodObj = goodObj
+    // let goodObj = JSON.parse(window.localStorage.getItem('homegood'))
+    // goodObj.count = 0
+    // console.log(goodObj);
+    // this.goodObj = goodObj
 
     let arr = this.goodObj.norms;
     console.log(typeof arr);
@@ -86,9 +87,9 @@ export default {
     }
   },
   computed: {
-    // ...mapState({
-    //   goodObj: state => state.shopCar.selectGood
-    // })
+    ...mapState({
+      goodObj: state => state.shopCar.selectGood
+    })
   }
 };
 </script>

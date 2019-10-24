@@ -16,7 +16,6 @@ const mutations = {
 const actions = {
 	async	getClassify({commit}){
 		const result = await reqClassfiy('classify')
-		console.log(result);
 		const lists = result
 		commit(LASSIFY_LIST,lists)
 	}
